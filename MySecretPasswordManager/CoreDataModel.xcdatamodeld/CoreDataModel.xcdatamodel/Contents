@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="BankAccount" representedClassName="BankAccount" syncable="YES">
+        <attribute name="accountHolderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accountNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accountPIN" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="accountType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bankName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="branchAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="branchCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="branchName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="branchPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="bankAccount" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="CableOperator" representedClassName="CableOperator" syncable="YES"/>
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bankAccount" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BankAccount" inverseName="relationship" inverseEntity="BankAccount" syncable="YES"/>
+        <relationship name="category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LoginTable" inverseName="loginTable" inverseEntity="LoginTable" syncable="YES"/>
+    </entity>
+    <entity name="CreditCard" representedClassName="CreditCard" syncable="YES">
+        <attribute name="bankName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardHolderName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardPIN" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expiryDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="localPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tollFreePhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="validFrom" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DriverLicence" representedClassName="DriverLicence" syncable="YES"/>
+    <entity name="EmailAccount" representedClassName="EmailAccount" syncable="YES"/>
+    <entity name="Identity" representedClassName="Identity" syncable="YES">
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="cityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departmentName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jobTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="webSite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Locations" representedClassName="Locations" syncable="YES"/>
+    <entity name="Login" representedClassName="Login" syncable="YES">
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LoginTable" representedClassName="LoginTable" syncable="YES">
+        <attribute name="categoryID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="webUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="loginTable" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="category" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <entity name="MedicalPolicy" representedClassName="MedicalPolicy" syncable="YES"/>
+    <entity name="Membership" representedClassName="Membership" syncable="YES"/>
+    <entity name="Passport" representedClassName="Passport" syncable="YES"/>
+    <entity name="Password" representedClassName="Password" syncable="YES"/>
+    <entity name="SecureNote" representedClassName="SecureNote" syncable="YES">
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Server" representedClassName="Server" syncable="YES"/>
+    <entity name="SocialSecurityNumber" representedClassName="SocialSecurityNumber" syncable="YES"/>
+    <entity name="SoftwareLicence" representedClassName="SoftwareLicence" syncable="YES"/>
+    <entity name="VehicleInformation" representedClassName="VehicleInformation" syncable="YES"/>
+    <entity name="Wallet" representedClassName="Wallet" syncable="YES"/>
+    <entity name="WirelessRouter" representedClassName="WirelessRouter" syncable="YES"/>
+    <elements>
+        <element name="BankAccount" positionX="-135" positionY="-301" width="128" height="240"/>
+        <element name="CableOperator" positionX="-162" positionY="54" width="128" height="45"/>
+        <element name="Category" positionX="-317" positionY="-78" width="128" height="118"/>
+        <element name="CreditCard" positionX="-315" positionY="72" width="128" height="240"/>
+        <element name="DriverLicence" positionX="-171" positionY="45" width="128" height="45"/>
+        <element name="EmailAccount" positionX="-162" positionY="54" width="128" height="45"/>
+        <element name="Identity" positionX="-153" positionY="63" width="128" height="330"/>
+        <element name="Locations" positionX="-144" positionY="72" width="128" height="45"/>
+        <element name="Login" positionX="-144" positionY="72" width="128" height="135"/>
+        <element name="LoginTable" positionX="-299" positionY="-270" width="128" height="133"/>
+        <element name="MedicalPolicy" positionX="-180" positionY="36" width="128" height="45"/>
+        <element name="Membership" positionX="-135" positionY="81" width="128" height="45"/>
+        <element name="Passport" positionX="-189" positionY="27" width="128" height="45"/>
+        <element name="Password" positionX="-180" positionY="36" width="128" height="45"/>
+        <element name="SecureNote" positionX="-171" positionY="45" width="128" height="90"/>
+        <element name="Server" positionX="-162" positionY="54" width="128" height="45"/>
+        <element name="SocialSecurityNumber" positionX="-153" positionY="63" width="128" height="45"/>
+        <element name="SoftwareLicence" positionX="-144" positionY="72" width="128" height="45"/>
+        <element name="VehicleInformation" positionX="-468" positionY="99" width="128" height="45"/>
+        <element name="Wallet" positionX="-171" positionY="45" width="128" height="45"/>
+        <element name="WirelessRouter" positionX="-135" positionY="81" width="128" height="45"/>
+    </elements>
+</model>

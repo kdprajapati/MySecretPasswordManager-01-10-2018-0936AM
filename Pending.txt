@@ -1,0 +1,55 @@
+Pending things
+
+First time flow
+================================================================
+- skip text to change as Done at last page
+
+
+MainView
+================================================================
+- add 3 more categories
+- remove '+' button for this version
+
+
+Detail view (show per category data)
+================================================================
+- show arrow below '+' button to help - add new data
+
+
+Category Add data view
+================================================================
+- Note:- per category to store data - encrypted or not text
+
+
+Settings
+================================================================
+- restore purchase option to add
+- remove ads logic
+- rate us link
+
+
+
+Text finalization
+================================================================
+1) Bank Account
+Note:- Save your bank information. Account Number and Account PIN will be encrypted with AES standard Encryption algorithm.
+
+2) Credit Card
+Note:- Save your Credit Card information. Card Number and Card PIN will be encrypted with AES standard Encryption algorithm.
+
+3) Login/Password
+Note:- Save your Login information. Password will be encrypted with AES standard Encryption algorithm.
+
+4) Identity
+Note:- Save the Identity of an individual or group. 
+
+5) Secure Note
+Note:- Save your personal Notes.
+
+
+
+Bugs:- 
+================================================================
+- favourite button select/deselect issue
+- category -> share -> share Now button not working
+- check at reset password encryption/decryption

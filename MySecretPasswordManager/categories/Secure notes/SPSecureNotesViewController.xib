@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SPSecureNotesViewController">
+            <connections>
+                <outlet property="favouriteBtn" destination="lIy-BU-6rA" id="znb-41-Yql"/>
+                <outlet property="secureNotesScrollView" destination="HUX-5q-vzw" id="tle-Xe-gQW"/>
+                <outlet property="textViewNote" destination="eSQ-ma-iAG" id="TKU-d4-UaO"/>
+                <outlet property="txtNoteName" destination="UKB-Ob-Vnd" id="TYN-ED-oQI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="SPSecureNotesViewController" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUX-5q-vzw">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgi-Yj-Ubn" userLabel="note name view">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secure Note Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxH-9X-V0I" userLabel="Secure Note Name">
+                                    <rect key="frame" x="20" y="8" width="280" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.54509803921568623" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKB-Ob-Vnd">
+                                    <rect key="frame" x="20" y="35" width="280" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="tgi-Yj-Ubn" secondAttribute="height" multiplier="64:15" id="qaM-dc-mor"/>
+                            </constraints>
+                        </view>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" maximumZoomScale="2" text="Enter secure note here" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-ma-iAG">
+                            <rect key="frame" x="20" y="75" width="279" height="300"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eSQ-ma-iAG" secondAttribute="height" multiplier="93:100" id="COO-Rk-MQc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes"/>
+                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                        </textView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8j-Oh-9r4" userLabel="category description view">
+                            <rect key="frame" x="0.0" y="375" width="320" height="110"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note:- Save your personal Notes." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-ka-TjN">
+                                    <rect key="frame" x="19" y="3" width="281" height="111"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" red="0.54509803921568623" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="p8j-Oh-9r4" secondAttribute="height" multiplier="32:11" id="Hho-kc-8bV"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTf-lM-1zp" userLabel="operations view">
+                            <rect key="frame" x="0.0" y="485" width="320" height="75"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yp8-mF-FIr">
+                                    <rect key="frame" x="143" y="25" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="share_normal.png"/>
+                                    <state key="highlighted" backgroundImage="share_highlighted.png"/>
+                                    <connections>
+                                        <action selector="funPreviewShare:" destination="-1" eventType="touchUpInside" id="x2A-JS-N8L"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIy-BU-6rA">
+                                    <rect key="frame" x="88" y="26" width="24" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="Fav_Unselect.png"/>
+                                    <state key="selected" backgroundImage="Fav_Selected.png"/>
+                                    <connections>
+                                        <action selector="funDoFavourite:" destination="-1" eventType="touchUpInside" id="e5A-f9-gVs"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePL-xy-qLy">
+                                    <rect key="frame" x="133" y="50" width="42" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Favourite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R5-8h-uc6">
+                                    <rect key="frame" x="73" y="50" width="55" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b1-uv-Nk8">
+                                    <rect key="frame" x="197" y="25" width="25" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="delete_normal.png"/>
+                                    <state key="highlighted" backgroundImage="delete_highlighted.png"/>
+                                    <connections>
+                                        <action selector="funDeleteObject:" destination="-1" eventType="touchUpInside" id="XVJ-NB-Dpk"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MnE-B6-cbW">
+                                    <rect key="frame" x="189" y="50" width="42" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bTf-lM-1zp" secondAttribute="height" multiplier="64:15" id="mcQ-YH-HZB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="bTf-lM-1zp" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="1Sh-ly-YWn"/>
+                        <constraint firstItem="p8j-Oh-9r4" firstAttribute="width" secondItem="HUX-5q-vzw" secondAttribute="width" id="5hd-s4-xNX"/>
+                        <constraint firstItem="tgi-Yj-Ubn" firstAttribute="top" secondItem="HUX-5q-vzw" secondAttribute="top" id="KMz-0k-zBz"/>
+                        <constraint firstItem="tgi-Yj-Ubn" firstAttribute="width" secondItem="HUX-5q-vzw" secondAttribute="width" id="Nw3-sL-iMr"/>
+                        <constraint firstItem="p8j-Oh-9r4" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="UF6-cx-e91"/>
+                        <constraint firstItem="bTf-lM-1zp" firstAttribute="width" secondItem="HUX-5q-vzw" secondAttribute="width" id="XoX-2e-h3r"/>
+                        <constraint firstItem="eSQ-ma-iAG" firstAttribute="top" secondItem="tgi-Yj-Ubn" secondAttribute="bottom" id="Zrp-sR-MtP"/>
+                        <constraint firstItem="p8j-Oh-9r4" firstAttribute="top" secondItem="eSQ-ma-iAG" secondAttribute="bottom" id="bqq-Z5-Hgr"/>
+                        <constraint firstItem="bTf-lM-1zp" firstAttribute="top" secondItem="p8j-Oh-9r4" secondAttribute="bottom" id="cnK-Vv-9a8"/>
+                        <constraint firstItem="eSQ-ma-iAG" firstAttribute="width" secondItem="HUX-5q-vzw" secondAttribute="width" multiplier="279:320" id="jei-jP-Ngp"/>
+                        <constraint firstItem="eSQ-ma-iAG" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="lHQ-ac-aI7"/>
+                        <constraint firstItem="tgi-Yj-Ubn" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="mZX-Za-sKH"/>
+                    </constraints>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woC-Yn-izZ" userLabel="ad view">
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                    <color key="backgroundColor" red="0.085244058710000001" green="0.086342763289999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="vaP-92-AP2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HUX-5q-vzw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2xe-2c-NtE"/>
+                <constraint firstAttribute="bottom" secondItem="woC-Yn-izZ" secondAttribute="bottom" id="GXK-SJ-hws"/>
+                <constraint firstItem="HUX-5q-vzw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="N4U-9i-Z5q"/>
+                <constraint firstItem="HUX-5q-vzw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Qtf-k9-Gbe"/>
+                <constraint firstAttribute="bottom" secondItem="HUX-5q-vzw" secondAttribute="bottom" id="gER-jp-T1L"/>
+                <constraint firstItem="woC-Yn-izZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iAU-da-fl1"/>
+                <constraint firstItem="HUX-5q-vzw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pzr-HR-Snl"/>
+                <constraint firstItem="woC-Yn-izZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="wvw-PY-kod"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Fav_Selected.png" width="24" height="24"/>
+        <image name="Fav_Unselect.png" width="24" height="24"/>
+        <image name="delete_highlighted.png" width="24" height="24"/>
+        <image name="delete_normal.png" width="24" height="24"/>
+        <image name="share_highlighted.png" width="24" height="24"/>
+        <image name="share_normal.png" width="24" height="24"/>
+    </resources>
+</document>

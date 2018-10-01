@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreviewNewViewController">
+            <connections>
+                <outlet property="buttonShareNow" destination="10m-Dd-d5G" id="oc7-Kk-IiE"/>
+                <outlet property="previewTableView" destination="FNp-L5-fLj" id="YF5-dj-VPl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FNp-L5-fLj">
+                    <rect key="frame" x="0.0" y="10" width="320" height="465"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="FNp-L5-fLj" secondAttribute="height" multiplier="64:93" id="pXz-WG-hq9"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="kid-Hl-Neu"/>
+                        <outlet property="delegate" destination="-1" id="cZh-rr-x7B"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10m-Dd-d5G">
+                    <rect key="frame" x="20" y="500" width="280" height="44"/>
+                    <color key="backgroundColor" red="0.17567905783653259" green="0.67043143510818481" blue="0.74269664287567139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="10m-Dd-d5G" secondAttribute="height" multiplier="70:11" id="Suh-6z-AsQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Share Now">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="funSharePreview:" destination="-1" eventType="touchUpInside" id="Izb-jc-EW5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FNp-L5-fLj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="1ES-Pj-h4m"/>
+                <constraint firstItem="10m-Dd-d5G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BCx-0i-pSo"/>
+                <constraint firstItem="10m-Dd-d5G" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="280:320" id="ach-MU-IzA"/>
+                <constraint firstItem="FNp-L5-fLj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="lrZ-II-hpa"/>
+                <constraint firstItem="10m-Dd-d5G" firstAttribute="top" secondItem="FNp-L5-fLj" secondAttribute="bottom" constant="25" id="t1Y-xt-2VD"/>
+                <constraint firstItem="FNp-L5-fLj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ubd-Av-j46"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
