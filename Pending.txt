@@ -18,15 +18,34 @@ Detail view (show per category data)
 
 Category Add data view
 ================================================================
+- text view at note
+- add edit option - edit and done to save
+- change background colour to white of all views
+- add photo thumbnail to photo collection view at bottom,
+	- close button with shadow
+- bottom options alignment to check (more space to add)
+- remove description text
+- eye button icon in place of show button
+
+
 - Note:- per category to store data - encrypted or not text
 
 
 Settings
 ================================================================
+- Lock on screen - 1min, 3mins, 5min, never
+- security ->
+	- Passcode-> change passcode
+	- password -> change password
+
 - restore purchase option to add
 - remove ads logic
 - rate us link
 
+Add colour theme
+
+About US section
+================================================================
 
 
 Text finalization
