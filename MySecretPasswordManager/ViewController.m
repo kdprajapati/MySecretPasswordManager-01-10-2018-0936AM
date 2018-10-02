@@ -75,6 +75,10 @@
     yPosition = self.view.bounds.size.height - 44;
 }
 
+
+/**
+ add bottom bar buttons - favourite and settings
+ */
 -(void)funAllocBottomBarButtons
 {
     
