@@ -100,6 +100,11 @@
     [self.navigationController pushViewController:imageShowVC animated:true];
 }
 
+- (IBAction)funAddPhotos:(id)sender {
+    [self funShowCameraOptions];
+}
+
+
 -(void)funShowCameraOptions
 {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Choose Option" message:@"Get Photo from below options" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -597,7 +602,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return images.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

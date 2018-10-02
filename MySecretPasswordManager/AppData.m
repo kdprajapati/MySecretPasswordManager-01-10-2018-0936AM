@@ -145,36 +145,6 @@ static AppData *_sharedAppData = nil;
         [[NSFileManager defaultManager] createDirectoryAtPath:photoPath1 withIntermediateDirectories:NO attributes:nil error:&error];
     }
     
-    switch (categoryType) {
-        case KCategoryBankAccount:
-        {
-            
-            
-        }
-            break;
-        case KCategoryCreditCard:
-        {
-            
-        }
-            break;
-        case KCategoryLoginPassword:
-        {
-            
-        }
-            break;
-        case KCategoryIdentity:
-        {
-            
-        }
-            break;
-        case KCategorySecureNote:
-        {
-            
-        }
-            break;
-        default:
-            break;
-    }
 }
 
 -(void)funCreateAppDataPlist

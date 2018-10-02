@@ -2,13 +2,13 @@ Pending things
 
 First time flow
 ================================================================
-- skip text to change as Done at last page
+√- skip text to change as Done at last page
 
 
 MainView
 ================================================================
-- add 3 more categories
-- remove '+' button for this version
+√- add 3 more categories
+√- remove '+' button for this version
 
 
 Detail view (show per category data)
