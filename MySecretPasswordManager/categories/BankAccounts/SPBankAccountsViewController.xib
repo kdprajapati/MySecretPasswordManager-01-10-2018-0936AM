@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="collectionViewPhotos" destination="XL7-Us-CfU" id="0Se-ND-xnh"/>
                 <outlet property="favouriteBtn" destination="cco-qt-SAC" id="klt-yg-MOW"/>
+                <outlet property="noteButton" destination="lKi-2U-Sx2" id="Cwg-SP-WDQ"/>
                 <outlet property="onView" destination="b8t-ap-COF" id="YBB-QQ-wYV"/>
                 <outlet property="scrolViewBankAC" destination="ZQ4-YF-9ow" id="vyR-Wf-Wxz"/>
                 <outlet property="showHidePinBtn" destination="GGb-Qe-5BS" id="UaN-0P-AEX"/>
@@ -281,13 +282,22 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your note here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-rc-MCT">
+                                <textField opaque="NO" clipsSubviews="YES" alpha="0.0" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type your note here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWM-rc-MCT">
                                     <rect key="frame" x="20" y="35" width="280" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKi-2U-Sx2">
+                                    <rect key="frame" x="20" y="35" width="280" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Tap to create note"/>
+                                    <connections>
+                                        <action selector="funOpenNoteView:" destination="-1" eventType="touchUpInside" id="8wV-Xc-TTF"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

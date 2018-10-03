@@ -86,6 +86,10 @@
     }
 }
 
+- (IBAction)funAddPhotos:(id)sender {
+    [self funShowCameraOptions];
+}
+
 -(void)funShowCameraOptions
 {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Choose Option" message:@"Get Photo from below options" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -410,6 +414,19 @@
     
 }
 
+- (IBAction)funOpenNoteView:(id)sender {
+    NoteViewController *noteVC = [[NoteViewController alloc]initWithNibName:@"NoteViewController" bundle:[NSBundle mainBundle]];
+    noteVC.delegate = self;
+    noteVC.buttonText = self.noteButton.titleLabel.text;
+    [self.navigationController pushViewController:noteVC animated:true];
+}
+
+//Note view delegate
+-(void)funNoteTextForCategory:(NSString *)text
+{
+    [self.noteButton setTitle:text forState:UIControlStateNormal];
+}
+
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews
 {
@@ -424,7 +441,14 @@
         self.txtWebsite.text = [self.identityObject valueForKey:@"webSite"];
         self.txtAddress.text = [self.identityObject valueForKey:@"address"];
         self.txtCountry.text = [self.identityObject valueForKey:@"country"];
-        self.txtNote.text = [self.identityObject valueForKey:@"note"];
+//        self.txtNote.text = [self.identityObject valueForKey:@"note"];
+        if ([self.identityObject valueForKey:@"note"] != nil)
+        {
+            [self.noteButton setTitle:[self.identityObject valueForKey:@"note"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.noteButton setTitle:[self.identityObject valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
+        }
 
         self.isFavourite = [[self.identityObject valueForKey:@"isFavourite"] boolValue];
         if (self.isFavourite == true)
@@ -526,7 +550,11 @@
     [object setValue:self.txtWebsite.text forKey:@"webSite"];
     [object setValue:self.txtAddress.text forKey:@"address"];
     [object setValue:self.txtCountry.text forKey:@"country"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     
     [object setValue:[NSNumber numberWithInt:4] forKey:@"categoryType"];
     if (self.isFavourite == true)

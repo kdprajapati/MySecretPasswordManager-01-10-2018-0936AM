@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginPasswordObject.h"
+#import "NoteViewController.h"
 
-@interface LoginItemsViewController : UIViewController <UITextFieldDelegate>
+@interface LoginItemsViewController : UIViewController <UITextFieldDelegate,NoteViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *loginNameTxt;
 @property (strong, nonatomic) IBOutlet UITextField *urlWebTxt;
 @property (strong, nonatomic) IBOutlet UITextField *usernameTxt;
@@ -23,4 +24,5 @@
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) IBOutlet UIButton *favouriteButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *noteButton;
 @end

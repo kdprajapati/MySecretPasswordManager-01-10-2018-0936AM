@@ -10,8 +10,9 @@
 #import "SWRevealTableViewCell.h"
 
 #import "IdentityObject.h"
+#import "NoteViewController.h"
 
-@interface SPIdentityViewController : UIViewController <SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface SPIdentityViewController : UIViewController <SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, NoteViewControllerDelegate>
 
 @property (weak, nonatomic) IdentityObject *identityObject;
 @property (nonatomic) BOOL isFavourite;
@@ -35,7 +36,7 @@
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionViewPhotos;
 
-
+@property (weak, nonatomic) IBOutlet UIButton *noteButton;
 
 
 

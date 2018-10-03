@@ -11,8 +11,9 @@
 #import "SWRevealTableViewCell.h"
 
 #import "BankAccountObject.h"
+#import "NoteViewController.h"
 
-@interface BankAccountsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface BankAccountsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, NoteViewControllerDelegate>
 //@property (weak, nonatomic) IBOutlet UITableView *bankAccountDetailTableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrolViewBankAC;
 
@@ -36,5 +37,6 @@
 @property (nonatomic) BOOL isFavourite;
 @property (strong, nonatomic) IBOutlet UIButton *favouriteBtn;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionViewPhotos;
+@property (weak, nonatomic) IBOutlet UIButton *noteButton;
 
 @end

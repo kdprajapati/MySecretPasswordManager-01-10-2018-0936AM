@@ -102,6 +102,10 @@
     }
 }
 
+- (IBAction)funAddPhotos:(id)sender {
+    [self funShowCameraOptions];
+}
+
 -(void)funShowCameraOptions
 {
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Choose Option" message:@"Get Photo from below options" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -439,6 +443,18 @@
     }
 }
 
+- (IBAction)funOpenNoteView:(id)sender {
+    NoteViewController *noteVC = [[NoteViewController alloc]initWithNibName:@"NoteViewController" bundle:[NSBundle mainBundle]];
+    noteVC.delegate = self;
+    noteVC.buttonText = self.noteButton.titleLabel.text;
+    [self.navigationController pushViewController:noteVC animated:true];
+}
+
+//Note view delegate
+-(void)funNoteTextForCategory:(NSString *)text
+{
+    [self.noteButton setTitle:text forState:UIControlStateNormal];
+}
 
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews

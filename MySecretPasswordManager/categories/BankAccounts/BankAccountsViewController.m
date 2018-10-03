@@ -364,6 +364,20 @@
     
 }
 
+- (IBAction)funOpenNoteView:(id)sender {
+    NoteViewController *noteVC = [[NoteViewController alloc]initWithNibName:@"NoteViewController" bundle:[NSBundle mainBundle]];
+    noteVC.delegate = self;
+    noteVC.buttonText = self.noteButton.titleLabel.text;
+    [self.navigationController pushViewController:noteVC animated:true];
+}
+
+//Note view delegate
+-(void)funNoteTextForCategory:(NSString *)text
+{
+    [self.noteButton setTitle:text forState:UIControlStateNormal];
+}
+
+
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews
 {
@@ -385,7 +399,14 @@
         self.txtBranchCode.text = [self.bankObject valueForKey:@"branchCode"];
         self.txtBranchPhone.text = [self.bankObject valueForKey:@"branchPhone"];
         self.txtBranchAddress.text = [self.bankObject valueForKey:@"branchAddress"];
-        self.txtNote.text = [self.bankObject valueForKey:@"note"];
+//        self.txtNote.text = [self.bankObject valueForKey:@"note"];
+        if ([self.bankObject valueForKey:@"note"] != nil)
+        {
+            [self.noteButton setTitle:[self.bankObject valueForKey:@"note"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.noteButton setTitle:[self.bankObject valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
+        }
         
         self.isFavourite = [[self.bankObject valueForKey:@"isFavourite"] boolValue];
         
@@ -502,7 +523,12 @@
     [object setValue:self.txtBranchCode.text forKey:@"branchCode"];
     [object setValue:self.txtBranchPhone.text forKey:@"branchPhone"];
     [object setValue:self.txtBranchAddress.text forKey:@"branchAddress"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
+    
     [object setValue:[NSNumber numberWithInt:1] forKey:@"categoryType"];
     
     if (self.isFavourite == true)

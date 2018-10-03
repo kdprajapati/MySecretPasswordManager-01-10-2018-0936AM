@@ -177,6 +177,18 @@
     
 }
 
+- (IBAction)funOpenNoteView:(id)sender {
+    NoteViewController *noteVC = [[NoteViewController alloc]initWithNibName:@"NoteViewController" bundle:[NSBundle mainBundle]];
+    noteVC.delegate = self;
+    noteVC.buttonText = self.noteButton.titleLabel.text;
+    [self.navigationController pushViewController:noteVC animated:true];
+}
+
+//Note view delegate
+-(void)funNoteTextForCategory:(NSString *)text
+{
+    [self.noteButton setTitle:text forState:UIControlStateNormal];
+}
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews
 {
@@ -187,7 +199,14 @@
         self.loginNameTxt.text = [self.loginObject valueForKey:@"title"];
         self.urlWebTxt.text = [self.loginObject valueForKey:@"url"];
         self.usernameTxt.text = [self.loginObject valueForKey:@"username"];
-        self.noteTxt.text = [self.loginObject valueForKey:@"note"];
+//        self.noteTxt.text = [self.loginObject valueForKey:@"note"];
+        if ([self.loginObject valueForKey:@"note"] != nil)
+        {
+            [self.noteButton setTitle:[self.loginObject valueForKey:@"note"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.noteButton setTitle:[self.loginObject valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
+        }
         if (decPassword != nil)
         {
             self.passwordTxt.text = decPassword;
@@ -273,7 +292,11 @@
     {
         [object setValue:@"" forKey:@"password"];
     }
-    [object setValue:self.noteTxt.text forKey:@"note"];
+//    [object setValue:self.noteTxt.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:3] forKey:@"categoryType"];
     
     if (self.isFavourite == true)

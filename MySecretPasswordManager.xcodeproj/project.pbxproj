@@ -56,6 +56,8 @@
 		734FE52120896443008E3915 /* img4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 734FE51C20896443008E3915 /* img4.jpg */; };
 		73D8170D20816F69002057D2 /* SPSecureNotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D8170B20816F69002057D2 /* SPSecureNotesViewController.m */; };
 		73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8170C20816F69002057D2 /* SPSecureNotesViewController.xib */; };
+		9E22185F216525000099A1A4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22185D216525000099A1A4 /* NoteViewController.m */; };
+		9E221860216525000099A1A4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E22185E216525000099A1A4 /* NoteViewController.xib */; };
 		9E631EE8215419F900572B0E /* menu-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE2215419F700572B0E /* menu-7.png */; };
 		9E631EE9215419F900572B0E /* menu-5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE3215419F700572B0E /* menu-5@3x.png */; };
 		9E631EEA215419F900572B0E /* menu-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE4215419F800572B0E /* menu-6.png */; };
@@ -248,6 +250,9 @@
 		73D8170A20816F69002057D2 /* SPSecureNotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSecureNotesViewController.h; sourceTree = "<group>"; };
 		73D8170B20816F69002057D2 /* SPSecureNotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSecureNotesViewController.m; sourceTree = "<group>"; };
 		73D8170C20816F69002057D2 /* SPSecureNotesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPSecureNotesViewController.xib; sourceTree = "<group>"; };
+		9E22185C216525000099A1A4 /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		9E22185D216525000099A1A4 /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
+		9E22185E216525000099A1A4 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		9E631EE2215419F700572B0E /* menu-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-7.png"; sourceTree = "<group>"; };
 		9E631EE3215419F700572B0E /* menu-5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-5@3x.png"; sourceTree = "<group>"; };
 		9E631EE4215419F800572B0E /* menu-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-6.png"; sourceTree = "<group>"; };
@@ -535,6 +540,16 @@
 			path = "Secure notes";
 			sourceTree = "<group>";
 		};
+		9E22185B216524EC0099A1A4 /* NoteView */ = {
+			isa = PBXGroup;
+			children = (
+				9E22185C216525000099A1A4 /* NoteViewController.h */,
+				9E22185D216525000099A1A4 /* NoteViewController.m */,
+				9E22185E216525000099A1A4 /* NoteViewController.xib */,
+			);
+			path = NoteView;
+			sourceTree = "<group>";
+		};
 		9E639C0B2142D5350041CE6D /* CategoryPassport */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +796,7 @@
 		D7B3783E1FD7093200841A50 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				9E22185B216524EC0099A1A4 /* NoteView */,
 				9E639C0D2142D5350041CE6D /* CategoryDrivingLicence */,
 				9E639C0C2142D5350041CE6D /* CategoryMembership */,
 				9E639C0B2142D5350041CE6D /* CategoryPassport */,
@@ -1049,6 +1065,7 @@
 				04067783208E5ECA00757437 /* Fav_Selected@2x.png in Resources */,
 				D7727B8B1FD85B8200AFD405 /* ViewOn@3x.png in Resources */,
 				D7727B7F1FD85A7800AFD405 /* Paging@3x.png in Resources */,
+				9E221860216525000099A1A4 /* NoteViewController.xib in Resources */,
 				04EDA4E42093A477003C7BEF /* Pro_image.png in Resources */,
 				04EDA4E52093A477003C7BEF /* Pro_image@3x.png in Resources */,
 				D7B378741FD7150500841A50 /* MPassCodeViewController.xib in Resources */,
@@ -1178,6 +1195,7 @@
 				0DF475AE214E169A00091276 /* PassportObject.m in Sources */,
 				D7C7E0F1203365C7003AB467 /* Login+CoreDataProperties.m in Sources */,
 				D7FEF65E1FF025D9005B24F0 /* BankAccountsViewController.m in Sources */,
+				9E22185F216525000099A1A4 /* NoteViewController.m in Sources */,
 				043B756420769F6B0059C8C5 /* SPIdentityViewController.m in Sources */,
 				D7C7E0F2203365C7003AB467 /* Identity+CoreDataClass.m in Sources */,
 				D77C0B622003EF7200BC25C2 /* JSDatePickerCell.m in Sources */,
