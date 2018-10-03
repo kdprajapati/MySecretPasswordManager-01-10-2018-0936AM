@@ -44,6 +44,7 @@
 		04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D62093A477003C7BEF /* InAppViewController.xib */; };
 		04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDA4D82093A477003C7BEF /* PageChildViewController.m */; };
 		04EDA4E92093A477003C7BEF /* PageChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D92093A477003C7BEF /* PageChildViewController.xib */; };
+		0DAEF063216540E50090A1CC /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAEF062216540E50090A1CC /* test.m */; };
 		0DF475A8214E166B00091276 /* DrivingLicenceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475A7214E166B00091276 /* DrivingLicenceObject.m */; };
 		0DF475AB214E168600091276 /* MembershipObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475AA214E168600091276 /* MembershipObject.m */; };
 		0DF475AE214E169A00091276 /* PassportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475AD214E169A00091276 /* PassportObject.m */; };
@@ -231,6 +232,7 @@
 		04EDA4D72093A477003C7BEF /* PageChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageChildViewController.h; sourceTree = "<group>"; };
 		04EDA4D82093A477003C7BEF /* PageChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageChildViewController.m; sourceTree = "<group>"; };
 		04EDA4D92093A477003C7BEF /* PageChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageChildViewController.xib; sourceTree = "<group>"; };
+		0DAEF062216540E50090A1CC /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		0DF475A6214E166B00091276 /* DrivingLicenceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrivingLicenceObject.h; sourceTree = "<group>"; };
 		0DF475A7214E166B00091276 /* DrivingLicenceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivingLicenceObject.m; sourceTree = "<group>"; };
 		0DF475A9214E168600091276 /* MembershipObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MembershipObject.h; sourceTree = "<group>"; };
@@ -752,6 +754,7 @@
 				D7B378411FD7093200841A50 /* settings */,
 				D7B3782A1FD7079B00841A50 /* AppDelegate.h */,
 				D7B3782B1FD7079B00841A50 /* AppDelegate.m */,
+				0DAEF062216540E50090A1CC /* test.m */,
 				D7B3782D1FD7079B00841A50 /* ViewController.h */,
 				D7B3782E1FD7079B00841A50 /* ViewController.m */,
 				D715D2C31FE3092E0013DFDA /* MainMenuCellTableViewCell.h */,
@@ -1155,6 +1158,7 @@
 				D7FEF6631FF025FD005B24F0 /* CategoryDetailViewController.m in Sources */,
 				9E639C162142D5700041CE6D /* SPCategoryMembershipViewController.m in Sources */,
 				D7FEF69A1FF03050005B24F0 /* LoginTable+CoreDataClass.m in Sources */,
+				0DAEF063216540E50090A1CC /* test.m in Sources */,
 				D77319FC1FE44A3700651B26 /* SWRevealTableViewCell.m in Sources */,
 				D7CF15FF1FFFF9D3005D982F /* CreditCard+CoreDataProperties.m in Sources */,
 				D75339621FEEC764004647A4 /* LoginItemsViewController.m in Sources */,
