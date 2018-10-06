@@ -14,7 +14,8 @@
 #import "CoreDataStackManager.h"
 #import "CategoryDetailViewController.h"
 #import "FavouriteViewController.h"
-#import "InApp/IAPHelper.swift"
+//#import "InApp/IAPHelper.swift"
+#import "MySecretPasswordManager-Swift.h"
 @interface ViewController ()
 
 @end
