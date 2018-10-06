@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -306,7 +307,7 @@
                                 <constraint firstAttribute="width" secondItem="xC9-g7-HTM" secondAttribute="height" multiplier="32:11" id="Iek-N5-Aik"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJw-lb-u7A" userLabel="operations">
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LJw-lb-u7A" userLabel="operations">
                             <rect key="frame" x="0.0" y="1000" width="320" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mvX-nM-AFL">
@@ -409,6 +410,9 @@
                         <constraint firstItem="Fxo-0b-tyM" firstAttribute="top" secondItem="rf1-iW-m5h" secondAttribute="bottom" id="y93-bK-N9t"/>
                     </constraints>
                     <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="LJw-lb-u7A"/>
+                        </mask>
                         <mask key="constraints">
                             <exclude reference="f1Z-99-nKS"/>
                             <exclude reference="Xcu-5r-juN"/>
@@ -434,7 +438,7 @@
             <constraints>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="top" secondItem="rCh-Yh-pTJ" secondAttribute="top" id="4ig-UB-3no"/>
                 <constraint firstItem="Jlj-UP-bsz" firstAttribute="centerX" secondItem="rCh-Yh-pTJ" secondAttribute="centerX" id="EXI-oX-OBP"/>
-                <constraint firstAttribute="bottom" secondItem="Jlj-UP-bsz" secondAttribute="bottom" id="FRD-aY-JEf"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Jlj-UP-bsz" secondAttribute="bottom" id="FRD-aY-JEf"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="centerX" secondItem="rCh-Yh-pTJ" secondAttribute="centerX" id="HuM-MT-Rqd"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="height" secondItem="rCh-Yh-pTJ" secondAttribute="height" multiplier="1150:568" id="UHX-cU-n7D"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="height" secondItem="rCh-Yh-pTJ" secondAttribute="height" id="aQk-2B-Hdj"/>

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,7 +78,7 @@
                                 <constraint firstAttribute="width" secondItem="p8j-Oh-9r4" secondAttribute="height" multiplier="32:11" id="Hho-kc-8bV"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTf-lM-1zp" userLabel="operations view">
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTf-lM-1zp" userLabel="operations view">
                             <rect key="frame" x="0.0" y="485" width="320" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yp8-mF-FIr">
@@ -150,6 +151,11 @@
                         <constraint firstItem="eSQ-ma-iAG" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="lHQ-ac-aI7"/>
                         <constraint firstItem="tgi-Yj-Ubn" firstAttribute="centerX" secondItem="HUX-5q-vzw" secondAttribute="centerX" id="mZX-Za-sKH"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="bTf-lM-1zp"/>
+                        </mask>
+                    </variation>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woC-Yn-izZ" userLabel="ad view">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
@@ -162,7 +168,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="HUX-5q-vzw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2xe-2c-NtE"/>
-                <constraint firstAttribute="bottom" secondItem="woC-Yn-izZ" secondAttribute="bottom" id="GXK-SJ-hws"/>
+                <constraint firstAttribute="bottomMargin" secondItem="woC-Yn-izZ" secondAttribute="bottom" id="GXK-SJ-hws"/>
                 <constraint firstItem="HUX-5q-vzw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="N4U-9i-Z5q"/>
                 <constraint firstItem="HUX-5q-vzw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Qtf-k9-Gbe"/>
                 <constraint firstAttribute="bottom" secondItem="HUX-5q-vzw" secondAttribute="bottom" id="gER-jp-T1L"/>

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -167,7 +168,7 @@
                                 <constraint firstAttribute="height" constant="110" id="aTJ-Kk-MEK"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glB-al-kXy" userLabel="operations view">
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glB-al-kXy" userLabel="operations view">
                             <rect key="frame" x="0.0" y="485" width="320" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdG-MJ-udJ">
@@ -254,6 +255,9 @@
                         <constraint firstItem="qF6-Ge-Joh" firstAttribute="centerX" secondItem="av2-5R-b5t" secondAttribute="centerX" id="ygf-rk-m9q"/>
                     </constraints>
                     <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="glB-al-kXy"/>
+                        </mask>
                         <mask key="constraints">
                             <exclude reference="IeK-di-gjt"/>
                             <exclude reference="Pud-Rh-rit"/>
@@ -277,7 +281,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="av2-5R-b5t" secondAttribute="bottom" id="H1P-Ks-lYE"/>
                 <constraint firstItem="fIC-1A-dno" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NxC-Hi-uY7"/>
-                <constraint firstAttribute="bottom" secondItem="fIC-1A-dno" secondAttribute="bottom" id="ack-jT-vTS"/>
+                <constraint firstAttribute="bottomMargin" secondItem="fIC-1A-dno" secondAttribute="bottom" id="ack-jT-vTS"/>
                 <constraint firstItem="av2-5R-b5t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bKf-Hg-KmZ"/>
                 <constraint firstItem="av2-5R-b5t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cvA-Zo-qM5"/>
                 <constraint firstItem="fIC-1A-dno" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="oba-MU-i8V"/>

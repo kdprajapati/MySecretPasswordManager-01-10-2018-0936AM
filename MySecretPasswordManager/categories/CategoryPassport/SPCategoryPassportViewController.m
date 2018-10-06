@@ -44,7 +44,7 @@
     self.title = @"Passport";
     // Do any additional setup after loading the view from its nib.
     CGFloat contentRatio = ([UIScreen mainScreen].bounds.size.height*230)/320;
-    self.scrolViewPassport.contentSize = CGSizeMake(self.scrolViewPassport.frame.size.width, self.onView.frame.size.height * 14 + 50);
+    self.scrolViewPassport.contentSize = CGSizeMake(self.scrolViewPassport.frame.size.width, self.onView.frame.size.height * 13 + 50);
     NSLog(@"scrolViewPassport - %@",NSStringFromCGSize(self.scrolViewPassport.contentSize));
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -76,6 +76,40 @@
     [self setUpCollection];
     
     [self funChangeRighBarButtonItemEditSave:true];
+    
+    [self funAllocBottomBarButtons];
+}
+
+/**
+ add bottom bar buttons - favourite and settings
+ */
+-(void)funAllocBottomBarButtons
+{
+    
+    UIBarButtonItem *flexibalSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIButton *favBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [favBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    [favBtn addTarget:self action:@selector(funDoFavourite) forControlEvents:UIControlEventTouchUpInside];
+    favBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithCustomView:favBtn];
+    
+    UIButton *shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [shareBtn setImage:[UIImage imageNamed:@"share_normal.png"] forState:UIControlStateNormal];
+    [shareBtn addTarget:self action:@selector(funPreviewShare:) forControlEvents:UIControlEventTouchUpInside];
+    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+    UIBarButtonItem *shareBtnBar = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    
+    UIButton *deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [deleteBtn setImage:[UIImage imageNamed:@"delete_normal.png"] forState:UIControlStateNormal];
+    [deleteBtn addTarget:self action:@selector(funDeleteObject:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *deleteBtnBar = [[UIBarButtonItem alloc] initWithCustomView:deleteBtn];
+    
+    self.navigationController.toolbarHidden = false;
+    
+    self.toolbarItems = [NSArray arrayWithObjects: favouriteBtn,flexibalSpace, shareBtnBar,flexibalSpace, deleteBtnBar, nil];
+    
+    
 }
 
 -(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
@@ -97,7 +131,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.scrolViewPassport.contentSize = CGSizeMake(self.scrolViewPassport.frame.size.width, self.onView.frame.size.height * 14 + 50);
+    self.scrolViewPassport.contentSize = CGSizeMake(self.scrolViewPassport.frame.size.width, self.onView.frame.size.height * 13 + 50);
 }
 
 -(void)viewWillDisappear:(BOOL)animated

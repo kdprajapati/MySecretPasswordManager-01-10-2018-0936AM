@@ -35,7 +35,7 @@
     
 //    _scrollViewIdentity.frame = CGRectMake(_scrollViewIdentity.frame.origin.x, _scrollViewIdentity.frame.origin.y, _scrollViewIdentity.frame.size.width, [UIScreen mainScreen].bounds.size.height - 55);
     
-    self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 16 + 50);
+    self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 15 + 50);
     
     
 //    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
@@ -69,6 +69,45 @@
     [self setUpCollection];
     
     [self funChangeRighBarButtonItemEditSave:true];
+    
+    [self funAllocBottomBarButtons];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 15 + 50);
+}
+
+/**
+ add bottom bar buttons - favourite and settings
+ */
+-(void)funAllocBottomBarButtons
+{
+    
+    UIBarButtonItem *flexibalSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    UIButton *favBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [favBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    [favBtn addTarget:self action:@selector(funDoFavourite) forControlEvents:UIControlEventTouchUpInside];
+    favBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithCustomView:favBtn];
+    
+    UIButton *shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [shareBtn setImage:[UIImage imageNamed:@"share_normal.png"] forState:UIControlStateNormal];
+    [shareBtn addTarget:self action:@selector(funPreviewShare:) forControlEvents:UIControlEventTouchUpInside];
+    shareBtn.imageEdgeInsets = UIEdgeInsetsMake(1, 1, 1, 1);
+    UIBarButtonItem *shareBtnBar = [[UIBarButtonItem alloc] initWithCustomView:shareBtn];
+    
+    UIButton *deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [deleteBtn setImage:[UIImage imageNamed:@"delete_normal.png"] forState:UIControlStateNormal];
+    [deleteBtn addTarget:self action:@selector(funDeleteObject:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *deleteBtnBar = [[UIBarButtonItem alloc] initWithCustomView:deleteBtn];
+    
+    self.navigationController.toolbarHidden = false;
+    
+    self.toolbarItems = [NSArray arrayWithObjects: favouriteBtn,flexibalSpace, shareBtnBar,flexibalSpace, deleteBtnBar, nil];
+    
+    
 }
 
 -(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit

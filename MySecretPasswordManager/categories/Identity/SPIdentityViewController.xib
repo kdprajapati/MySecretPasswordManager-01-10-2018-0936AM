@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,7 +37,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="1188"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-hN-2vE">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-hN-2vE">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="1138"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ach-mF-K5W" userLabel="scroll photo view">
@@ -225,7 +226,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mem-vJ-Dca">
-                            <rect key="frame" x="0.0" y="747" width="320" height="75"/>
+                            <rect key="frame" x="0.0" y="740" width="320" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0e-3t-Wje">
                                     <rect key="frame" x="20" y="8" width="280" height="20"/>
@@ -247,7 +248,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6y-yE-6df">
-                            <rect key="frame" x="0.0" y="822" width="320" height="75"/>
+                            <rect key="frame" x="0.0" y="815" width="320" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dC-Nk-0U0">
                                     <rect key="frame" x="20" y="8" width="280" height="20"/>
@@ -269,7 +270,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-Qb-yQR">
-                            <rect key="frame" x="0.0" y="898" width="320" height="75"/>
+                            <rect key="frame" x="0.0" y="891" width="320" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUb-rU-3Dm">
                                     <rect key="frame" x="20" y="8" width="280" height="20"/>
@@ -291,7 +292,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-9X-tMP">
-                            <rect key="frame" x="0.0" y="968" width="320" height="75"/>
+                            <rect key="frame" x="0.0" y="961" width="320" height="75"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUH-m4-Yhm">
                                     <rect key="frame" x="20" y="8" width="280" height="20"/>
@@ -322,7 +323,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWE-P9-6bS" userLabel="category description view">
-                            <rect key="frame" x="0.0" y="1043" width="320" height="110"/>
+                            <rect key="frame" x="0.0" y="1036" width="320" height="110"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note:- Save the Identity of an individual or group." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oD2-dO-8OR">
                                     <rect key="frame" x="19" y="3" width="281" height="111"/>
@@ -337,7 +338,7 @@
                                 <constraint firstAttribute="width" secondItem="UWE-P9-6bS" secondAttribute="height" multiplier="32:11" id="I9U-g3-J0C"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-7a-GKc" userLabel="operations view">
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-7a-GKc" userLabel="operations view">
                             <rect key="frame" x="0.0" y="1153" width="320" height="75"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGJ-SG-Lh5">
@@ -429,7 +430,7 @@
                         <constraint firstItem="LDk-Zg-82j" firstAttribute="top" secondItem="3Wy-MJ-cFs" secondAttribute="bottom" id="dvu-is-Vnz"/>
                         <constraint firstItem="LDk-Zg-82j" firstAttribute="centerX" secondItem="CKZ-hN-2vE" secondAttribute="centerX" id="gmq-3b-IO9"/>
                         <constraint firstItem="3Wy-MJ-cFs" firstAttribute="top" secondItem="S51-iU-cpl" secondAttribute="bottom" constant="2" id="gp7-jE-3q1"/>
-                        <constraint firstItem="Mem-vJ-Dca" firstAttribute="top" secondItem="Hmn-Ks-aPU" secondAttribute="bottom" constant="7" id="iZa-fb-TUn"/>
+                        <constraint firstItem="Mem-vJ-Dca" firstAttribute="top" secondItem="Hmn-Ks-aPU" secondAttribute="bottom" id="iZa-fb-TUn"/>
                         <constraint firstItem="UWE-P9-6bS" firstAttribute="width" secondItem="UWE-P9-6bS" secondAttribute="height" multiplier="32:11" id="ido-ED-IW8"/>
                         <constraint firstAttribute="bottom" secondItem="rNs-7a-GKc" secondAttribute="bottom" id="jSG-rb-LU2"/>
                         <constraint firstItem="Mem-vJ-Dca" firstAttribute="centerX" secondItem="CKZ-hN-2vE" secondAttribute="centerX" id="jW0-6T-R5U"/>
@@ -446,6 +447,9 @@
                         <constraint firstItem="Ezs-Sc-0P7" firstAttribute="centerX" secondItem="CKZ-hN-2vE" secondAttribute="centerX" id="zu2-Sc-yRD"/>
                     </constraints>
                     <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="rNs-7a-GKc"/>
+                        </mask>
                         <mask key="constraints">
                             <exclude reference="0hh-qU-PAl"/>
                             <exclude reference="3ri-8a-8yp"/>
@@ -469,7 +473,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="CKZ-hN-2vE" secondAttribute="trailing" id="17y-IC-SzK"/>
                 <constraint firstAttribute="bottom" secondItem="CKZ-hN-2vE" secondAttribute="bottom" constant="50" id="2IM-ze-4RD"/>
-                <constraint firstAttribute="bottom" secondItem="5lS-JX-iLg" secondAttribute="bottom" id="4vt-em-eN0"/>
+                <constraint firstAttribute="bottomMargin" secondItem="5lS-JX-iLg" secondAttribute="bottom" id="4vt-em-eN0"/>
                 <constraint firstItem="5lS-JX-iLg" firstAttribute="width" secondItem="CKZ-hN-2vE" secondAttribute="width" id="PHs-ra-GnC"/>
                 <constraint firstItem="CKZ-hN-2vE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Spd-p3-2fb"/>
                 <constraint firstItem="CKZ-hN-2vE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jVd-Yp-XtL"/>
