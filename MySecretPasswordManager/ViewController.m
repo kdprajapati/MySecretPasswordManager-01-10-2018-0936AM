@@ -54,6 +54,8 @@
                                     target:nil
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated

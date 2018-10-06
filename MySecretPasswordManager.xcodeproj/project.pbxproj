@@ -44,6 +44,7 @@
 		04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D62093A477003C7BEF /* InAppViewController.xib */; };
 		04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDA4D82093A477003C7BEF /* PageChildViewController.m */; };
 		04EDA4E92093A477003C7BEF /* PageChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D92093A477003C7BEF /* PageChildViewController.xib */; };
+		0D92CA292168F5A1002E3894 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92CA282168F5A1002E3894 /* IAPHelper.swift */; };
 		0DAEF063216540E50090A1CC /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAEF062216540E50090A1CC /* test.m */; };
 		0DF475A8214E166B00091276 /* DrivingLicenceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475A7214E166B00091276 /* DrivingLicenceObject.m */; };
 		0DF475AB214E168600091276 /* MembershipObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475AA214E168600091276 /* MembershipObject.m */; };
@@ -234,6 +235,7 @@
 		04EDA4D72093A477003C7BEF /* PageChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageChildViewController.h; sourceTree = "<group>"; };
 		04EDA4D82093A477003C7BEF /* PageChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageChildViewController.m; sourceTree = "<group>"; };
 		04EDA4D92093A477003C7BEF /* PageChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageChildViewController.xib; sourceTree = "<group>"; };
+		0D92CA282168F5A1002E3894 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		0DAEF062216540E50090A1CC /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		0DF475A6214E166B00091276 /* DrivingLicenceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrivingLicenceObject.h; sourceTree = "<group>"; };
 		0DF475A7214E166B00091276 /* DrivingLicenceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivingLicenceObject.m; sourceTree = "<group>"; };
@@ -481,6 +483,14 @@
 				04EDA4D32093A477003C7BEF /* Pro_image@3x.png */,
 			);
 			path = "images-help";
+			sourceTree = "<group>";
+		};
+		0D92CA272168F587002E3894 /* InApp */ = {
+			isa = PBXGroup;
+			children = (
+				0D92CA282168F5A1002E3894 /* IAPHelper.swift */,
+			);
+			path = InApp;
 			sourceTree = "<group>";
 		};
 		0DF475A5214E121900091276 /* core data classes */ = {
@@ -754,6 +764,7 @@
 		D7B378261FD7079B00841A50 /* MySecretPasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				0D92CA272168F587002E3894 /* InApp */,
 				04EDA4C62093A477003C7BEF /* First Time Flow */,
 				D71C4EA3203F2D4B0088185A /* Reachability.m */,
 				D71C4EA4203F2D4B0088185A /* Reachability.h */,
@@ -1186,6 +1197,7 @@
 				D72EBD872059B00000E05154 /* FavouriteViewController.m in Sources */,
 				D715D2C51FE3092E0013DFDA /* MainMenuCellTableViewCell.m in Sources */,
 				D71C4EA2203F2D040088185A /* AppData.m in Sources */,
+				0D92CA292168F5A1002E3894 /* IAPHelper.swift in Sources */,
 				9EF5988F212B411200873A87 /* ImageShowViewController.m in Sources */,
 				D7C7E10220336AA3003AB467 /* SecureNoteObject.m in Sources */,
 				D7FEF69B1FF03050005B24F0 /* LoginTable+CoreDataProperties.m in Sources */,
@@ -1362,7 +1374,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MySecretPasswordManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1381,7 +1393,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MySecretPasswordManager-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
