@@ -43,11 +43,9 @@
     self.title = @"Bank Account";
     
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
-    
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(funShowCameraOptions)];
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: cameraButton, saveButton, nil];
+//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+   
+//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     [self funSetDataToViews];
  
@@ -71,6 +69,25 @@
     [self prepareImages];
     
     [self setUpCollection];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -438,6 +455,41 @@
     
 }
 
+-(void)funSetInteractionFalseToAllTextfields
+{
+    self.txtBankName.userInteractionEnabled = false;
+    self.txtBankName.userInteractionEnabled = false;
+    self.txtAccountNumber.userInteractionEnabled = false;
+    self.txtAccountHolderName.userInteractionEnabled = false;
+    self.txtAccountType.userInteractionEnabled = false;
+    self.txtUserId.userInteractionEnabled = false;
+    self.txtPIN.userInteractionEnabled = false;
+    self.txtBranchCode.userInteractionEnabled = false;
+    self.txtBranchPhone.userInteractionEnabled = false;
+    self.txtBranchAddress.userInteractionEnabled = false;
+    self.noteButton.userInteractionEnabled = false;
+    
+    self.collectionViewPhotos.userInteractionEnabled = false;
+}
+
+-(void)EditCategory
+{
+    self.txtBankName.userInteractionEnabled = true;
+    self.txtBankName.userInteractionEnabled = true;
+    self.txtAccountNumber.userInteractionEnabled = true;
+    self.txtAccountHolderName.userInteractionEnabled = true;
+    self.txtAccountType.userInteractionEnabled = true;
+    self.txtUserId.userInteractionEnabled = true;
+    self.txtPIN.userInteractionEnabled = true;
+    self.txtBranchCode.userInteractionEnabled = true;
+    self.txtBranchPhone.userInteractionEnabled = true;
+    self.txtBranchAddress.userInteractionEnabled = true;
+    self.noteButton.userInteractionEnabled = true;
+    
+    self.collectionViewPhotos.userInteractionEnabled = true;
+    
+    [self funChangeRighBarButtonItemEditSave:false];
+}
 
 -(void)AddSaveBankAccount
 {
@@ -558,7 +610,11 @@
     [object setValue:self.txtBranchCode.text forKey:@"branchCode"];
     [object setValue:self.txtBranchPhone.text forKey:@"branchPhone"];
     [object setValue:self.txtBranchAddress.text forKey:@"branchAddress"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:1] forKey:@"categoryType"];
     
     return object;

@@ -557,7 +557,8 @@
     NSString *stringPreview = [previewItemsArray objectAtIndex:indexPath.row];
     if (stringPreview != nil && stringPreview.length > 0)
     {
-        return 50;
+//        return 50;
+        return UITableViewAutomaticDimension;
     }
     return 0;
 }

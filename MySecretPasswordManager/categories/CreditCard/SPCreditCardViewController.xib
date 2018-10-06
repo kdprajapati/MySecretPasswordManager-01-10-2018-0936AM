@@ -309,6 +309,9 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <state key="normal" title="Tap to create note"/>
+                                    <connections>
+                                        <action selector="funOpenNoteView:" destination="-1" eventType="touchUpInside" id="oWP-7t-fwf"/>
+                                    </connections>
                                 </button>
                                 <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bJ-Oe-ciu">
                                     <rect key="frame" x="20" y="36" width="280" height="30"/>
@@ -317,7 +320,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
-                                        <action selector="funOpenNoteView:" destination="-1" eventType="editingDidEnd" id="o4W-FH-iOy"/>
+                                        <action selector="funOpenNoteViewC:" destination="-1" eventType="touchUpInside" id="gsZ-Ku-Jp9"/>
                                     </connections>
                                 </textField>
                             </subviews>

@@ -64,13 +64,13 @@
     NSString *lockTimeInMinString;
     switch (lockTime) {
         case 1:
-            lockTimeInMinString = @"1 Mins";
+            lockTimeInMinString = @"1 Min";
             break;
         case 2:
-            lockTimeInMinString = @"5 Mins";
+            lockTimeInMinString = @"3 Mins";
             break;
         case 3:
-            lockTimeInMinString = @"10 Mins";
+            lockTimeInMinString = @"5 Mins";
             break;
             
         default:
@@ -302,20 +302,20 @@
 {
     UIAlertController *alertTime = [UIAlertController alertControllerWithTitle:@"Choose Time" message:@"App will lock after choosen time" preferredStyle:UIAlertControllerStyleActionSheet];
     [alertTime addAction:[UIAlertAction actionWithTitle:@"1 min" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [appdelegate funStartSecurityTimer:1*60];
-        [appdelegate funStartSecurityTimer:10];//test
+        [appdelegate funStartSecurityTimer:1*60];
+//        [appdelegate funStartSecurityTimer:10];//test
         [self funUpdateAppLockTime:1];
     }]];
     
-    [alertTime addAction:[UIAlertAction actionWithTitle:@"5 min" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [appdelegate funStartSecurityTimer:5*60];
-        [appdelegate funStartSecurityTimer:20];//test
+    [alertTime addAction:[UIAlertAction actionWithTitle:@"3 min" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [appdelegate funStartSecurityTimer:3*60];
+//        [appdelegate funStartSecurityTimer:20];//test
         [self funUpdateAppLockTime:2];
     }]];
     
-    [alertTime addAction:[UIAlertAction actionWithTitle:@"10 min" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [appdelegate funStartSecurityTimer:10*60];
-        [appdelegate funStartSecurityTimer:30];//test
+    [alertTime addAction:[UIAlertAction actionWithTitle:@"5 min" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [appdelegate funStartSecurityTimer:5*60];
+//        [appdelegate funStartSecurityTimer:30];//test
         [self funUpdateAppLockTime:3];
     }]];
     

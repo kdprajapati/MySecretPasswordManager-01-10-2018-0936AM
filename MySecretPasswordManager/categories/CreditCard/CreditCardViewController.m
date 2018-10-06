@@ -13,6 +13,7 @@
 #import "protocol.h"
 #import "HorizontalScrollCell.h"
 #import "PreviewNewViewController.h"
+#import "ImageShowViewController.h"
 
 #import "MySecretPasswordManager-Swift.h"
 
@@ -49,11 +50,9 @@
     self.title = @"Credit Card";
     
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
-    
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(funShowCameraOptions)];
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: cameraButton, saveButton, nil];
+//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
+//
+//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     selectedIndexPath = [[NSIndexPath alloc] init];
     
@@ -80,6 +79,25 @@
     [self prepareImages];
     
     [self setUpCollection];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -100,6 +118,13 @@
             NSLog(@"error deleting photo - %@",error);
         }
     }
+}
+
+-(void)cellSelected:(UIImage *)image
+{
+    ImageShowViewController *imageShowVC = [[ImageShowViewController alloc]initWithNibName:@"ImageShowViewController" bundle:[NSBundle mainBundle]];
+    imageShowVC.imageDetail = image;
+    [self.navigationController pushViewController:imageShowVC animated:true];
 }
 
 - (IBAction)funAddPhotos:(id)sender {
@@ -476,7 +501,14 @@
         self.txtLocalPhone.text = [self.ObjectCreditCard valueForKey:@"localPhone"];
         self.txtTollFree.text = [self.ObjectCreditCard valueForKey:@"tollFreePhone"];
         self.txtWebsite.text = [self.ObjectCreditCard valueForKey:@"website"];
-        self.txtNote.text = [self.ObjectCreditCard valueForKey:@"note"];
+//        self.txtNote.text = [self.ObjectCreditCard valueForKey:@"note"];
+        if ([self.ObjectCreditCard valueForKey:@"note"] != nil)
+        {
+            [self.noteButton setTitle:[self.ObjectCreditCard valueForKey:@"note"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.noteButton setTitle:[self.ObjectCreditCard valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
+        }
         
         NSLog(@"expirydate- %@",[self.ObjectCreditCard valueForKey:@"expiryDate"]);
         NSLog(@"validFrom date- %@",[self.ObjectCreditCard valueForKey:@"validFrom"]);
@@ -539,6 +571,41 @@
         recordIDCategory = [[CoreDataStackManager sharedManager] funGenerateUDID];
         isSavedData = false;
     }
+}
+
+
+-(void)funSetInteractionFalseToAllTextfields
+{
+    
+    self.txtBankName.userInteractionEnabled = false;
+    self.txtCardHolderName.userInteractionEnabled = false;
+    self.txtCardNumber.userInteractionEnabled = false;
+    self.txtCardType.userInteractionEnabled = false;
+    self.txtCardPIN.userInteractionEnabled = false;
+    self.txtLocalPhone.userInteractionEnabled = false;
+    self.txtTollFree.userInteractionEnabled = false;
+    self.txtWebsite.userInteractionEnabled = false;
+    self.noteButton.userInteractionEnabled = false;
+    
+    self.collectionViewPhotos.userInteractionEnabled = false;
+    
+}
+
+-(void)EditCategory
+{
+    self.txtBankName.userInteractionEnabled = true;
+    self.txtCardHolderName.userInteractionEnabled = true;
+    self.txtCardNumber.userInteractionEnabled = true;
+    self.txtCardType.userInteractionEnabled = true;
+    self.txtCardPIN.userInteractionEnabled = true;
+    self.txtLocalPhone.userInteractionEnabled = true;
+    self.txtTollFree.userInteractionEnabled = true;
+    self.txtWebsite.userInteractionEnabled = true;
+    self.noteButton.userInteractionEnabled = true;
+    
+    self.collectionViewPhotos.userInteractionEnabled = true;
+    
+    [self funChangeRighBarButtonItemEditSave:false];
 }
 
 -(void)AddSaveCreditCard
@@ -608,7 +675,11 @@
     
     [object setValue:[NSNumber numberWithInt:2] forKey:@"categoryType"];
     
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     
     if (self.isFavourite == true)
     {
@@ -646,7 +717,11 @@
     [object setValue:self.txtWebsite.text forKey:@"website"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:self.validFromButton.titleLabel.text forKey:@"validFrom"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:2] forKey:@"categoryType"];
     
     return object;

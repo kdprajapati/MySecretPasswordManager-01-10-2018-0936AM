@@ -14,10 +14,11 @@
 #import "protocol.h"
 #import "HorizontalScrollCell.h"
 #import "PreviewNewViewController.h"
+#import "ImageShowViewController.h"
 
 #import "MySecretPasswordManager-Swift.h"
 
-@interface SPCategoryDrivingLicenceViewController ()
+@interface SPCategoryDrivingLicenceViewController ()<HorizontalScrollCellDelegate>
 
 @end
 
@@ -49,9 +50,7 @@
     
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
     
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(funShowCameraOptions)];
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: cameraButton, saveButton, nil];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     selectedIndexPath = [[NSIndexPath alloc] init];
     
@@ -75,6 +74,25 @@
     [self prepareImages];
     
     [self setUpCollection];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -95,6 +113,17 @@
             NSLog(@"error deleting photo - %@",error);
         }
     }
+}
+
+-(void)cellSelected:(UIImage *)image
+{
+    ImageShowViewController *imageShowVC = [[ImageShowViewController alloc]initWithNibName:@"ImageShowViewController" bundle:[NSBundle mainBundle]];
+    imageShowVC.imageDetail = image;
+    [self.navigationController pushViewController:imageShowVC animated:true];
+}
+
+- (IBAction)funAddPhotos:(id)sender {
+    [self funShowCameraOptions];
 }
 
 -(void)funShowCameraOptions
@@ -439,6 +468,19 @@
     }
 }
 
+- (IBAction)funOpenNoteView:(id)sender {
+    NoteViewController *noteVC = [[NoteViewController alloc]initWithNibName:@"NoteViewController" bundle:[NSBundle mainBundle]];
+    noteVC.delegate = self;
+    noteVC.buttonText = self.noteButton.titleLabel.text;
+    [self.navigationController pushViewController:noteVC animated:true];
+}
+
+//Note view delegate
+-(void)funNoteTextForCategory:(NSString *)text
+{
+    [self.noteButton setTitle:text forState:UIControlStateNormal];
+}
+
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews
 {
@@ -449,7 +491,14 @@
         self.txtLicenceNumber.text = [self.ObjectDrivingLicence valueForKey:@"licenceNumber"];
         self.txtClassType.text = [self.ObjectDrivingLicence valueForKey:@"classType"];
         self.txtDocumentNumber.text = [self.ObjectDrivingLicence valueForKey:@"documentNumber"];
-        self.txtNote.text = [self.ObjectDrivingLicence valueForKey:@"note"];
+//        self.txtNote.text = [self.ObjectDrivingLicence valueForKey:@"note"];
+        if ([self.ObjectDrivingLicence valueForKey:@"note"] != nil)
+        {
+            [self.noteButton setTitle:[self.ObjectDrivingLicence valueForKey:@"note"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.noteButton setTitle:[self.ObjectDrivingLicence valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
+        }
         
         id dob = [self.ObjectDrivingLicence valueForKey:@"DOB"];
         if (dob != nil)
@@ -521,6 +570,33 @@
     }
 }
 
+-(void)funSetInteractionFalseToAllTextfields
+{
+    self.txtFullName.userInteractionEnabled = false;
+    self.txtAddress.userInteractionEnabled = false;
+    self.txtLicenceNumber.userInteractionEnabled = false;
+    self.txtClassType.userInteractionEnabled = false;
+    self.txtDocumentNumber.userInteractionEnabled = false;
+    
+    self.noteButton.userInteractionEnabled = false;
+    
+    self.collectionViewPhotos.userInteractionEnabled = false;
+}
+
+-(void)EditCategory
+{
+    self.txtFullName.userInteractionEnabled = true;
+    self.txtAddress.userInteractionEnabled = true;
+    self.txtLicenceNumber.userInteractionEnabled = true;
+    self.txtClassType.userInteractionEnabled = true;
+    self.txtDocumentNumber.userInteractionEnabled = true;
+    self.noteButton.userInteractionEnabled = true;
+    
+    self.collectionViewPhotos.userInteractionEnabled = true;
+    
+    [self funChangeRighBarButtonItemEditSave:false];
+}
+
 -(void)AddSaveCreditCard
 {
     
@@ -565,7 +641,11 @@
     [object setValue:self.issueDateButton.titleLabel.text forKey:@"issueDate"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:[NSNumber numberWithInt:6] forKey:@"categoryType"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     
     if (self.isFavourite == true)
     {
@@ -591,18 +671,7 @@
 -(NSMutableDictionary *)funReturnCurrentObjectForPreview
 {
     NSMutableDictionary *object = [[NSMutableDictionary alloc] init];
-    /*
-     title
-     fullName
-     address
-     licenceNumber
-     classType
-     documentNumber
-     DOB
-     issueDate
-     expiryDate
-     note
-     */
+    
     [object setValue:self.txtFullName.text forKey:@"title"];
     [object setValue:self.txtFullName.text forKey:@"fullName"];
     [object setValue:self.txtAddress.text forKey:@"address"];
@@ -612,7 +681,11 @@
     [object setValue:self.DateOfBirthButton.titleLabel.text forKey:@"DOB"];
     [object setValue:self.issueDateButton.titleLabel.text forKey:@"issueDate"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:6] forKey:@"categoryType"];
     
     return object;

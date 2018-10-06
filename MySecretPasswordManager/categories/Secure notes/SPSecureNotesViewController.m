@@ -45,6 +45,25 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -210,6 +229,20 @@
     }
 }
 
+-(void)funSetInteractionFalseToAllTextfields
+{
+    self.txtNoteName.userInteractionEnabled = false;
+    self.textViewNote.userInteractionEnabled = false;
+    
+}
+
+-(void)EditCategory
+{
+    self.txtNoteName.userInteractionEnabled = true;
+    self.textViewNote.userInteractionEnabled = true;
+        
+    [self funChangeRighBarButtonItemEditSave:false];
+}
 
 -(void)AddSaveSecureNote
 {
