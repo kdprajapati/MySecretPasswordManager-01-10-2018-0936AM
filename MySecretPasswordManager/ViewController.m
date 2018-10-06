@@ -14,7 +14,7 @@
 #import "CoreDataStackManager.h"
 #import "CategoryDetailViewController.h"
 #import "FavouriteViewController.h"
-
+#import "InApp/IAPHelper.swift"
 @interface ViewController ()
 
 @end
@@ -57,16 +57,30 @@
     
     
 }
-
+/*
+RazeFaceProducts.store.requestProducts{ [weak self] success, products in
+    guard case self = self else { return }
+    if success {
+        self?.products = products!
+        
+        self?.tableView.reloadData()
+    }
+    
+    self?.refreshControl?.endRefreshing()
+}*/
 -(void)viewWillAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(handlePurchaseNotification:) name:@"IAPHelperPurchaseNotification"  object:nil];
 }
-
+-(void)handlePurchaseNotification:(NSNotification *)notification
+{
+    NSLog(@"handlePurchaseNotification");
+}
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:false animated:true];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)orientationChanged:(NSNotification *)notification{
