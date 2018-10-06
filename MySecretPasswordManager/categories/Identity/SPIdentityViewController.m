@@ -10,7 +10,7 @@
 #import "CoreDataStackManager.h"
 #import "AppData.h"
 #import "PreviewNewViewController.h"
-
+#import "ImageShowViewController.h"
 #import "HorizontalScrollCell.h"
 
 @interface SPIdentityViewController ()<HorizontalScrollCellDelegate>
@@ -38,11 +38,9 @@
     self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 16 + 50);
     
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
-    
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(funShowCameraOptions)];
-    
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: cameraButton, saveButton, nil];
+//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+//
+//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     
     datePicker = [[UIDatePicker alloc] init];
@@ -69,6 +67,25 @@
     [self prepareImages];
     
     [self setUpCollection];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -88,6 +105,13 @@
 
 - (IBAction)funAddPhotos:(id)sender {
     [self funShowCameraOptions];
+}
+
+-(void)cellSelected:(UIImage *)image
+{
+    ImageShowViewController *imageShowVC = [[ImageShowViewController alloc]initWithNibName:@"ImageShowViewController" bundle:[NSBundle mainBundle]];
+    imageShowVC.imageDetail = image;
+    [self.navigationController pushViewController:imageShowVC animated:true];
 }
 
 -(void)funShowCameraOptions
@@ -407,7 +431,11 @@
     [object setValue:self.txtWebsite.text forKey:@"webSite"];
     [object setValue:self.txtAddress.text forKey:@"address"];
     [object setValue:self.txtCountry.text forKey:@"country"];
-    [object setValue:self.txtNote.text forKey:@"note"];
+//    [object setValue:self.txtNote.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:4] forKey:@"categoryType"];
     
     return object;
@@ -496,6 +524,40 @@
     }
 }
 
+-(void)funSetInteractionFalseToAllTextfields
+{
+    
+    self.txtIdentityTitle.userInteractionEnabled = false;
+    self.txtFirstName.userInteractionEnabled = false;
+    self.txtLastName.userInteractionEnabled = false;
+    self.txtEmail.userInteractionEnabled = false;
+    self.txtOccupation.userInteractionEnabled = false;
+    self.txtPhoneNumber.userInteractionEnabled = false;
+    self.txtWebsite.userInteractionEnabled = false;
+    self.txtAddress.userInteractionEnabled = false;
+    self.txtCountry.userInteractionEnabled = false;
+    self.noteButton.userInteractionEnabled = false;
+    
+    self.collectionViewPhotos.userInteractionEnabled = false;
+}
+
+-(void)EditCategory
+{
+    self.txtIdentityTitle.userInteractionEnabled = true;
+    self.txtFirstName.userInteractionEnabled = true;
+    self.txtLastName.userInteractionEnabled = true;
+    self.txtEmail.userInteractionEnabled = true;
+    self.txtOccupation.userInteractionEnabled = true;
+    self.txtPhoneNumber.userInteractionEnabled = true;
+    self.txtWebsite.userInteractionEnabled = true;
+    self.txtAddress.userInteractionEnabled = true;
+    self.txtCountry.userInteractionEnabled = true;
+    self.noteButton.userInteractionEnabled = true;
+    
+    self.collectionViewPhotos.userInteractionEnabled = true;
+    
+    [self funChangeRighBarButtonItemEditSave:false];
+}
 
 -(void)AddSaveBankAccount
 {

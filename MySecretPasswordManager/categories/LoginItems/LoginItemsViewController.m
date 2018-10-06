@@ -27,8 +27,8 @@
 
     self.scrollViewLogin.contentSize = CGSizeMake(self.scrollViewLogin.frame.size.width, self.loginView.frame.size.height * 5);
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin)];
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:saveButton, nil];
+//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin)];
+//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:saveButton, nil];
     
     [self funSetDataToViews];
     
@@ -43,6 +43,25 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [self funChangeRighBarButtonItemEditSave:true];
+}
+
+-(void)funChangeRighBarButtonItemEditSave:(BOOL)isEdit
+{
+    if (isEdit)
+    {
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(EditCategory)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: editButton, nil];
+        
+        [self funSetInteractionFalseToAllTextfields];
+    }
+    else
+    {
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    }
+    
 }
 
 #pragma mark:- keyboard notifications
@@ -170,7 +189,11 @@
     [object setValue:self.loginNameTxt.text forKey:@"loginName"];
     [object setValue:self.urlWebTxt.text forKey:@"url"];
     [object setValue:self.usernameTxt.text forKey:@"username"];
-    [object setValue:self.noteTxt.text forKey:@"note"];
+//    [object setValue:self.noteTxt.text forKey:@"note"];
+    if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
+    {
+        [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
+    }
     [object setValue:[NSNumber numberWithInt:3] forKey:@"categoryType"];
     
     return object;
@@ -227,6 +250,27 @@
 //            [self.favouriteButton setBackgroundImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
         }
     }
+}
+
+-(void)funSetInteractionFalseToAllTextfields
+{
+    self.loginNameTxt.userInteractionEnabled = false;
+    self.urlWebTxt.userInteractionEnabled = false;
+    self.usernameTxt.userInteractionEnabled = false;
+    self.passwordTxt.userInteractionEnabled = false;
+    self.noteButton.userInteractionEnabled = false;
+    
+}
+
+-(void)EditCategory
+{
+    self.loginNameTxt.userInteractionEnabled = true;
+    self.urlWebTxt.userInteractionEnabled = true;
+    self.usernameTxt.userInteractionEnabled = true;
+    self.passwordTxt.userInteractionEnabled = true;
+    self.noteButton.userInteractionEnabled = true;
+    
+    [self funChangeRighBarButtonItemEditSave:false];
 }
 
 - (IBAction)copyUsername:(id)sender {

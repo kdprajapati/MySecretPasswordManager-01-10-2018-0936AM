@@ -22,8 +22,9 @@
 #import <UIKit/UIKit.h>
 #import "SWRevealTableViewCell.h"
 #import "JSDatePickerCell.h"
+#import "NoteViewController.h"
 
-@interface SPCategoryPassportViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate, JSDatePickerCellDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SPCategoryPassportViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,SWRevealTableViewCellDataSource, SWRevealTableViewCellDelegate, JSDatePickerCellDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, NoteViewControllerDelegate>
 
 @property (weak, nonatomic) id ObjectPassport;
 
@@ -43,5 +44,7 @@
 @property (nonatomic) BOOL isFavourite;
 @property (strong, nonatomic) IBOutlet UIButton *favouriteBtn;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionViewPhotos;
+
+@property (weak, nonatomic) IBOutlet UIButton *noteButton;
 
 @end
