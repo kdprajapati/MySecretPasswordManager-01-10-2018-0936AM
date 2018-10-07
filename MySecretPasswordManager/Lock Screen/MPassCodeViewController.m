@@ -24,6 +24,8 @@
     self.passCodeStr = @"";
     
     [self funSetTitleAsPerPasscodeMode];
+    
+    self.view.backgroundColor = [[AppData sharedAppData] funGetThemeColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated

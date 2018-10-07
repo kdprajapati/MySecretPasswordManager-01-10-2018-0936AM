@@ -242,23 +242,7 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
 }
 - (NSArray*)rightButtonItemsInRevealTableViewCell:(SWRevealTableViewCell *)revealTableViewCell
 {
-    SWCellButtonItem *btn1 = [SWCellButtonItem itemWithTitle:@"Delete" handler:^BOOL(SWCellButtonItem *item, SWRevealTableViewCell *cell) {
-        
-        NSIndexPath *indexPath = [self.mainMenuTableView indexPathForCell:cell];
-        
-//        PasswordObject *object = [arrPassword objectAtIndex:indexPath.row];
-//        [[DbClass database] funDeletePassword:object];
-//        [arrPassword removeObject:object];
-        [self.mainMenuTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        return true;
-    }];
-    btn1.tintColor = [UIColor whiteColor];
-    btn1.backgroundColor = [UIColor redColor];
-    btn1.width = 75;
-    
-
-    
-    return @[btn1];
+    return nil;
 }
 
 @end

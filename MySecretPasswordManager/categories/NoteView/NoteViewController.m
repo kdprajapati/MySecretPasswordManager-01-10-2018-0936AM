@@ -34,6 +34,11 @@
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:true animated:true];
+}
+
 -(void)funSaveNoteToCategory
 {
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(funNoteTextForCategory:)])

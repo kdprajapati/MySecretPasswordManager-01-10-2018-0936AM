@@ -76,6 +76,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 15 + 50);
+    
+    [self.navigationController setToolbarHidden:false animated:true];
+    
 }
 
 /**

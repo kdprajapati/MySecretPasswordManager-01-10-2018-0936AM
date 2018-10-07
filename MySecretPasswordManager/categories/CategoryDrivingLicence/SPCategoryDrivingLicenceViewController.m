@@ -80,6 +80,12 @@
     [self funAllocBottomBarButtons];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.scrolViewDrivingLicence.contentSize = CGSizeMake(self.scrolViewDrivingLicence.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
+    [self.navigationController setToolbarHidden:false animated:true];
+}
+
 /**
  add bottom bar buttons - favourite and settings
  */
@@ -127,11 +133,6 @@
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    self.scrolViewDrivingLicence.contentSize = CGSizeMake(self.scrolViewDrivingLicence.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
 }
 
 -(void)viewWillDisappear:(BOOL)animated

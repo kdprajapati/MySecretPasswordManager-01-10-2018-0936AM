@@ -438,10 +438,10 @@
                     </variation>
                 </scrollView>
                 <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxd-Lv-ReU">
-                    <rect key="frame" x="0.0" y="1005" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="1015" width="320" height="50"/>
                     <color key="backgroundColor" red="0.33333333333333331" green="0.17647058823529413" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="jxd-Lv-ReU" secondAttribute="height" multiplier="80:15" id="2oL-GW-kIY"/>
+                        <constraint firstAttribute="height" constant="50" id="l9h-Ga-gOO"/>
                     </constraints>
                 </view>
             </subviews>

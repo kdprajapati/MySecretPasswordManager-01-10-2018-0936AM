@@ -103,6 +103,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.secureNotesScrollView.contentSize = CGSizeMake(self.secureNotesScrollView.frame.size.width, self.view.frame.size.height + 20);
+    
+    [self.navigationController setToolbarHidden:false animated:true];
+    
 }
 
 #pragma mark:- keyboard notifications

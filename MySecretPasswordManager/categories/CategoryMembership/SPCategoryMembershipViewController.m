@@ -134,6 +134,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.scrolViewMembership.contentSize = CGSizeMake(self.scrolViewMembership.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
+    
+    [self.navigationController setToolbarHidden:false animated:true];
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated

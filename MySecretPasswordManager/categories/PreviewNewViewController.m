@@ -33,6 +33,11 @@
     [self funSetupPreviewArray];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:true animated:true];
+}
+
 -(void)funSetupPreviewArray
 {
     switch (self.categoryType) {

@@ -89,6 +89,7 @@
     [securityItems addObject:@"Change Password"];
     [securityItems addObject:@"Change PIN"];
     [securityItems addObject:askPasscodeAfterString];
+    [securityItems addObject:@"Theme"];
 //    [securityItems addObject:@"Email Account"];
     
     
@@ -118,6 +119,15 @@
         return otherItems.count;
     }
     return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 0 && indexPath.row == 3)
+    {
+        return 60;
+    }
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,6 +170,45 @@
                     [switchPIN setOn:false];
                 }
             }
+            else if (indexPath.row == 3)
+            {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                
+                float buttonX = self.view.frame.size.width - (5 * 40) - (5*4) - 4;
+                int i = 1;
+                for (i = 1; i <= 5 ; i++)
+                {
+                    UIColor *colorTheme;
+                    switch (i) {
+                        case 1:
+                            colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+                            break;
+                        case 2:
+                            colorTheme = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
+                            break;
+                        case 3:
+                            colorTheme = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
+                            break;
+                        case 4:
+                            colorTheme = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
+                            break;
+                        case 5:
+                            colorTheme = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
+                            break;
+                        default:
+                            break;
+                    }
+                    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonX, 8, 40, 40)];
+                    [button setBackgroundColor:colorTheme];
+                    [button addTarget:self action:@selector(funChangeTheme:) forControlEvents:UIControlEventTouchUpInside];
+                    button.tag = i;
+                    [cell.contentView addSubview:button];
+                    
+                    buttonX = buttonX + 40 + 4;
+                }
+                
+                
+            }
         }
     }
     else if (indexPath.section == 1)
@@ -176,13 +225,39 @@
     
 }
 
-- (void)changeSwitch:(id)sender{
+-(void)funChangeTheme:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    switch (button.tag) {
+        case 1:
+            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+            break;
+        case 2:
+            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
+            break;
+        case 3:
+            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
+            break;
+        case 4:
+            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
+            break;
+        case 5:
+            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
+            break;
+        default:
+            break;
+    }
     
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    [userdefaults setInteger:button.tag forKey:@"AppTheme"];
+    [userdefaults synchronize];
+    
+}
+
+- (void)changeSwitch:(id)sender{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([sender isOn]){
         NSLog(@"Switch is ON");
-        
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *code = [defaults objectForKey:@"APP_Passcode"];
         if (code == nil || [code isEqualToString:@""])
         {
@@ -257,16 +332,17 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         //change passcode
         [self funChangePassword];
+        return;
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
         //change passcode
         [self funChangePasscode];
     }
-    //funChangePassword
     else if (indexPath.section == 0 && indexPath.row == 2)
     {
         [self funChooseAppLockTime];
     }
+    
 }
 
 
@@ -332,6 +408,7 @@
     [self presentViewController:alertTime animated:YES completion:nil];
 }
 
+
 -(void)funUpdateAppLockTime:(NSInteger)lockTimeCase
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
@@ -344,73 +421,6 @@
     [self.settingsTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:2 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
     [self.settingsTableView endUpdates];
 }
-
-/*
- UIAlertController
- *actionSheet = [UIAlertController
- alertControllerWithTitle:@"Action
- Sheet"
- message:@"Action
- Sheet example using UIAlertController "
- preferredStyle:UIAlertControllerStyleActionSheet];
- [actionSheet
- addAction:[UIAlertAction
- actionWithTitle:@"Cancel"
- style:UIAlertActionStyleCancel
- handler:^(UIAlertAction
- *action) {
- NSLog(@"Cancel
- button tapped");
- [self
- dismissViewControllerAnimated:YES
- completion:^{
- }];
- }]];
- [actionSheet
- addAction:[UIAlertAction
- actionWithTitle:@"Delete"
- style:UIAlertActionStyleDestructive
- handler:^(UIAlertAction
- *action) {
- NSLog(@"Delete
- button tapped");
- [self
- dismissViewControllerAnimated:YES
- completion:^{
- }];
- }]];
- [actionSheet
- addAction:[UIAlertAction
- actionWithTitle:@"Create"
- style:UIAlertActionStyleDefault
- handler:^(UIAlertAction
- *action) {
- NSLog(@"Create
- button tapped");
- [self
- dismissViewControllerAnimated:YES
- completion:^{
- }];
- }]];
- [actionSheet
- addAction:[UIAlertAction
- actionWithTitle:@"Select
- All"
- style:UIAlertActionStyleDefault
- handler:^(UIAlertAction
- *action) {
- NSLog(@"Select
- All button tapped");
- [self
- dismissViewControllerAnimated:YES
- completion:^{
- }];
- }]];
- [self
- presentViewController:actionSheet
- animated:YES
- completion:nil];
- */
 
 /*
 #pragma mark - Navigation

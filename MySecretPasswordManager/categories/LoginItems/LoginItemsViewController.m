@@ -49,6 +49,11 @@
     [self funAllocBottomBarButtons];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:false animated:true];
+}
+
 /**
  add bottom bar buttons - favourite and settings
  */

@@ -127,6 +127,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.scrolViewBankAC.contentSize = CGSizeMake(self.scrolViewBankAC.frame.size.width, self.onView.frame.size.height * 14.5 + 50);
+    
+    [self.navigationController setToolbarHidden:false animated:true];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

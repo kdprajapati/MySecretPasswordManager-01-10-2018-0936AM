@@ -35,6 +35,8 @@
     self.passwordField.textColor = [UIColor whiteColor];
     self.passwordField.tintColor = [UIColor whiteColor];
     self.passwordHintLabel.hidden = true;
+    
+    self.view.backgroundColor = [[AppData sharedAppData] funGetThemeColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated

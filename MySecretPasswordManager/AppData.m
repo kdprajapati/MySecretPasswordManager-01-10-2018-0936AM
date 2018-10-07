@@ -1220,4 +1220,32 @@ static AppData *_sharedAppData = nil;
     [topViewController presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Theme Helpers
+-(UIColor *)funGetThemeColor
+{
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger theme = [userdefaults integerForKey:@"AppTheme"];
+    UIColor *colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+    switch (theme) {
+        case 1:
+            colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+            break;
+        case 2:
+            colorTheme = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
+            break;
+        case 3:
+            colorTheme = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
+            break;
+        case 4:
+            colorTheme = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
+            break;
+        case 5:
+            colorTheme = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
+            break;
+        default:
+            break;
+    }
+    return colorTheme;
+}
+
 @end

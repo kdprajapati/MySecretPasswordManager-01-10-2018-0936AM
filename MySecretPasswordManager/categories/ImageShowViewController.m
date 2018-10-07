@@ -26,6 +26,11 @@
     self.navigationItem.rightBarButtonItem = shareButton;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:true animated:true];
+}
+
 -(void)shareImage
 {
     NSArray *activityItems = [[NSArray alloc] initWithObjects:self.imageDetail, nil];

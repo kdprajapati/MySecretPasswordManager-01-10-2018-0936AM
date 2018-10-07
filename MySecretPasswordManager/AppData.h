@@ -52,4 +52,7 @@
 
 #pragma mark - Decrypt/Encrypt process for reset password methods
 -(void)funDecryptEncryptDataForPasswordReset:(NSString *)newPasscode;
+
+#pragma mark - Theme Helpers
+-(UIColor *)funGetThemeColor;
 @end
