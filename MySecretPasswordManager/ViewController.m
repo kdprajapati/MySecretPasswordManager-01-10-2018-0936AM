@@ -149,21 +149,6 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
 #pragma  mark :- Category method
 -(void)funAddCategories
 {
-//    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
-    //197, 17, 98)
-    
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255.0 green:96/255.0 blue:100/255.0 alpha:1.0];
-    //0, 96, 100)
-    
-    //255, 214, 0
-    
-    //255, 109, 0
-    
-    //38, 50, 56
-    
-    //0, 172, 193)
-    
-    
     /*
 //    CategoriesViewController *settingsVC = [[CategoriesViewController alloc] init];
     CategoriesViewController *categoryVC = [[CategoriesViewController alloc]initWithNibName:@"CategoriesViewController" bundle:[NSBundle mainBundle]];

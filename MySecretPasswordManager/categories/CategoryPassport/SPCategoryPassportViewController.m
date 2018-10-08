@@ -618,6 +618,10 @@
     self.txtIssuingAuthority.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
     
+    self.DateOfBirthButton.userInteractionEnabled = false;
+    self.issueDateButton.userInteractionEnabled = false;
+    self.expiryDateButton.userInteractionEnabled = false;
+    
     self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
@@ -629,7 +633,9 @@
     self.txtNationality.userInteractionEnabled = true;
     self.txtIssuingAuthority.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
-    
+    self.DateOfBirthButton.userInteractionEnabled = true;
+    self.issueDateButton.userInteractionEnabled = true;
+    self.expiryDateButton.userInteractionEnabled = true;
     self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];

@@ -580,6 +580,8 @@
     self.txtCountry.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
     
+    self.birthDate.userInteractionEnabled = false;
+    
     self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
@@ -596,6 +598,8 @@
     self.txtCountry.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
     
+    self.birthDate.userInteractionEnabled = true;
+
     self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];

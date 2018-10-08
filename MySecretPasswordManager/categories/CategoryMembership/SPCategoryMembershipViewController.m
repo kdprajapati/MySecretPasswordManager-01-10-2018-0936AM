@@ -609,6 +609,8 @@
     self.txtMemberID.userInteractionEnabled = false;
     self.txtMemberPassword.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
+    self.memberSinceDateButton.userInteractionEnabled = false;
+    self.expiryDateButton.userInteractionEnabled = false;
     
     self.collectionViewPhotos.userInteractionEnabled = false;
 }
@@ -622,6 +624,9 @@
     self.txtMemberID.userInteractionEnabled = true;
     self.txtMemberPassword.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
+    
+    self.memberSinceDateButton.userInteractionEnabled = true;
+    self.expiryDateButton.userInteractionEnabled = true;
     
     self.collectionViewPhotos.userInteractionEnabled = true;
     

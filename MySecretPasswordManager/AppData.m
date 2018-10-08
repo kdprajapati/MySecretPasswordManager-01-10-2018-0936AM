@@ -1225,22 +1225,25 @@ static AppData *_sharedAppData = nil;
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     NSInteger theme = [userdefaults integerForKey:@"AppTheme"];
-    UIColor *colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+    UIColor *colorTheme = [UIColor colorWithRed:98/255.0 green:0/255.0 blue:238/255.0 alpha:1.0];
     switch (theme) {
         case 1:
-            colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
+            colorTheme = [UIColor colorWithRed:98/255.0 green:0/255.0 blue:238/255.0 alpha:1.0];
             break;
         case 2:
-            colorTheme = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
+            colorTheme = [UIColor colorWithRed:3/255.0 green:54/255.0 blue:255/255.0 alpha:1.0];
             break;
         case 3:
-            colorTheme = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
+            colorTheme = [UIColor colorWithRed:255/255.0 green:2/255.0 blue:0/102 alpha:1.0];
             break;
         case 4:
-            colorTheme = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
+            colorTheme = [UIColor colorWithRed:255/255.0 green:165/255.0 blue:0/255.0 alpha:1.0];
             break;
         case 5:
-            colorTheme = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
+            colorTheme = [UIColor colorWithRed:72/255.0 green:206/255.0 blue:107/255.0 alpha:1.0];
+            break;
+        case 6:
+            colorTheme = [UIColor colorWithRed:255/255.0 green:17/255.0 blue:52/255.0 alpha:1.0];
             break;
         default:
             break;

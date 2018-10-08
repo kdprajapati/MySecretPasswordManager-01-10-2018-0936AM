@@ -14,6 +14,8 @@
 #import "AppDelegate.h"
 #import "AppData.h"
 
+#import "ThemeViewController.h"
+
 @interface SettingsViewController ()
 {
     NSMutableArray *securityItems;
@@ -89,12 +91,12 @@
     [securityItems addObject:@"Change Password"];
     [securityItems addObject:@"Change PIN"];
     [securityItems addObject:askPasscodeAfterString];
-    [securityItems addObject:@"Theme"];
-//    [securityItems addObject:@"Email Account"];
+//    [securityItems addObject:@"Theme"];
     
     
     //otherItems allocation
     otherItems = [[NSMutableArray alloc] init];
+    [otherItems addObject:@"Set a Theme"];
     [otherItems addObject:@"Remove Ads"];
     [otherItems addObject:@"Share This App"];
     [otherItems addObject:@"Rate Us"];
@@ -123,10 +125,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 0 && indexPath.row == 3)
-    {
-        return 60;
-    }
     return 50;
 }
 
@@ -170,45 +168,6 @@
                     [switchPIN setOn:false];
                 }
             }
-            else if (indexPath.row == 3)
-            {
-                cell.accessoryType = UITableViewCellAccessoryNone;
-                
-                float buttonX = self.view.frame.size.width - (5 * 40) - (5*4) - 4;
-                int i = 1;
-                for (i = 1; i <= 5 ; i++)
-                {
-                    UIColor *colorTheme;
-                    switch (i) {
-                        case 1:
-                            colorTheme = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
-                            break;
-                        case 2:
-                            colorTheme = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
-                            break;
-                        case 3:
-                            colorTheme = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
-                            break;
-                        case 4:
-                            colorTheme = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
-                            break;
-                        case 5:
-                            colorTheme = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
-                            break;
-                        default:
-                            break;
-                    }
-                    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonX, 8, 40, 40)];
-                    [button setBackgroundColor:colorTheme];
-                    [button addTarget:self action:@selector(funChangeTheme:) forControlEvents:UIControlEventTouchUpInside];
-                    button.tag = i;
-                    [cell.contentView addSubview:button];
-                    
-                    buttonX = buttonX + 40 + 4;
-                }
-                
-                
-            }
         }
     }
     else if (indexPath.section == 1)
@@ -222,35 +181,6 @@
     }
     cell.textLabel.textColor = [UIColor lightGrayColor];
     return cell;
-    
-}
-
--(void)funChangeTheme:(id)sender
-{
-    UIButton *button = (UIButton *)sender;
-    switch (button.tag) {
-        case 1:
-            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
-            break;
-        case 2:
-            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:197/255.0 green:17/255.0 blue:98/255.0 alpha:1.0];
-            break;
-        case 3:
-            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1.0];
-            break;
-        case 4:
-            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255/255.0 green:109/255.0 blue:0/255.0 alpha:1.0];
-            break;
-        case 5:
-            self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0/255.0 green:172/255.0 blue:193/255.0 alpha:1.0];
-            break;
-        default:
-            break;
-    }
-    
-    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-    [userdefaults setInteger:button.tag forKey:@"AppTheme"];
-    [userdefaults synchronize];
     
 }
 
@@ -342,9 +272,18 @@
     {
         [self funChooseAppLockTime];
     }
+    else if (indexPath.section == 1 && indexPath.row == 0)
+    {
+        [self funOpenThemeViewController];
+    }
     
 }
 
+-(void)funOpenThemeViewController
+{
+    ThemeViewController *homeVc = [[ThemeViewController alloc]initWithNibName:@"ThemeViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:homeVc animated:true];
+}
 
 #pragma mark:- settings helper methods
 -(void)funChangePasscode

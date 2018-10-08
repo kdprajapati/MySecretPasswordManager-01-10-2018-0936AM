@@ -72,6 +72,10 @@
 		9E639C172142D5700041CE6D /* SPCategoryMembershipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E639C152142D5700041CE6D /* SPCategoryMembershipViewController.xib */; };
 		9E639C1B2142D5810041CE6D /* SPCategoryPassportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E639C192142D5810041CE6D /* SPCategoryPassportViewController.m */; };
 		9E639C1C2142D5810041CE6D /* SPCategoryPassportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E639C1A2142D5810041CE6D /* SPCategoryPassportViewController.xib */; };
+		9EBE82B7216BC3600001EC9A /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE82B5216BC3600001EC9A /* ThemeViewController.m */; };
+		9EBE82B8216BC3600001EC9A /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */; };
+		9EBE82BB216BD0210001EC9A /* check_White@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE82B9216BD0210001EC9A /* check_White@3x.png */; };
+		9EBE82BC216BD0210001EC9A /* check_White.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE82BA216BD0210001EC9A /* check_White.png */; };
 		9EF5988F212B411200873A87 /* ImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF5988D212B411200873A87 /* ImageShowViewController.m */; };
 		9EF59890212B411200873A87 /* ImageShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF5988E212B411200873A87 /* ImageShowViewController.xib */; };
 		D70437C8203DEE78003C9259 /* hide_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = D70437C6203DEE78003C9259 /* hide_pin.png */; };
@@ -272,6 +276,11 @@
 		9E639C182142D5810041CE6D /* SPCategoryPassportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCategoryPassportViewController.h; sourceTree = "<group>"; };
 		9E639C192142D5810041CE6D /* SPCategoryPassportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCategoryPassportViewController.m; sourceTree = "<group>"; };
 		9E639C1A2142D5810041CE6D /* SPCategoryPassportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPCategoryPassportViewController.xib; sourceTree = "<group>"; };
+		9EBE82B4216BC3600001EC9A /* ThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeViewController.h; sourceTree = "<group>"; };
+		9EBE82B5216BC3600001EC9A /* ThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeViewController.m; sourceTree = "<group>"; };
+		9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
+		9EBE82B9216BD0210001EC9A /* check_White@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check_White@3x.png"; sourceTree = "<group>"; };
+		9EBE82BA216BD0210001EC9A /* check_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check_White.png; sourceTree = "<group>"; };
 		9EF5988C212B411200873A87 /* ImageShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageShowViewController.h; sourceTree = "<group>"; };
 		9EF5988D212B411200873A87 /* ImageShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageShowViewController.m; sourceTree = "<group>"; };
 		9EF5988E212B411200873A87 /* ImageShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageShowViewController.xib; sourceTree = "<group>"; };
@@ -872,9 +881,14 @@
 		D7B378411FD7093200841A50 /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE82BA216BD0210001EC9A /* check_White.png */,
+				9EBE82B9216BD0210001EC9A /* check_White@3x.png */,
 				D7121FE01FE81C0B00A169B2 /* SettingsViewController.h */,
 				D7121FE11FE81C0B00A169B2 /* SettingsViewController.m */,
 				D7121FE21FE81C0B00A169B2 /* SettingsViewController.xib */,
+				9EBE82B4216BC3600001EC9A /* ThemeViewController.h */,
+				9EBE82B5216BC3600001EC9A /* ThemeViewController.m */,
+				9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -1064,6 +1078,7 @@
 				D72EBD7C2059A0A400E05154 /* Fav_Selected.png in Resources */,
 				D7B378601FD70F9C00841A50 /* favouriteActive.png in Resources */,
 				04067773208E5E5900757437 /* favourite_menu.png in Resources */,
+				9EBE82B8216BC3600001EC9A /* ThemeViewController.xib in Resources */,
 				D7E9F273201A464D00B20BF0 /* SPCreditCardViewController.xib in Resources */,
 				D72EBD882059B00000E05154 /* FavouriteViewController.xib in Resources */,
 				04067781208E5ECA00757437 /* delete_normal.png in Resources */,
@@ -1115,6 +1130,7 @@
 				04067788208E5ECA00757437 /* share_normal@2x.png in Resources */,
 				D7121FE41FE81C0B00A169B2 /* SettingsViewController.xib in Resources */,
 				D72AFD602018E479004DEFA9 /* SPBankAccountsViewController.xib in Resources */,
+				9EBE82BC216BD0210001EC9A /* check_White.png in Resources */,
 				9E631EEA215419F900572B0E /* menu-6.png in Resources */,
 				D712200E1FE842D200A169B2 /* Category_5.png in Resources */,
 				D7B3785F1FD70F9C00841A50 /* favourite@3x.png in Resources */,
@@ -1140,6 +1156,7 @@
 				73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */,
 				D7B3785B1FD70F9C00841A50 /* Add@3x.png in Resources */,
 				D7B3785C1FD70F9C00841A50 /* Arrow.png in Resources */,
+				9EBE82BB216BD0210001EC9A /* check_White@3x.png in Resources */,
 				D788D1602024E144002EECD5 /* SPPreviewViewController.xib in Resources */,
 				04EDA4DA2093A477003C7BEF /* Checkmark.png in Resources */,
 				04067784208E5ECA00757437 /* Fav_Unselect@2x.png in Resources */,
@@ -1237,6 +1254,7 @@
 				D7491371205A9B160060FE38 /* FBEncryptorAES.m in Sources */,
 				D7491372205A9B160060FE38 /* NSData+Base64.m in Sources */,
 				04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */,
+				9EBE82B7216BC3600001EC9A /* ThemeViewController.m in Sources */,
 				D7CF15FE1FFFF9D3005D982F /* CreditCard+CoreDataClass.m in Sources */,
 				73D8170D20816F69002057D2 /* SPSecureNotesViewController.m in Sources */,
 				D7584A8D1FFD55B600D87529 /* Category+CoreDataClass.m in Sources */,

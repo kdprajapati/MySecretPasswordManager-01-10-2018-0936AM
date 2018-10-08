@@ -623,6 +623,9 @@
     self.txtWebsite.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
     
+    self.expiryDateButton.userInteractionEnabled = false;
+    self.validFromButton.userInteractionEnabled = false;
+    
     self.collectionViewPhotos.userInteractionEnabled = false;
     
 }
@@ -638,6 +641,9 @@
     self.txtTollFree.userInteractionEnabled = true;
     self.txtWebsite.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
+    
+    self.expiryDateButton.userInteractionEnabled = true;
+    self.validFromButton.userInteractionEnabled = true;
     
     self.collectionViewPhotos.userInteractionEnabled = true;
     
