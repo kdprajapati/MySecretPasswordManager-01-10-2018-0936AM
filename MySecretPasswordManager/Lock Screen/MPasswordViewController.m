@@ -100,7 +100,7 @@
 -(void)funPopToSettingsViewController
 {
     NSArray *arrayControllers = self.navigationController.viewControllers;
-    [self.navigationController popToViewController:[arrayControllers objectAtIndex:1] animated:true];
+    [self.navigationController popToViewController:[arrayControllers objectAtIndex:2] animated:true];
 }
 
 -(void)funCheckPassword

@@ -42,7 +42,7 @@
 -(void)funAllocSectionItems
 {
     passcodeItems = [[NSMutableArray alloc] init];
-    [passcodeItems addObject:@"Enable/Disable Passcode"];
+    [passcodeItems addObject:@"Turn On/Off Passcode"];
     [passcodeItems addObject:@"Change Passcode"];
 }
 
@@ -75,8 +75,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     cell.textLabel.text = [passcodeItems objectAtIndex:indexPath.row];
-    if (indexPath.row == 1)
+    if (indexPath.row == 0)
     {
+        cell.accessoryType = UITableViewCellAccessoryNone;
         UISwitch *switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 6, 60, 30)];
         [switchPIN addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
         [cell.contentView addSubview:switchPIN];

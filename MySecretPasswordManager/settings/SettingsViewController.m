@@ -15,6 +15,8 @@
 #import "AppData.h"
 
 #import "ThemeViewController.h"
+#import "PasswordSettingsViewController.h"
+#import "PasscodeSettingsViewController.h"
 
 @interface SettingsViewController ()
 {
@@ -151,23 +153,7 @@
         else
         {
             cell.textLabel.text = [securityItems objectAtIndex:indexPath.row];
-            if (indexPath.row == 1)
-            {
-                UISwitch *switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 6, 60, 30)];
-                [switchPIN addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
-                [cell.contentView addSubview:switchPIN];
-                
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                NSInteger onOffStatus = [[defaults valueForKey:AppPasscodeOnOffKey] integerValue];
-                if (onOffStatus == 1)
-                {
-                    [switchPIN setOn:true];
-                }
-                else
-                {
-                    [switchPIN setOn:false];
-                }
-            }
+            
         }
     }
     else if (indexPath.section == 1)
@@ -182,31 +168,6 @@
     cell.textLabel.textColor = [UIColor lightGrayColor];
     return cell;
     
-}
-
-- (void)changeSwitch:(id)sender{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if([sender isOn]){
-        NSLog(@"Switch is ON");
-        NSString *code = [defaults objectForKey:@"APP_Passcode"];
-        if (code == nil || [code isEqualToString:@""])
-        {
-            //push passcode viewcontroller to set first time
-            [self funChangePasscode];
-            [sender setOn:false];
-            [defaults setInteger:0 forKey:AppPasscodeOnOffKey];
-        }
-        else
-        {
-            [defaults setInteger:1 forKey:AppPasscodeOnOffKey];
-        }
-        
-        
-    } else{
-        NSLog(@"Switch is OFF");
-        [defaults setInteger:0 forKey:AppPasscodeOnOffKey];
-    }
-    [defaults synchronize];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -261,12 +222,11 @@
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
         //change passcode
-        [self funChangePassword];
+        [self funOpenPasswordSettingsViewController];
         return;
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
-        //change passcode
-        [self funChangePasscode];
+        [self funOpenPasscodeSettingsViewController];
     }
     else if (indexPath.section == 0 && indexPath.row == 2)
     {
@@ -277,6 +237,18 @@
         [self funOpenThemeViewController];
     }
     
+}
+
+-(void)funOpenPasswordSettingsViewController
+{
+    PasswordSettingsViewController *passwordSettingsVc = [[PasswordSettingsViewController alloc]initWithNibName:@"PasswordSettingsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:passwordSettingsVc animated:true];
+}
+
+-(void)funOpenPasscodeSettingsViewController
+{
+    PasscodeSettingsViewController *passcodeSettingsVc = [[PasscodeSettingsViewController alloc]initWithNibName:@"PasscodeSettingsViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:passcodeSettingsVc animated:true];
 }
 
 -(void)funOpenThemeViewController
