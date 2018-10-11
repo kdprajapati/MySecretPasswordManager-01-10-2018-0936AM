@@ -88,8 +88,8 @@
     
     //securityItems allocation
     securityItems = [[NSMutableArray alloc] init];
-    [securityItems addObject:@"Change Password"];
-    [securityItems addObject:@"Change PIN"];
+    [securityItems addObject:@"Password"];
+    [securityItems addObject:@"Passcode"];
     [securityItems addObject:askPasscodeAfterString];
 //    [securityItems addObject:@"Theme"];
     

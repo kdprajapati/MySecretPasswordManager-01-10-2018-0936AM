@@ -60,6 +60,10 @@
 		73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8170C20816F69002057D2 /* SPSecureNotesViewController.xib */; };
 		9E22185F216525000099A1A4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22185D216525000099A1A4 /* NoteViewController.m */; };
 		9E221860216525000099A1A4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E22185E216525000099A1A4 /* NoteViewController.xib */; };
+		9E50FDAC216E60AE00E8AE54 /* PasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E50FDAA216E60AE00E8AE54 /* PasswordSettingsViewController.m */; };
+		9E50FDAD216E60AE00E8AE54 /* PasswordSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E50FDAB216E60AE00E8AE54 /* PasswordSettingsViewController.xib */; };
+		9E50FDB1216E60BE00E8AE54 /* PasscodeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E50FDAF216E60BE00E8AE54 /* PasscodeSettingsViewController.m */; };
+		9E50FDB2216E60BE00E8AE54 /* PasscodeSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E50FDB0216E60BE00E8AE54 /* PasscodeSettingsViewController.xib */; };
 		9E631EE8215419F900572B0E /* menu-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE2215419F700572B0E /* menu-7.png */; };
 		9E631EE9215419F900572B0E /* menu-5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE3215419F700572B0E /* menu-5@3x.png */; };
 		9E631EEA215419F900572B0E /* menu-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E631EE4215419F800572B0E /* menu-6.png */; };
@@ -261,6 +265,12 @@
 		9E22185C216525000099A1A4 /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		9E22185D216525000099A1A4 /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		9E22185E216525000099A1A4 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		9E50FDA9216E60AE00E8AE54 /* PasswordSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordSettingsViewController.h; sourceTree = "<group>"; };
+		9E50FDAA216E60AE00E8AE54 /* PasswordSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordSettingsViewController.m; sourceTree = "<group>"; };
+		9E50FDAB216E60AE00E8AE54 /* PasswordSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSettingsViewController.xib; sourceTree = "<group>"; };
+		9E50FDAE216E60BE00E8AE54 /* PasscodeSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasscodeSettingsViewController.h; sourceTree = "<group>"; };
+		9E50FDAF216E60BE00E8AE54 /* PasscodeSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasscodeSettingsViewController.m; sourceTree = "<group>"; };
+		9E50FDB0216E60BE00E8AE54 /* PasscodeSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasscodeSettingsViewController.xib; sourceTree = "<group>"; };
 		9E631EE2215419F700572B0E /* menu-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-7.png"; sourceTree = "<group>"; };
 		9E631EE3215419F700572B0E /* menu-5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-5@3x.png"; sourceTree = "<group>"; };
 		9E631EE4215419F800572B0E /* menu-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-6.png"; sourceTree = "<group>"; };
@@ -889,6 +899,12 @@
 				9EBE82B4216BC3600001EC9A /* ThemeViewController.h */,
 				9EBE82B5216BC3600001EC9A /* ThemeViewController.m */,
 				9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */,
+				9E50FDA9216E60AE00E8AE54 /* PasswordSettingsViewController.h */,
+				9E50FDAA216E60AE00E8AE54 /* PasswordSettingsViewController.m */,
+				9E50FDAB216E60AE00E8AE54 /* PasswordSettingsViewController.xib */,
+				9E50FDAE216E60BE00E8AE54 /* PasscodeSettingsViewController.h */,
+				9E50FDAF216E60BE00E8AE54 /* PasscodeSettingsViewController.m */,
+				9E50FDB0216E60BE00E8AE54 /* PasscodeSettingsViewController.xib */,
 			);
 			path = settings;
 			sourceTree = "<group>";
@@ -1155,6 +1171,7 @@
 				D7727B7C1FD85A7800AFD405 /* AppIcon.png in Resources */,
 				73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */,
 				D7B3785B1FD70F9C00841A50 /* Add@3x.png in Resources */,
+				9E50FDB2216E60BE00E8AE54 /* PasscodeSettingsViewController.xib in Resources */,
 				D7B3785C1FD70F9C00841A50 /* Arrow.png in Resources */,
 				9EBE82BB216BD0210001EC9A /* check_White@3x.png in Resources */,
 				D788D1602024E144002EECD5 /* SPPreviewViewController.xib in Resources */,
@@ -1183,6 +1200,7 @@
 				D7B378631FD70F9C00841A50 /* menu-0@3x.png in Resources */,
 				734FE51F20896443008E3915 /* img2.jpg in Resources */,
 				D71220101FE842D200A169B2 /* Category_7.png in Resources */,
+				9E50FDAD216E60AE00E8AE54 /* PasswordSettingsViewController.xib in Resources */,
 				04067774208E5E5900757437 /* favourite_menu@3x.png in Resources */,
 				D7727B7D1FD85A7800AFD405 /* AppIcon@3x.png in Resources */,
 				0417325A207D021F00DF4F33 /* delete_category.png in Resources */,
@@ -1208,6 +1226,7 @@
 				D7CF15FF1FFFF9D3005D982F /* CreditCard+CoreDataProperties.m in Sources */,
 				D75339621FEEC764004647A4 /* LoginItemsViewController.m in Sources */,
 				D7B3782F1FD7079B00841A50 /* ViewController.m in Sources */,
+				9E50FDB1216E60BE00E8AE54 /* PasscodeSettingsViewController.m in Sources */,
 				04E5F4F620A36EFD003A50A1 /* SPPreviewViewPopupController.m in Sources */,
 				D7C7E0F0203365C7003AB467 /* Login+CoreDataClass.m in Sources */,
 				9E639C112142D5590041CE6D /* SPCategoryDrivingLicenceViewController.m in Sources */,
@@ -1258,6 +1277,7 @@
 				D7CF15FE1FFFF9D3005D982F /* CreditCard+CoreDataClass.m in Sources */,
 				73D8170D20816F69002057D2 /* SPSecureNotesViewController.m in Sources */,
 				D7584A8D1FFD55B600D87529 /* Category+CoreDataClass.m in Sources */,
+				9E50FDAC216E60AE00E8AE54 /* PasswordSettingsViewController.m in Sources */,
 				D77C2D2D200F9EBB00806E67 /* CreditCardObject.m in Sources */,
 				0DF475AB214E168600091276 /* MembershipObject.m in Sources */,
 				D76C6222200539D10023AF1C /* DatePickerCell.swift in Sources */,
