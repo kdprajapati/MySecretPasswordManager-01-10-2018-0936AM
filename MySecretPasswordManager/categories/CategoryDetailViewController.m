@@ -19,11 +19,12 @@
 #import "SPPreviewViewController.h"
 #import "SPPreviewViewPopupController.h"
 #import "AppData.h"
+#import "NoDataHelpViewController.h"
 
 @interface CategoryDetailViewController ()
 {
     NSMutableArray *detailArray;
-    UILabel *labelNoData;
+    NoDataHelpViewController *noDataHelpVC;
 }
 
 @end
@@ -51,14 +52,11 @@
                                     action:nil];
     [[self navigationItem] setBackBarButtonItem:newBackButton];
     
-    labelNoData = [[UILabel  alloc] init];
-    labelNoData.frame = CGRectMake(0, self.view.center.y, self.view.frame.size.width, 60);;
-    labelNoData.text =  @"No Data Found\n press \'+\' to Add";
-    labelNoData.numberOfLines = 2;
-    labelNoData.hidden = true;
-//    labelNoData.center = self.view.center;
-    labelNoData.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:labelNoData];
+    noDataHelpVC = [[NoDataHelpViewController alloc]initWithNibName:@"NoDataHelpViewController" bundle:[NSBundle mainBundle]];
+    noDataHelpVC.view.frame = CGRectMake(0, self.view.center.y, self.view.frame.size.width, 60);
+    [self.view addSubview:noDataHelpVC.view];
+    noDataHelpVC.view.hidden = true;
+
 }
 
 -(NSString *)funGetTitle
@@ -112,12 +110,12 @@
 {
     if(detailArray.count > 0)
     {
-        labelNoData.hidden = true;
+        noDataHelpVC.view.hidden = true;
         _categoryDetailTableView.hidden = false;
     }
     else
     {
-        labelNoData.hidden = false;
+        noDataHelpVC.view.hidden = false;
         _categoryDetailTableView.hidden = true;
     }
 }

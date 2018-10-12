@@ -46,7 +46,14 @@
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.noteObject == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }
@@ -94,7 +101,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveSecureNote)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     

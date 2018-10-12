@@ -26,10 +26,7 @@
     self.title = @"Login/Password";
 
     self.scrollViewLogin.contentSize = CGSizeMake(self.scrollViewLogin.frame.size.width, self.loginView.frame.size.height * 4.5);
-    
-//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin)];
-//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:saveButton, nil];
-    
+  
     [self funSetDataToViews];
     
     self.loginNameTxt.delegate = self;
@@ -44,7 +41,14 @@
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.loginObject == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }
@@ -97,7 +101,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     

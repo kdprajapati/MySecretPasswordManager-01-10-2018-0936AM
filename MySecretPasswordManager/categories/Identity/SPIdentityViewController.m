@@ -36,13 +36,7 @@
 //    _scrollViewIdentity.frame = CGRectMake(_scrollViewIdentity.frame.origin.x, _scrollViewIdentity.frame.origin.y, _scrollViewIdentity.frame.size.width, [UIScreen mainScreen].bounds.size.height - 55);
     
     self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 15 + 50);
-    
-    
-//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
-//
-//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
-    
-    
+  
     datePicker = [[UIDatePicker alloc] init];
 
     self.txtIdentityTitle.delegate = self;
@@ -68,7 +62,14 @@
     
     [self setUpCollection];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.identityObject == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }
@@ -124,7 +125,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveIdentity)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -605,7 +606,7 @@
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveBankAccount
+-(void)AddSaveIdentity
 {
     
     //Validation

@@ -48,7 +48,7 @@
     NSLog(@"scrolViewDrivingLicence - %@",NSStringFromCGSize(self.scrolViewDrivingLicence.contentSize));
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence)];
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
@@ -75,7 +75,14 @@
     
     [self setUpCollection];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.ObjectDrivingLicence == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }
@@ -129,7 +136,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -637,7 +644,7 @@
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveCreditCard
+-(void)AddSaveDrivingLicence
 {
     
     //Validation

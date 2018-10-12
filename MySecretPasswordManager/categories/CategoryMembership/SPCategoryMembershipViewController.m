@@ -77,7 +77,14 @@
     
     [self setUpCollection];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.ObjectMembership == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }
@@ -125,7 +132,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveMembership)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     

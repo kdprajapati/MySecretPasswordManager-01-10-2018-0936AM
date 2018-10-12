@@ -41,12 +41,7 @@
     
     // Do any additional setup after loading the view from its nib.
     self.title = @"Bank Account";
-    
-    
-//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
    
-//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
-    
     [self funSetDataToViews];
  
     self.txtBankName.delegate = self;
@@ -70,7 +65,14 @@
     
     [self setUpCollection];
     
-    [self funChangeRighBarButtonItemEditSave:true];
+    if (self.bankObject == nil)
+    {
+        [self funChangeRighBarButtonItemEditSave:false];
+    }
+    else
+    {
+        [self funChangeRighBarButtonItemEditSave:true];
+    }
     
     [self funAllocBottomBarButtons];
 }

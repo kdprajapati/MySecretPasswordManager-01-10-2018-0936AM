@@ -76,6 +76,12 @@
 		9E639C172142D5700041CE6D /* SPCategoryMembershipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E639C152142D5700041CE6D /* SPCategoryMembershipViewController.xib */; };
 		9E639C1B2142D5810041CE6D /* SPCategoryPassportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E639C192142D5810041CE6D /* SPCategoryPassportViewController.m */; };
 		9E639C1C2142D5810041CE6D /* SPCategoryPassportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E639C1A2142D5810041CE6D /* SPCategoryPassportViewController.xib */; };
+		9EB9D9562170F715006BDE00 /* NoDataHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB9D9542170F715006BDE00 /* NoDataHelpViewController.m */; };
+		9EB9D9572170F715006BDE00 /* NoDataHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EB9D9552170F715006BDE00 /* NoDataHelpViewController.xib */; };
+		9EB9D95D2170F7EF006BDE00 /* arrowHelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB9D9592170F7EF006BDE00 /* arrowHelp.png */; };
+		9EB9D95E2170F7EF006BDE00 /* arrowHelp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB9D95A2170F7EF006BDE00 /* arrowHelp@3x.png */; };
+		9EB9D95F2170F7EF006BDE00 /* stopBadge.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB9D95B2170F7EF006BDE00 /* stopBadge.png */; };
+		9EB9D9602170F7EF006BDE00 /* stopBadge@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB9D95C2170F7EF006BDE00 /* stopBadge@3x.png */; };
 		9EBE82B7216BC3600001EC9A /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE82B5216BC3600001EC9A /* ThemeViewController.m */; };
 		9EBE82B8216BC3600001EC9A /* ThemeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */; };
 		9EBE82BB216BD0210001EC9A /* check_White@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE82B9216BD0210001EC9A /* check_White@3x.png */; };
@@ -286,6 +292,13 @@
 		9E639C182142D5810041CE6D /* SPCategoryPassportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPCategoryPassportViewController.h; sourceTree = "<group>"; };
 		9E639C192142D5810041CE6D /* SPCategoryPassportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SPCategoryPassportViewController.m; sourceTree = "<group>"; };
 		9E639C1A2142D5810041CE6D /* SPCategoryPassportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPCategoryPassportViewController.xib; sourceTree = "<group>"; };
+		9EB9D9532170F715006BDE00 /* NoDataHelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoDataHelpViewController.h; sourceTree = "<group>"; };
+		9EB9D9542170F715006BDE00 /* NoDataHelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoDataHelpViewController.m; sourceTree = "<group>"; };
+		9EB9D9552170F715006BDE00 /* NoDataHelpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataHelpViewController.xib; sourceTree = "<group>"; };
+		9EB9D9592170F7EF006BDE00 /* arrowHelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowHelp.png; sourceTree = "<group>"; };
+		9EB9D95A2170F7EF006BDE00 /* arrowHelp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowHelp@3x.png"; sourceTree = "<group>"; };
+		9EB9D95B2170F7EF006BDE00 /* stopBadge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopBadge.png; sourceTree = "<group>"; };
+		9EB9D95C2170F7EF006BDE00 /* stopBadge@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopBadge@3x.png"; sourceTree = "<group>"; };
 		9EBE82B4216BC3600001EC9A /* ThemeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeViewController.h; sourceTree = "<group>"; };
 		9EBE82B5216BC3600001EC9A /* ThemeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeViewController.m; sourceTree = "<group>"; };
 		9EBE82B6216BC3600001EC9A /* ThemeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeViewController.xib; sourceTree = "<group>"; };
@@ -611,6 +624,17 @@
 			path = CategoryDrivingLicence;
 			sourceTree = "<group>";
 		};
+		9EB9D9582170F7EF006BDE00 /* NoDataHelpImages */ = {
+			isa = PBXGroup;
+			children = (
+				9EB9D9592170F7EF006BDE00 /* arrowHelp.png */,
+				9EB9D95A2170F7EF006BDE00 /* arrowHelp@3x.png */,
+				9EB9D95B2170F7EF006BDE00 /* stopBadge.png */,
+				9EB9D95C2170F7EF006BDE00 /* stopBadge@3x.png */,
+			);
+			path = NoDataHelpImages;
+			sourceTree = "<group>";
+		};
 		D70437C5203DEE78003C9259 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +853,7 @@
 		D7B3783E1FD7093200841A50 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				9EB9D9582170F7EF006BDE00 /* NoDataHelpImages */,
 				9E22185B216524EC0099A1A4 /* NoteView */,
 				9E639C0D2142D5350041CE6D /* CategoryDrivingLicence */,
 				9E639C0C2142D5350041CE6D /* CategoryMembership */,
@@ -864,6 +889,9 @@
 				9EF5988C212B411200873A87 /* ImageShowViewController.h */,
 				9EF5988D212B411200873A87 /* ImageShowViewController.m */,
 				9EF5988E212B411200873A87 /* ImageShowViewController.xib */,
+				9EB9D9532170F715006BDE00 /* NoDataHelpViewController.h */,
+				9EB9D9542170F715006BDE00 /* NoDataHelpViewController.m */,
+				9EB9D9552170F715006BDE00 /* NoDataHelpViewController.xib */,
 			);
 			path = categories;
 			sourceTree = "<group>";
@@ -1082,6 +1110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7727B881FD85B8200AFD405 /* ViewOff.png in Resources */,
+				9EB9D95F2170F7EF006BDE00 /* stopBadge.png in Resources */,
 				D7B3786D1FD70F9C00841A50 /* Settings@3x.png in Resources */,
 				D7B378681FD70F9C00841A50 /* menu-3.png in Resources */,
 				D72EBD792059A03E00E05154 /* Fav_Unselect.png in Resources */,
@@ -1109,11 +1138,14 @@
 				0460A6BC2060284D00C94050 /* copy-icon.png in Resources */,
 				04067783208E5ECA00757437 /* Fav_Selected@2x.png in Resources */,
 				D7727B8B1FD85B8200AFD405 /* ViewOn@3x.png in Resources */,
+				9EB9D9572170F715006BDE00 /* NoDataHelpViewController.xib in Resources */,
 				D7727B7F1FD85A7800AFD405 /* Paging@3x.png in Resources */,
 				9E221860216525000099A1A4 /* NoteViewController.xib in Resources */,
 				04EDA4E42093A477003C7BEF /* Pro_image.png in Resources */,
 				04EDA4E52093A477003C7BEF /* Pro_image@3x.png in Resources */,
 				D7B378741FD7150500841A50 /* MPassCodeViewController.xib in Resources */,
+				9EB9D9602170F7EF006BDE00 /* stopBadge@3x.png in Resources */,
+				9EB9D95E2170F7EF006BDE00 /* arrowHelp@3x.png in Resources */,
 				D75339631FEEC764004647A4 /* LoginItemsViewController.xib in Resources */,
 				734FE52120896443008E3915 /* img4.jpg in Resources */,
 				D7B378621FD70F9C00841A50 /* menu-0.png in Resources */,
@@ -1143,6 +1175,7 @@
 				D7B3785D1FD70F9C00841A50 /* Arrow@3x.png in Resources */,
 				9E639C1C2142D5810041CE6D /* SPCategoryPassportViewController.xib in Resources */,
 				04EDA4DD2093A477003C7BEF /* Close@3x.png in Resources */,
+				9EB9D95D2170F7EF006BDE00 /* arrowHelp.png in Resources */,
 				04067788208E5ECA00757437 /* share_normal@2x.png in Resources */,
 				D7121FE41FE81C0B00A169B2 /* SettingsViewController.xib in Resources */,
 				D72AFD602018E479004DEFA9 /* SPBankAccountsViewController.xib in Resources */,
@@ -1218,6 +1251,7 @@
 			files = (
 				04E5C8C120BC7EAB00E1DECF /* PreviewNewViewController.m in Sources */,
 				D7121FF01FE8412E00A169B2 /* CategoryCollectionViewCell.m in Sources */,
+				9EB9D9562170F715006BDE00 /* NoDataHelpViewController.m in Sources */,
 				D7FEF6631FF025FD005B24F0 /* CategoryDetailViewController.m in Sources */,
 				9E639C162142D5700041CE6D /* SPCategoryMembershipViewController.m in Sources */,
 				D7FEF69A1FF03050005B24F0 /* LoginTable+CoreDataClass.m in Sources */,

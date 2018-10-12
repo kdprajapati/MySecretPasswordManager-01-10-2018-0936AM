@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoDataHelpViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cc6-mN-0A2">
+                    <rect key="frame" x="0.0" y="10" width="320" height="568"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data found tap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-Ze-Sev">
+                            <rect key="frame" x="0.0" y="200" width="320" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bxE-Ze-Sev" secondAttribute="height" multiplier="320:21" id="PXX-RA-gkp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopBadge.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-1s-Vfg">
+                            <rect key="frame" x="142" y="266" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="6Lh-1s-Vfg" secondAttribute="height" multiplier="1:1" id="Rzd-SB-KsQ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="NoDataHelpViewController" image="arrowHelp.png" translatesAutoresizingMaskIntoConstraints="NO" id="eO0-f6-pwi">
+                            <rect key="frame" x="237" y="42" width="75" height="150"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eO0-f6-pwi" secondAttribute="height" multiplier="5:10" id="SfP-6u-OKR"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="eO0-f6-pwi" firstAttribute="width" secondItem="cc6-mN-0A2" secondAttribute="width" multiplier="75:320" id="2K4-sq-e27"/>
+                        <constraint firstItem="bxE-Ze-Sev" firstAttribute="top" secondItem="eO0-f6-pwi" secondAttribute="bottom" constant="8" id="FDb-gi-YTC"/>
+                        <constraint firstItem="6Lh-1s-Vfg" firstAttribute="width" secondItem="cc6-mN-0A2" secondAttribute="width" multiplier="36:320" id="JHN-Ha-mMC"/>
+                        <constraint firstAttribute="trailing" secondItem="eO0-f6-pwi" secondAttribute="trailing" constant="8" id="JhR-oB-Fha"/>
+                        <constraint firstItem="bxE-Ze-Sev" firstAttribute="width" secondItem="cc6-mN-0A2" secondAttribute="width" id="Rzi-6N-NRd"/>
+                        <constraint firstItem="bxE-Ze-Sev" firstAttribute="centerX" secondItem="cc6-mN-0A2" secondAttribute="centerX" id="aTU-nC-xDS"/>
+                        <constraint firstItem="6Lh-1s-Vfg" firstAttribute="centerY" secondItem="cc6-mN-0A2" secondAttribute="centerY" id="cdD-4P-vQK"/>
+                        <constraint firstItem="6Lh-1s-Vfg" firstAttribute="centerX" secondItem="cc6-mN-0A2" secondAttribute="centerX" id="r1H-7b-Ab0"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'+' to add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-ku-BmS">
+                    <rect key="frame" x="0.0" y="242" width="320" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="f3S-ku-BmS" secondAttribute="height" multiplier="320:21" id="UM5-bQ-whk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="6Lh-1s-Vfg" firstAttribute="top" secondItem="f3S-ku-BmS" secondAttribute="bottom" constant="13" id="3pe-KT-hfx"/>
+                <constraint firstItem="cc6-mN-0A2" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="NVl-8F-bhF"/>
+                <constraint firstItem="cc6-mN-0A2" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="U5B-JE-J3a"/>
+                <constraint firstItem="cc6-mN-0A2" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="a6K-Sh-hxv"/>
+                <constraint firstItem="f3S-ku-BmS" firstAttribute="width" secondItem="cc6-mN-0A2" secondAttribute="width" id="air-71-rXG"/>
+                <constraint firstItem="f3S-ku-BmS" firstAttribute="top" secondItem="bxE-Ze-Sev" secondAttribute="bottom" constant="11" id="pzt-pb-hk9"/>
+                <constraint firstItem="f3S-ku-BmS" firstAttribute="centerX" secondItem="cc6-mN-0A2" secondAttribute="centerX" id="q1j-MT-jFI"/>
+                <constraint firstItem="cc6-mN-0A2" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="uCO-1D-dCb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowHelp.png" width="229" height="372"/>
+        <image name="stopBadge.png" width="72" height="72"/>
+    </resources>
+</document>
