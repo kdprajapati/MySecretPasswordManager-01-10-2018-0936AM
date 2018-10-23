@@ -37,6 +37,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *eightBtn;
 @property (weak, nonatomic) IBOutlet UIButton *nineBtn;
 @property (weak, nonatomic) IBOutlet UIButton *zeroBtn;
+@property (weak, nonatomic) IBOutlet UIButton *forgotBtn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
+
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *dotOne;
 @property (weak, nonatomic) IBOutlet UIImageView *dotTwo;

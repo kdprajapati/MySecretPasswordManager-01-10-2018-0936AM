@@ -26,11 +26,82 @@
     [self funSetTitleAsPerPasscodeMode];
     
     self.view.backgroundColor = [[AppData sharedAppData] funGetThemeColor];
+    
+    self.dotOne.layer.cornerRadius = self.dotOne.frame.size.height/2;
+    self.dotOne.layer.borderWidth = 2;
+    self.dotOne.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.dotOne.backgroundColor = [UIColor clearColor];
+    
+    self.dotTwo.layer.cornerRadius = self.dotTwo.frame.size.height/2;
+    self.dotTwo.layer.borderWidth = 2;
+    self.dotTwo.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.dotTwo.backgroundColor = [UIColor clearColor];
+    
+    self.dotThree.layer.cornerRadius = self.dotThree.frame.size.height/2;
+    self.dotThree.layer.borderWidth = 2;
+    self.dotThree.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.dotThree.backgroundColor = [UIColor clearColor];
+    
+    self.dotFour.layer.cornerRadius = self.dotFour.frame.size.height/2;
+    self.dotFour.layer.borderWidth = 2;
+    self.dotFour.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.dotFour.backgroundColor = [UIColor clearColor];
+    
+    self.oneBtn.layer.borderWidth = 0.3;
+    self.oneBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.twoBtn.layer.borderWidth = 0.3;
+    self.twoBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.threeBtn.layer.borderWidth = 0.3;
+    self.threeBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.fourBtn.layer.borderWidth = 0.3;
+    self.fourBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.fiveBtn.layer.borderWidth = 0.3;
+    self.fiveBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.sixBtn.layer.borderWidth = 0.3;
+    self.sixBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.sevenBtn.layer.borderWidth = 0.3;
+    self.sevenBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.eightBtn.layer.borderWidth = 0.3;
+    self.eightBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.nineBtn.layer.borderWidth = 0.3;
+    self.nineBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.zeroBtn.layer.borderWidth = 0.3;
+    self.zeroBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.forgotBtn.layer.borderWidth = 0.3;
+    self.forgotBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    self.cancelBtn.layer.borderWidth = 0.3;
+    self.cancelBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     
+}
+
+-(void)viewDidLayoutSubviews
+{
+    self.dotOne.frame = CGRectMake(self.dotOne.frame.origin.x, self.dotOne.frame.origin.y, self.dotOne.frame.size.width, self.dotOne.frame.size.width);
+    self.dotTwo.frame = CGRectMake(self.dotTwo.frame.origin.x, self.dotTwo.frame.origin.y, self.dotOne.frame.size.width, self.dotOne.frame.size.width);
+    self.dotThree.frame = CGRectMake(self.dotThree.frame.origin.x, self.dotThree.frame.origin.y, self.dotOne.frame.size.width, self.dotOne.frame.size.width);
+    self.dotFour.frame = CGRectMake(self.dotFour.frame.origin.x, self.dotFour.frame.origin.y, self.dotOne.frame.size.width, self.dotOne.frame.size.width);
+    
+    self.dotOne.layer.cornerRadius = self.dotOne.frame.size.height/2;
+    self.dotTwo.layer.cornerRadius = self.dotTwo.frame.size.height/2;
+    self.dotThree.layer.cornerRadius = self.dotThree.frame.size.height/2;
+    self.dotFour.layer.cornerRadius = self.dotFour.frame.size.height/2;
 }
 
 -(void)funSetTitleAsPerPasscodeMode
@@ -87,7 +158,8 @@
 - (IBAction)funTouchDownBtn:(id)sender {
     
     UIButton *btn = (UIButton *)sender;
-    [btn setBackgroundColor:[UIColor colorWithRed:220.0/255.0 green:212.0/255.0 blue:238.0/255.0 alpha:1.0]];
+    //e5e5e5 - 229
+    [btn setBackgroundColor:[UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1.0]];
 }
 - (IBAction)funDragOutside:(id)sender {
     
@@ -119,37 +191,34 @@
     
     switch (lengthOfCode) {
         case 0:
-            self.dotOne.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotTwo.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotThree.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotFour.image = [UIImage imageNamed:@"Paging.png"];
+            self.dotOne.backgroundColor = [UIColor clearColor];
+            self.dotTwo.backgroundColor = [UIColor clearColor];
+            self.dotThree.backgroundColor = [UIColor clearColor];
+            self.dotFour.backgroundColor = [UIColor clearColor];
             break;
-            
         case 1:
-            self.dotOne.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotTwo.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotThree.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotFour.image = [UIImage imageNamed:@"Paging.png"];
-            
+            self.dotOne.backgroundColor = [UIColor whiteColor];
+            self.dotTwo.backgroundColor = [UIColor clearColor];
+            self.dotThree.backgroundColor = [UIColor clearColor];
+            self.dotFour.backgroundColor = [UIColor clearColor];
             break;
         case 2:
-            self.dotOne.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotTwo.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotThree.image = [UIImage imageNamed:@"Paging.png"];
-            self.dotFour.image = [UIImage imageNamed:@"Paging.png"];
+            self.dotOne.backgroundColor = [UIColor whiteColor];
+            self.dotTwo.backgroundColor = [UIColor whiteColor];
+            self.dotThree.backgroundColor = [UIColor clearColor];
+            self.dotFour.backgroundColor = [UIColor clearColor];
             break;
         case 3:
-            self.dotOne.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotTwo.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotThree.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotFour.image = [UIImage imageNamed:@"Paging.png"];
+            self.dotOne.backgroundColor = [UIColor whiteColor];
+            self.dotTwo.backgroundColor = [UIColor whiteColor];
+            self.dotThree.backgroundColor = [UIColor whiteColor];
+            self.dotFour.backgroundColor = [UIColor clearColor];
             break;
         case 4:
-            self.dotOne.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotTwo.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotThree.image = [UIImage imageNamed:@"PagingActive.png"];
-            self.dotFour.image = [UIImage imageNamed:@"PagingActive.png"];
-            
+            self.dotOne.backgroundColor = [UIColor whiteColor];
+            self.dotTwo.backgroundColor = [UIColor whiteColor];
+            self.dotThree.backgroundColor = [UIColor whiteColor];
+            self.dotFour.backgroundColor = [UIColor whiteColor];
             
             [self performSelector:@selector(funCheckPasscode) withObject:nil afterDelay:0.3];
             

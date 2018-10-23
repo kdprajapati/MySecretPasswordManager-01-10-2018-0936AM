@@ -28,7 +28,7 @@
     
     self.passwordField.layer.borderWidth = 2;
     self.passwordField.layer.cornerRadius = 4;
-    self.passwordField.layer.borderColor = [UIColor colorWithRed:141/255.0 green:115/255.0  blue:198/255.0 alpha:1.0].CGColor;///141, 115, 198
+    self.passwordField.layer.borderColor = [UIColor whiteColor].CGColor;///141, 115, 198
     
     [self funSetTitleAsPerPasscodeMode];
     self.passwordField.delegate = self;

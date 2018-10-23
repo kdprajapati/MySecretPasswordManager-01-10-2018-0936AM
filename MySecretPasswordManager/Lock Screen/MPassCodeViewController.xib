@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,12 +13,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MPassCodeViewController">
             <connections>
+                <outlet property="cancelBtn" destination="n0c-fk-VKL" id="tFz-gV-iLl"/>
                 <outlet property="dotFour" destination="P2O-U4-a5k" id="PhQ-qK-nNg"/>
                 <outlet property="dotOne" destination="cjK-xK-D2c" id="zuq-Ef-eLu"/>
                 <outlet property="dotThree" destination="XWg-sf-C2i" id="rM9-mh-OsT"/>
                 <outlet property="dotTwo" destination="MGB-eX-Bis" id="GBK-ab-Qch"/>
                 <outlet property="eightBtn" destination="p63-lD-u0g" id="ExN-MB-Rsm"/>
                 <outlet property="fiveBtn" destination="gV9-3K-iaZ" id="W3Y-va-rL8"/>
+                <outlet property="forgotBtn" destination="Ree-3d-lUj" id="53v-gd-6oL"/>
                 <outlet property="fourBtn" destination="ScB-Bq-wdr" id="75t-9U-8Pp"/>
                 <outlet property="labelTitlePasscode" destination="YvA-9S-Ho5" id="fGx-EA-VJ4"/>
                 <outlet property="nineBtn" destination="X7q-AE-bAV" id="ctT-6B-hZ6"/>
@@ -374,20 +376,20 @@
                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     </variation>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p6v-Dh-ryk">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="p6v-Dh-ryk">
                     <rect key="frame" x="113.5" y="205" width="93" height="16.5"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paging.png" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-xK-D2c">
-                            <rect key="frame" x="0.0" y="0.0" width="17.5" height="16.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cjK-xK-D2c">
+                            <rect key="frame" x="0.0" y="0.0" width="16.5" height="16.5"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paging.png" translatesAutoresizingMaskIntoConstraints="NO" id="MGB-eX-Bis">
-                            <rect key="frame" x="25.5" y="0.0" width="17" height="16.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MGB-eX-Bis">
+                            <rect key="frame" x="25.5" y="0.0" width="16.5" height="16.5"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paging.png" translatesAutoresizingMaskIntoConstraints="NO" id="XWg-sf-C2i">
-                            <rect key="frame" x="50.5" y="0.0" width="17.5" height="16.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XWg-sf-C2i">
+                            <rect key="frame" x="51" y="0.0" width="16.5" height="16.5"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paging.png" translatesAutoresizingMaskIntoConstraints="NO" id="P2O-U4-a5k">
-                            <rect key="frame" x="76" y="0.0" width="17" height="16.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P2O-U4-a5k">
+                            <rect key="frame" x="76.5" y="0.0" width="16.5" height="16.5"/>
                         </imageView>
                     </subviews>
                     <constraints>
@@ -447,6 +449,5 @@
     </objects>
     <resources>
         <image name="AppIcon.png" width="220" height="220"/>
-        <image name="Paging.png" width="30" height="30"/>
     </resources>
 </document>
