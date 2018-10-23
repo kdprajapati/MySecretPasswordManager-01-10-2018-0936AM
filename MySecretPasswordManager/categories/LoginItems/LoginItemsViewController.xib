@@ -20,6 +20,7 @@
                 <outlet property="noteTxt" destination="Gj5-gf-kTp" id="HX9-ln-OeH"/>
                 <outlet property="passwordTxt" destination="85B-id-KuO" id="7jK-LM-RKB"/>
                 <outlet property="scrollViewLogin" destination="av2-5R-b5t" id="xbD-vt-Ouj"/>
+                <outlet property="showHidePinBtn" destination="XAt-Gv-9w1" id="qmw-Rj-8i3"/>
                 <outlet property="urlWebTxt" destination="zb1-Dn-fzU" id="u65-25-Jkq"/>
                 <outlet property="usernameTxt" destination="WFo-AS-l5N" id="nRi-BZ-NeD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="8pm-YA-tvB"/>
@@ -109,12 +110,23 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="85B-id-KuO">
-                                    <rect key="frame" x="20" y="35" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="35" width="249" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAt-Gv-9w1">
+                                    <rect key="frame" x="270" y="31" width="32" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="Show">
+                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="funShowHidePIN:" destination="-1" eventType="touchUpInside" id="JjP-O2-I6S"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>

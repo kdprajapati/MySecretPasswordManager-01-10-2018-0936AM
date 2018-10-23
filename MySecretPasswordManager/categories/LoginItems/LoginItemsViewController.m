@@ -255,6 +255,20 @@
 {
     [self.noteButton setTitle:text forState:UIControlStateNormal];
 }
+
+- (IBAction)funShowHidePIN:(id)sender
+{
+    if (self.passwordTxt.secureTextEntry == true)
+    {
+        self.passwordTxt.secureTextEntry = false;
+        [self.showHidePinBtn setTitle:@"Hide" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.passwordTxt.secureTextEntry = true;
+        [self.showHidePinBtn setTitle:@"Show" forState:UIControlStateNormal];
+    }
+}
 #pragma mark :- save / Set data methods
 -(void)funSetDataToViews
 {

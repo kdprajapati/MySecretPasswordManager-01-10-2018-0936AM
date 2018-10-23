@@ -792,6 +792,20 @@
     }
 }
 
+- (IBAction)funShowHidePIN:(id)sender
+{
+    if (self.txtCardPIN.secureTextEntry == true)
+    {
+        self.txtCardPIN.secureTextEntry = false;
+        [self.showHidePinBtn setTitle:@"Hide" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.txtCardPIN.secureTextEntry = true;
+        [self.showHidePinBtn setTitle:@"Show" forState:UIControlStateNormal];
+    }
+}
+
 -(void)dealloc
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];

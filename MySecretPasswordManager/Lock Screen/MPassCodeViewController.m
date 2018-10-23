@@ -189,6 +189,9 @@
             
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:self.passCodeStr forKey:@"APP_Passcode"];
+            
+            [defaults setInteger:1 forKey:AppPasscodeOnOffKey];
+
             [defaults synchronize];
             
             self.labelTitlePasscode.text = @"Passcode set successful!";

@@ -20,6 +20,7 @@
 {
     NSMutableArray *passcodeItems;
     AppDelegate *appdelegate;
+    UISwitch *switchPIN;
 }
 
 - (void)viewDidLoad {
@@ -37,6 +38,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:true animated:true];
+    [self.PasscodeSettingsTableView reloadData];
 }
 
 -(void)funAllocSectionItems
@@ -78,7 +80,10 @@
     if (indexPath.row == 0)
     {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        UISwitch *switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 6, 60, 30)];
+        if (switchPIN == nil)
+        {
+            switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 6, 60, 30)];
+        }
         [switchPIN addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
         [cell.contentView addSubview:switchPIN];
         

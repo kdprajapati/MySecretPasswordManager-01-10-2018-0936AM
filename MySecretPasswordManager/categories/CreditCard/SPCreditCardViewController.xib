@@ -20,6 +20,7 @@
                 <outlet property="noteButton" destination="mNd-L6-qPM" id="LJ2-qN-7Ef"/>
                 <outlet property="onView" destination="nER-9G-GRj" id="xLC-DL-fpC"/>
                 <outlet property="scrolViewCreditCard" destination="gVF-dO-oGu" id="dAr-WI-inz"/>
+                <outlet property="showHidePinBtn" destination="grN-gF-S7m" id="7wC-LS-T8U"/>
                 <outlet property="txtBankName" destination="9td-FM-zHZ" id="mxi-YZ-0zc"/>
                 <outlet property="txtCardHolderName" destination="ezD-kU-M43" id="0i9-o3-fZ3"/>
                 <outlet property="txtCardNumber" destination="RCm-D2-fjZ" id="j4Z-Xr-Q0N"/>
@@ -167,12 +168,23 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FzU-Ih-FGV">
-                                    <rect key="frame" x="20" y="35" width="280" height="30"/>
+                                    <rect key="frame" x="20" y="35" width="250" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grN-gF-S7m">
+                                    <rect key="frame" x="278" y="31" width="32" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <state key="normal" title="Show">
+                                        <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="funShowHidePIN:" destination="-1" eventType="touchUpInside" id="7YT-pd-OxM"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -507,7 +519,7 @@
                     <exclude reference="fk6-Xp-2MB"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="51" y="60"/>
+            <point key="canvasLocation" x="51" y="59.5"/>
         </view>
     </objects>
     <resources>

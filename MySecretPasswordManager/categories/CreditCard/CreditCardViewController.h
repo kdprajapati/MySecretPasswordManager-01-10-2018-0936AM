@@ -41,4 +41,6 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionViewPhotos;
 
 @property (weak, nonatomic) IBOutlet UIButton *noteButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *showHidePinBtn;
 @end

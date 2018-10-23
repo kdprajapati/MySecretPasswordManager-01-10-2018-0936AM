@@ -25,4 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *favouriteButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *noteButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *showHidePinBtn;
 @end

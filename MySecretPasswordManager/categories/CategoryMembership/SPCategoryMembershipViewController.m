@@ -760,6 +760,20 @@
     }
 }
 
+- (IBAction)funShowHidePIN:(id)sender
+{
+    if (self.txtMemberPassword.secureTextEntry == true)
+    {
+        self.txtMemberPassword.secureTextEntry = false;
+        [self.showHidePinBtn setTitle:@"Hide" forState:UIControlStateNormal];
+    }
+    else
+    {
+        self.txtMemberPassword.secureTextEntry = true;
+        [self.showHidePinBtn setTitle:@"Show" forState:UIControlStateNormal];
+    }
+}
+
 -(void)dealloc
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];

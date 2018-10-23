@@ -680,13 +680,11 @@
     {
         self.txtPIN.secureTextEntry = false;
         [self.showHidePinBtn setTitle:@"Hide" forState:UIControlStateNormal];
-//        [self.showHidePinBtn setImage:[UIImage imageNamed:@"hide_pin.png"] forState:UIControlStateNormal];
     }
     else
     {
         self.txtPIN.secureTextEntry = true;
         [self.showHidePinBtn setTitle:@"Show" forState:UIControlStateNormal];
-//        [self.showHidePinBtn setImage:[UIImage imageNamed:@"show_pin.png"] forState:UIControlStateNormal];
     }
 }
 
