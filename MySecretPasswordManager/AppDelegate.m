@@ -57,6 +57,7 @@
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0]];//81, 38, 171
     [[UINavigationBar appearance] setBarTintColor:[[AppData sharedAppData] funGetThemeColor]];//81, 38, 171
     
+    
 //    NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
 //    [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
 

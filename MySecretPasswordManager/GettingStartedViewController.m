@@ -62,12 +62,49 @@
     self.pageController.view.backgroundColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0]];
+//    UIImage *barImage = [self funImageFromRGB:[UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0]];
+//    [[UINavigationBar appearance] setBackIndicatorImage:barImage];
+    
 //    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.alpha = 1.0;
     self.navigationController.navigationBar.translucent = true;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
 }
+
+-(UIImage *)funImageFromRGB:(UIColor *)colorRGB
+{
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
+    [colorRGB setFill];
+    UIRectFill(rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+/*
+ static func imageFromColor(color: UIColor) -> UIImage {
+ let rect = CGRectMake(0, 0, 1, 1)
+ 
+ // create a 1 by 1 pixel context
+ UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+ color.setFill()
+ UIRectFill(rect)
+ 
+ let image = UIGraphicsGetImageFromCurrentImageContext()
+ UIGraphicsEndImageContext()
+ return image
+ 
+ }
+ */
 
 -(void)viewDidLayoutSubviews
 {

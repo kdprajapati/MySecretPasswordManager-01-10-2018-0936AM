@@ -33,6 +33,15 @@
     [self funAllocSectionItems];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+//    self.navigationController.navigationBar.barTintColor = [[AppData sharedAppData] funGetThemeColor];
+    /*UIImage *barImage = [[AppData sharedAppData] funImageFromRGB:[UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0]];
+    [self.navigationController.navigationBar setBackgroundImage:barImage
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.translucent = true;*/
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:true animated:true];

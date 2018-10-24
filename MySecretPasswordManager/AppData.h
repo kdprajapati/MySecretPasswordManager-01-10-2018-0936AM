@@ -55,4 +55,6 @@
 
 #pragma mark - Theme Helpers
 -(UIColor *)funGetThemeColor;
+
+-(UIImage *)funImageFromRGB:(UIColor *)colorRGB;
 @end

@@ -1251,4 +1251,16 @@ static AppData *_sharedAppData = nil;
     return colorTheme;
 }
 
+-(UIImage *)funImageFromRGB:(UIColor *)colorRGB
+{
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContextWithOptions(rect.size, false, 0);
+    [colorRGB setFill];
+    UIRectFill(rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end
