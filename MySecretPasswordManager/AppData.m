@@ -1345,7 +1345,23 @@ static AppData *_sharedAppData = nil;
         {
             [appData.adMob.bannerView removeFromSuperview];
         }
-        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+        
+        if (@available(iOS 11.0, *)) {
+            UIEdgeInsets insets = [[UIApplication sharedApplication] keyWindow].safeAreaInsets;
+            if (insets.bottom > 0)
+            {
+                appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height - insets.bottom,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+            }
+            else
+            {
+                appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+            }
+        } else {
+            // Fallback on earlier versions
+            appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+        }
+        
+//        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
         [viewController.view addSubview:appData.adMob.bannerView];
         [[AppData sharedAppData] showFullScreenAdonComtroller:viewController];
     }
@@ -1361,7 +1377,8 @@ static AppData *_sharedAppData = nil;
         {
             [appData.adMob.bannerView removeFromSuperview];
         }
-        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height-viewController.toolbar.frame.size.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+//        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height-viewController.toolbar.frame.size.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+        appData.adMob.bannerView.frame =CGRectMake(0,viewController.toolbar.frame.origin.y - appData.adMob.bannerView.frame.size.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
         [viewController.view addSubview:appData.adMob.bannerView];
         [[AppData sharedAppData] showFullScreenAdonComtroller:viewController];
     }

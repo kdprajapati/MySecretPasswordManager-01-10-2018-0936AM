@@ -7,6 +7,7 @@
 //
 
 #import "PreviewNewViewController.h"
+#import "AppData.h"
 
 @interface PreviewNewViewController ()
 {
@@ -36,6 +37,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:true animated:true];
+    
+     [[AppData sharedAppData] showAddAtBottom];
 }
 
 -(void)funSetupPreviewArray

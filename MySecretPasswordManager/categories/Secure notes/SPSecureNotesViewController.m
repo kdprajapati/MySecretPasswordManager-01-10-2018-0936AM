@@ -113,6 +113,8 @@
     
     [self.navigationController setToolbarHidden:false animated:true];
     
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
+    
 }
 
 #pragma mark:- keyboard notifications

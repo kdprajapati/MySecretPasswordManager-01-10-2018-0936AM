@@ -131,6 +131,8 @@
     self.scrolViewBankAC.contentSize = CGSizeMake(self.scrolViewBankAC.frame.size.width, self.onView.frame.size.height * 14.5 + 50);
     
     [self.navigationController setToolbarHidden:false animated:true];
+    
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -380,6 +382,8 @@
     categoryVC.categoryType = KCategoryBankAccount;
     
     [self.navigationController pushViewController:categoryVC animated:true];
+    
+    [[AppData sharedAppData] showAddAtBottom];
 }
 
 

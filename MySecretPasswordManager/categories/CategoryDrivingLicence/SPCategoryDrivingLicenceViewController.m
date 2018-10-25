@@ -91,6 +91,8 @@
 {
     self.scrolViewDrivingLicence.contentSize = CGSizeMake(self.scrolViewDrivingLicence.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
     [self.navigationController setToolbarHidden:false animated:true];
+    
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
 }
 
 /**

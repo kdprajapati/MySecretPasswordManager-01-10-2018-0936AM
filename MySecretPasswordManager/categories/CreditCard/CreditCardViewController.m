@@ -146,6 +146,8 @@
     self.scrolViewCreditCard.contentSize = CGSizeMake(self.scrolViewCreditCard.frame.size.width, self.onView.frame.size.height * 15.5 + 50);
     [self.navigationController setToolbarHidden:false animated:true];
     
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated

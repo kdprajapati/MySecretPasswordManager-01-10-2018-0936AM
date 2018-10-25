@@ -260,6 +260,7 @@
         default:
             break;
     }
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
     
 }
 

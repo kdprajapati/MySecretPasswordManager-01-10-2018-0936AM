@@ -91,6 +91,8 @@
 {
     self.scrolViewPassport.contentSize = CGSizeMake(self.scrolViewPassport.frame.size.width, self.onView.frame.size.height * 13 + 50);
     [self.navigationController setToolbarHidden:false animated:true];
+    
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
 }
 
 /**

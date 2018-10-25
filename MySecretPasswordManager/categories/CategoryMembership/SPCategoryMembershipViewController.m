@@ -144,6 +144,8 @@
     
     [self.navigationController setToolbarHidden:false animated:true];
     
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
+    
 }
 
 -(void)viewWillDisappear:(BOOL)animated

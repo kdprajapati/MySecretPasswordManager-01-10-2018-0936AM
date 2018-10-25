@@ -184,7 +184,7 @@
         default:
             break;
     }
-    [[AppData sharedAppData] showAddOnTopOfToolBar];
+    [[AppData sharedAppData] performSelector:@selector(showAddOnTopOfToolBar) withObject:nil afterDelay:0.5];
 //BankAccountsViewController.m
 }
 
@@ -369,6 +369,7 @@
         default:
             break;
     }
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
     
 }
 
