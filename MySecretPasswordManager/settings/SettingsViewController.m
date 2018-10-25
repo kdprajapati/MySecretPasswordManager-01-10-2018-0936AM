@@ -17,7 +17,7 @@
 #import "ThemeViewController.h"
 #import "PasswordSettingsViewController.h"
 #import "PasscodeSettingsViewController.h"
-
+#import "InAppPurchase.h"
 @interface SettingsViewController ()
 {
     NSMutableArray *securityItems;
@@ -59,6 +59,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:true animated:true];
+    [[AppData sharedAppData] showAddAtBottom];
 }
 
 -(NSString *)funReturnAskPasscodeString
@@ -236,9 +237,25 @@
     {
         [self funOpenThemeViewController];
     }
-    
+    else if (indexPath.section == 1 && indexPath.row == 1)
+    {
+        [self funRemoveAd];
+    }
 }
-
+-(void)inAppPurchaseDoneForID:(NSString*)strInAppItemID
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"isRemoveAdPurchased"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [AppData sharedAppData].isRemoveAdPurchased=YES;
+    [[AppData sharedAppData].adMob hideAllAds];
+    [AppData sharedAppData].adMob=nil;
+}
+-(void)funRemoveAd
+{
+    InAppPurchase *inAppPurchase=[InAppPurchase sharedInAppPurchase];
+    inAppPurchase.delegate=self;
+    [inAppPurchase purchaseProduct:[inAppPurchase getProductWithID:InAppId]];
+}
 -(void)funOpenPasswordSettingsViewController
 {
     PasswordSettingsViewController *passwordSettingsVc = [[PasswordSettingsViewController alloc]initWithNibName:@"PasswordSettingsViewController" bundle:[NSBundle mainBundle]];

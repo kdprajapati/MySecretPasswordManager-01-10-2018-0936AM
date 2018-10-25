@@ -66,7 +66,9 @@
     [self funHideShowNoData];
     
     [self.navigationController setToolbarHidden:true animated:true];
+    [self.navigationController setToolbarHidden:true animated:true];
     
+    [[AppData sharedAppData] showAddAtBottom];
 }
 
 -(void)funHideShowNoData

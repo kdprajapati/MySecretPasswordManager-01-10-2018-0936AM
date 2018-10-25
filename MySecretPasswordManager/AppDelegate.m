@@ -48,7 +48,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-    AppData *appData = [AppData sharedAppData];
+    
     isLaunching = false;
     
 
@@ -80,6 +80,7 @@
     nav.navigationBar.backgroundColor = [UIColor clearColor];
     self.window.rootViewController = nav;
     
+   AppData *appData = [AppData sharedAppData];
     
     self.pascodeWindow = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     

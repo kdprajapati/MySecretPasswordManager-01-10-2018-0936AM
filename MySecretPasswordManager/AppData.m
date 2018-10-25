@@ -25,10 +25,11 @@
 #import "Reachability.h"
 #import "protocol.h"
 #import "FBEncryptorAES.h"
-
+#import "InAppPurchase.h"
 @implementation AppData
 {
     NSArray *arrayCategoryDirFolderName;
+    InAppPurchase *inAppPurchase;
 }
 @synthesize userAppPassword;
 
@@ -55,6 +56,19 @@ static AppData *_sharedAppData = nil;
     if((self=[super init]))
     {
         appdelegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+        
+        NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+        self.isRemoveAdPurchased=[[userdefaults objectForKey:@"isRemoveAdPurchased"] boolValue];
+        
+        self.appLaunchCount=[[userdefaults objectForKey:@"AppLaunchCount"] intValue];
+        self.appLaunchCount++;
+        [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
+        [userdefaults synchronize];
+        if(!self.isRemoveAdPurchased)
+        {
+            self.adMob=[AdMob sharedAdMob];
+        }
+        [InAppPurchase sharedInAppPurchase];
         
         arrayCategoryDirFolderName = [[NSArray alloc] initWithObjects:@"BankAccountPhotos",@"CreditCardPhotos",@"LoginPhotos",@"IdentityPhotos",@"SecureNotesPhotos",@"DrivingLicence",@"Membership",@"Passport", nil];
         
@@ -1177,6 +1191,14 @@ static AppData *_sharedAppData = nil;
     [self.viewActivityLoaderBG removeFromSuperview];
     
 }
+-(void)hideActivityLoderAfterSomeTime
+{
+    if(!self.activityLoaderView.hidden)
+    {
+        [self hideActivityLoader];
+        [self showAlertWithMessage:@"We are getting some network error, please check your network connection" andTitle:@"Sorry!"];
+    }
+}
 -(BOOL)isNetAvailable
 {
     Reachability *reach = [Reachability reachabilityForInternetConnection];
@@ -1193,6 +1215,22 @@ static AppData *_sharedAppData = nil;
         return YES;
     }
     
+}
+-(void)alertForNotificationOnViewController:(UIViewController*) viewController
+{
+    
+    UIAlertController * alert=   [UIAlertController alertControllerWithTitle:[self.dicNotificationInfo objectForKey:@"Quotes_Title"] message:[self.dicNotificationInfo objectForKey:@"Quotes_Detail"] preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* Done = [UIAlertAction
+                           actionWithTitle:@"Done"
+                           style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * action)
+                           {
+                               [alert dismissViewControllerAnimated:YES completion:nil];
+                               
+                           }];
+    [alert addAction:Done];
+    [viewController presentViewController:alert animated:YES completion:nil];
 }
 -(void)showAlertWithMessage:(NSString *)msg andTitle:(NSString *)strTitle
 {
@@ -1219,7 +1257,139 @@ static AppData *_sharedAppData = nil;
     
     [topViewController presentViewController:alert animated:YES completion:nil];
 }
-
+-(void)showAlertForRateUsOnViewController:(UIViewController*) viewController
+{
+    UIAlertController * alert= [UIAlertController alertControllerWithTitle:@"Rate our App" message:@"If you Love our App, please take a moment to rate it." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Rate"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action)
+                         {
+                             [self rateUs];
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Not Now"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    //    UIViewController *topViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    //    while (topViewController.presentedViewController)
+    //    {
+    //        topViewController = topViewController.presentedViewController;
+    //    }
+    [viewController presentViewController:alert animated:YES completion:nil];
+}
+-(void)rateUs
+{
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.3)
+    {
+        
+    }
+    else
+    {
+        NSString *templateReviewURL = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=APP_ID";
+        NSString *templateReviewURLiOS7 = @"itms-apps://itunes.apple.com/app/idAPP_ID";
+        NSString *templateReviewURLiOS8 = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=APP_ID&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software";
+        
+        //ios7 before
+        NSString *reviewURL = [templateReviewURL stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@",AppId]];
+        
+        // iOS 7 needs a different templateReviewURL @see https://github.com/arashpayan/appirater/issues/131
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
+        {
+            reviewURL = [templateReviewURLiOS7 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@",AppId]];
+        }
+        // iOS 8 needs a different templateReviewURL also @see https://github.com/arashpayan/appirater/issues/182
+        else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+        {
+            reviewURL = [templateReviewURLiOS8 stringByReplacingOccurrencesOfString:@"APP_ID" withString:[NSString stringWithFormat:@"%@",AppId]];
+        }
+        
+        // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL]];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL] options:@{} completionHandler:^(BOOL success)
+         {
+             if(success)
+             {
+                 NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+                 [userdefaults setObject:[NSNumber numberWithInt:1] forKey:@"isAppRateDone"];
+                 [userdefaults synchronize];
+             }
+             else
+             {
+                 
+             }
+         }];
+    }
+    
+}
+#pragma mark - AdMob
+-(void)showAddAtBottom
+{
+    AppData *appData=[AppData sharedAppData];
+    AppDelegate *appdelegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+    UINavigationController *viewController=(UINavigationController *)[appdelegate.window rootViewController];
+    if(!appData.isRemoveAdPurchased)
+    {
+        if(appData.adMob.bannerView.superview)
+        {
+            [appData.adMob.bannerView removeFromSuperview];
+        }
+        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+        [viewController.view addSubview:appData.adMob.bannerView];
+        [[AppData sharedAppData] showFullScreenAdonComtroller:viewController];
+    }
+}
+-(void)showAddOnTopOfToolBar
+{
+    AppData *appData=[AppData sharedAppData];
+    AppDelegate *appdelegate=(AppDelegate*)[[UIApplication sharedApplication]delegate];
+    UINavigationController *viewController=(UINavigationController *)[appdelegate.window rootViewController];
+    if(!appData.isRemoveAdPurchased)
+    {
+        if(appData.adMob.bannerView.superview)
+        {
+            [appData.adMob.bannerView removeFromSuperview];
+        }
+        appData.adMob.bannerView.frame =CGRectMake(0,viewController.view.frame.size.height-appData.adMob.adSize.height-viewController.toolbar.frame.size.height,appData.adMob.bannerView.frame.size.width,appData.adMob.adSize.height);
+        [viewController.view addSubview:appData.adMob.bannerView];
+        [[AppData sharedAppData] showFullScreenAdonComtroller:viewController];
+    }
+}
+-(BOOL)showFullScreenAdonComtroller:(UIViewController*)controller
+{
+    if(!self.isRemoveAdPurchased)
+    {
+        self.admobFullScreenDislplayCount++;
+        
+        if(self.admobFullScreenDislplayCount%AdMobFullScreenRepeatCount==0)
+        {
+            if(self.adMob.interstitial.isReady)
+            {
+                [self.adMob showFullScreenAdonComtroller:controller];
+            }
+            return  YES;
+        }
+        else
+        {
+            return  NO;
+        }
+    }
+    else
+    {
+        return NO;
+    }
+}
 #pragma mark - Theme Helpers
 -(UIColor *)funGetThemeColor
 {

@@ -16,6 +16,7 @@
 #import "FavouriteViewController.h"
 //#import "InApp/IAPHelper.swift"
 #import "MySecretPasswordManager-Swift.h"
+#import "AppData.h"
 @interface ViewController ()
 
 @end
@@ -82,6 +83,8 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
 {
     [self.navigationController setToolbarHidden:false animated:true];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
+    
 }
 
 - (void)orientationChanged:(NSNotification *)notification{
@@ -212,9 +215,9 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     categoryVC.categoryType = (int)indexPath.row+1;
     categoryVC.title = [mainMenuItems objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:categoryVC animated:true];
+    [[AppData sharedAppData] showAddAtBottom];
+    
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

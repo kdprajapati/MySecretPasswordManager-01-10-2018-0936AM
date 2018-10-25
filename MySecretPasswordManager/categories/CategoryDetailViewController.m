@@ -104,6 +104,8 @@
     [self funHideShowNoData];
     
     [self.navigationController setToolbarHidden:true animated:true];
+    
+    [[AppData sharedAppData] showAddAtBottom];
 }
 
 -(void)funHideShowNoData
@@ -182,8 +184,7 @@
         default:
             break;
     }
-    
-
+    [[AppData sharedAppData] showAddOnTopOfToolBar];
 //BankAccountsViewController.m
 }
 

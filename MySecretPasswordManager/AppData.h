@@ -8,6 +8,7 @@
 
 #import"AppDelegate.h"
 #import "protocol.h"
+#import "AdMob/AdMob.h"
 @interface AppData : NSObject
 {
     AppDelegate *appdelegate;
@@ -17,9 +18,24 @@
 #define AppPasscodeOnOffKey @"PasscodeOnOffStatus"
 #define AppPasscodeKey @"APP_Passcode"
 
+@property(assign,nonatomic)int appLaunchCount,admobFullScreenDislplayCount,notificationQuatesIndex;
+@property (assign, nonatomic)BOOL isChalisaPlaying;
+@property (strong, nonatomic,nullable)AdMob *adMob;
+@property (assign, nonatomic)BOOL isRemoveAdPurchased,isLaunchFromNotiFication;
+@property (strong, nonatomic,nullable) UIActivityIndicatorView   *activityLoaderView;
+@property (strong, nonatomic,nullable) UIView   *viewActivityLoaderBG;
+@property(retain,nullable)NSDictionary *dictChalisaURL,*dicQuates,*dicNotificationInfo;
 
-@property (strong, nonatomic) UIActivityIndicatorView   *activityLoaderView;
-@property (strong, nonatomic) UIView   *viewActivityLoaderBG;
++(nullable AppData *)sharedAppData;
+-(void)showAlertWithMessage:(nullable NSString *)msg andTitle:(nullable NSString *)strTitle;
+
+-(void)hideActivityLoderAfterSomeTime;
+
+-(BOOL)showFullScreenAdonComtroller:(nullable UIViewController*)controller;
+-(void)showAlertForRateUsOnViewController:(nullable UIViewController*) viewController;
+-(void)rateUs;
+-(void)alertForNotificationOnViewController:(UIViewController*) viewController;
+
 @property (strong, nonatomic) NSMutableDictionary   *dictAllCategoryData;
 @property (strong, nonatomic) NSString   *userAppPassword;
 @property (assign) int numOfTimeWrong;
@@ -42,10 +58,6 @@
 #pragma mark - Delete objects
 -(void)funDeleteCategoryData:(int)categoryType recordIDToDelete:(NSString *)recordIDToDelete;
 
--(void)showAlertWithMessage:(NSString *)msg andTitle:(NSString *)strTitle;
-
-+(AppData *)sharedAppData;
-
 #pragma mark - Encryption/Decryption methods
 - (NSString *)encrypt:(NSString *)string withKey:(NSString *)Key;
 - (NSString *)decrypt:(NSString *)string withKey:(NSString *)Key;
@@ -57,4 +69,8 @@
 -(UIColor *)funGetThemeColor;
 
 -(UIImage *)funImageFromRGB:(UIColor *)colorRGB;
+
+
+-(void)showAddOnTopOfToolBar;
+-(void)showAddAtBottom;
 @end
