@@ -76,6 +76,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     ViewController *mainVC = (ViewController *)[sb instantiateViewControllerWithIdentifier:@"ViewController"];
+    //fhg
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainVC];
     nav.navigationBar.backgroundColor = [UIColor clearColor];
     self.window.rootViewController = nav;
