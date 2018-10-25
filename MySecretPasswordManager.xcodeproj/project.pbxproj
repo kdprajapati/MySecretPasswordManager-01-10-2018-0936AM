@@ -45,21 +45,21 @@
 		04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDA4D82093A477003C7BEF /* PageChildViewController.m */; };
 		04EDA4E92093A477003C7BEF /* PageChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D92093A477003C7BEF /* PageChildViewController.xib */; };
 		0DAEF063216540E50090A1CC /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAEF062216540E50090A1CC /* test.m */; };
-		0DDA617221823A440089C577 /* ramayn-ad_ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616021823A440089C577 /* ramayn-ad_ipad.jpg */; };
-		0DDA617321823A440089C577 /* ramayn-ad_iphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616121823A440089C577 /* ramayn-ad_iphone5.jpg */; };
-		0DDA617421823A440089C577 /* ramayn-ad_iphone6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616221823A440089C577 /* ramayn-ad_iphone6.jpg */; };
-		0DDA617521823A440089C577 /* ramayn-ad_iphone6plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616321823A440089C577 /* ramayn-ad_iphone6plus.jpg */; };
-		0DDA617621823A440089C577 /* ramayn-ad_ratina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616421823A440089C577 /* ramayn-ad_ratina.jpg */; };
-		0DDA617721823A440089C577 /* AdMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA616621823A440089C577 /* AdMob.m */; };
-		0DDA617821823A440089C577 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616821823A440089C577 /* FirebaseAnalytics.framework */; };
-		0DDA617921823A440089C577 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616921823A440089C577 /* FirebaseInstanceID.framework */; };
-		0DDA617A21823A440089C577 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616A21823A440089C577 /* GoogleInterchangeUtilities.framework */; };
-		0DDA617B21823A440089C577 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616B21823A440089C577 /* GoogleMobileAds.framework */; };
-		0DDA617C21823A440089C577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA616C21823A440089C577 /* GoogleService-Info.plist */; };
-		0DDA617D21823A440089C577 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616D21823A440089C577 /* GoogleSymbolUtilities.framework */; };
-		0DDA617E21823A440089C577 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA616E21823A440089C577 /* GoogleUtilities.framework */; };
-		0DDA617F21823A440089C577 /* MyAppBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA617121823A440089C577 /* MyAppBanner.m */; };
 		0DDA618521823A4B0089C577 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA618321823A4B0089C577 /* InAppPurchase.m */; };
+		0DDA619D21823B1B0089C577 /* ramayn-ad_ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA618B21823B1B0089C577 /* ramayn-ad_ipad.jpg */; };
+		0DDA619E21823B1B0089C577 /* ramayn-ad_iphone5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA618C21823B1B0089C577 /* ramayn-ad_iphone5.jpg */; };
+		0DDA619F21823B1B0089C577 /* ramayn-ad_iphone6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA618D21823B1B0089C577 /* ramayn-ad_iphone6.jpg */; };
+		0DDA61A021823B1B0089C577 /* ramayn-ad_iphone6plus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA618E21823B1B0089C577 /* ramayn-ad_iphone6plus.jpg */; };
+		0DDA61A121823B1B0089C577 /* ramayn-ad_ratina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA618F21823B1B0089C577 /* ramayn-ad_ratina.jpg */; };
+		0DDA61A221823B1B0089C577 /* AdMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA619121823B1B0089C577 /* AdMob.m */; };
+		0DDA61A321823B1B0089C577 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619321823B1B0089C577 /* FirebaseAnalytics.framework */; };
+		0DDA61A421823B1B0089C577 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619421823B1B0089C577 /* FirebaseInstanceID.framework */; };
+		0DDA61A521823B1B0089C577 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619521823B1B0089C577 /* GoogleInterchangeUtilities.framework */; };
+		0DDA61A621823B1B0089C577 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619621823B1B0089C577 /* GoogleMobileAds.framework */; };
+		0DDA61A721823B1B0089C577 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DDA619721823B1B0089C577 /* GoogleService-Info.plist */; };
+		0DDA61A821823B1B0089C577 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619821823B1B0089C577 /* GoogleSymbolUtilities.framework */; };
+		0DDA61A921823B1B0089C577 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDA619921823B1B0089C577 /* GoogleUtilities.framework */; };
+		0DDA61AA21823B1B0089C577 /* MyAppBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA619C21823B1B0089C577 /* MyAppBanner.m */; };
 		0DF475A8214E166B00091276 /* DrivingLicenceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475A7214E166B00091276 /* DrivingLicenceObject.m */; };
 		0DF475AB214E168600091276 /* MembershipObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475AA214E168600091276 /* MembershipObject.m */; };
 		0DF475AE214E169A00091276 /* PassportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF475AD214E169A00091276 /* PassportObject.m */; };
@@ -264,26 +264,26 @@
 		04EDA4D82093A477003C7BEF /* PageChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageChildViewController.m; sourceTree = "<group>"; };
 		04EDA4D92093A477003C7BEF /* PageChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageChildViewController.xib; sourceTree = "<group>"; };
 		0DAEF062216540E50090A1CC /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
-		0DDA616021823A440089C577 /* ramayn-ad_ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_ipad.jpg"; sourceTree = "<group>"; };
-		0DDA616121823A440089C577 /* ramayn-ad_iphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone5.jpg"; sourceTree = "<group>"; };
-		0DDA616221823A440089C577 /* ramayn-ad_iphone6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone6.jpg"; sourceTree = "<group>"; };
-		0DDA616321823A440089C577 /* ramayn-ad_iphone6plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone6plus.jpg"; sourceTree = "<group>"; };
-		0DDA616421823A440089C577 /* ramayn-ad_ratina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_ratina.jpg"; sourceTree = "<group>"; };
-		0DDA616521823A440089C577 /* AdMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMob.h; sourceTree = "<group>"; };
-		0DDA616621823A440089C577 /* AdMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdMob.m; sourceTree = "<group>"; };
-		0DDA616721823A440089C577 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		0DDA616821823A440089C577 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		0DDA616921823A440089C577 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		0DDA616A21823A440089C577 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		0DDA616B21823A440089C577 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		0DDA616C21823A440089C577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0DDA616D21823A440089C577 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		0DDA616E21823A440089C577 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
-		0DDA616F21823A440089C577 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		0DDA617021823A440089C577 /* MyAppBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppBanner.h; sourceTree = "<group>"; };
-		0DDA617121823A440089C577 /* MyAppBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppBanner.m; sourceTree = "<group>"; };
 		0DDA618221823A4B0089C577 /* InAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchase.h; sourceTree = "<group>"; };
 		0DDA618321823A4B0089C577 /* InAppPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchase.m; sourceTree = "<group>"; };
+		0DDA618B21823B1B0089C577 /* ramayn-ad_ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_ipad.jpg"; sourceTree = "<group>"; };
+		0DDA618C21823B1B0089C577 /* ramayn-ad_iphone5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone5.jpg"; sourceTree = "<group>"; };
+		0DDA618D21823B1B0089C577 /* ramayn-ad_iphone6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone6.jpg"; sourceTree = "<group>"; };
+		0DDA618E21823B1B0089C577 /* ramayn-ad_iphone6plus.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_iphone6plus.jpg"; sourceTree = "<group>"; };
+		0DDA618F21823B1B0089C577 /* ramayn-ad_ratina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ramayn-ad_ratina.jpg"; sourceTree = "<group>"; };
+		0DDA619021823B1B0089C577 /* AdMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMob.h; sourceTree = "<group>"; };
+		0DDA619121823B1B0089C577 /* AdMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdMob.m; sourceTree = "<group>"; };
+		0DDA619221823B1B0089C577 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		0DDA619321823B1B0089C577 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		0DDA619421823B1B0089C577 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		0DDA619521823B1B0089C577 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		0DDA619621823B1B0089C577 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		0DDA619721823B1B0089C577 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DDA619821823B1B0089C577 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		0DDA619921823B1B0089C577 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		0DDA619A21823B1B0089C577 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		0DDA619B21823B1B0089C577 /* MyAppBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAppBanner.h; sourceTree = "<group>"; };
+		0DDA619C21823B1B0089C577 /* MyAppBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAppBanner.m; sourceTree = "<group>"; };
 		0DF475A6214E166B00091276 /* DrivingLicenceObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrivingLicenceObject.h; sourceTree = "<group>"; };
 		0DF475A7214E166B00091276 /* DrivingLicenceObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrivingLicenceObject.m; sourceTree = "<group>"; };
 		0DF475A9214E168600091276 /* MembershipObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MembershipObject.h; sourceTree = "<group>"; };
@@ -510,13 +510,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DDA617D21823A440089C577 /* GoogleSymbolUtilities.framework in Frameworks */,
-				0DDA617821823A440089C577 /* FirebaseAnalytics.framework in Frameworks */,
-				0DDA617A21823A440089C577 /* GoogleInterchangeUtilities.framework in Frameworks */,
-				0DDA617B21823A440089C577 /* GoogleMobileAds.framework in Frameworks */,
-				0DDA617921823A440089C577 /* FirebaseInstanceID.framework in Frameworks */,
+				0DDA61A821823B1B0089C577 /* GoogleSymbolUtilities.framework in Frameworks */,
+				0DDA61A321823B1B0089C577 /* FirebaseAnalytics.framework in Frameworks */,
+				0DDA61A521823B1B0089C577 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				0DDA61A621823B1B0089C577 /* GoogleMobileAds.framework in Frameworks */,
+				0DDA61A421823B1B0089C577 /* FirebaseInstanceID.framework in Frameworks */,
 				D7D4D6122014E4F10040C48E /* UIKit.framework in Frameworks */,
-				0DDA617E21823A440089C577 /* GoogleUtilities.framework in Frameworks */,
+				0DDA61A921823B1B0089C577 /* GoogleUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,39 +556,6 @@
 			path = "images-help";
 			sourceTree = "<group>";
 		};
-		0DDA615E21823A440089C577 /* AdMob */ = {
-			isa = PBXGroup;
-			children = (
-				0DDA615F21823A440089C577 /* Ad_images */,
-				0DDA616521823A440089C577 /* AdMob.h */,
-				0DDA616621823A440089C577 /* AdMob.m */,
-				0DDA616721823A440089C577 /* Firebase.h */,
-				0DDA616821823A440089C577 /* FirebaseAnalytics.framework */,
-				0DDA616921823A440089C577 /* FirebaseInstanceID.framework */,
-				0DDA616A21823A440089C577 /* GoogleInterchangeUtilities.framework */,
-				0DDA616B21823A440089C577 /* GoogleMobileAds.framework */,
-				0DDA616C21823A440089C577 /* GoogleService-Info.plist */,
-				0DDA616D21823A440089C577 /* GoogleSymbolUtilities.framework */,
-				0DDA616E21823A440089C577 /* GoogleUtilities.framework */,
-				0DDA616F21823A440089C577 /* module.modulemap */,
-				0DDA617021823A440089C577 /* MyAppBanner.h */,
-				0DDA617121823A440089C577 /* MyAppBanner.m */,
-			);
-			path = AdMob;
-			sourceTree = "<group>";
-		};
-		0DDA615F21823A440089C577 /* Ad_images */ = {
-			isa = PBXGroup;
-			children = (
-				0DDA616021823A440089C577 /* ramayn-ad_ipad.jpg */,
-				0DDA616121823A440089C577 /* ramayn-ad_iphone5.jpg */,
-				0DDA616221823A440089C577 /* ramayn-ad_iphone6.jpg */,
-				0DDA616321823A440089C577 /* ramayn-ad_iphone6plus.jpg */,
-				0DDA616421823A440089C577 /* ramayn-ad_ratina.jpg */,
-			);
-			path = Ad_images;
-			sourceTree = "<group>";
-		};
 		0DDA618021823A4B0089C577 /* InApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +563,39 @@
 				0DDA618321823A4B0089C577 /* InAppPurchase.m */,
 			);
 			path = InApp;
+			sourceTree = "<group>";
+		};
+		0DDA618921823B1B0089C577 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA618A21823B1B0089C577 /* Ad_images */,
+				0DDA619021823B1B0089C577 /* AdMob.h */,
+				0DDA619121823B1B0089C577 /* AdMob.m */,
+				0DDA619221823B1B0089C577 /* Firebase.h */,
+				0DDA619321823B1B0089C577 /* FirebaseAnalytics.framework */,
+				0DDA619421823B1B0089C577 /* FirebaseInstanceID.framework */,
+				0DDA619521823B1B0089C577 /* GoogleInterchangeUtilities.framework */,
+				0DDA619621823B1B0089C577 /* GoogleMobileAds.framework */,
+				0DDA619721823B1B0089C577 /* GoogleService-Info.plist */,
+				0DDA619821823B1B0089C577 /* GoogleSymbolUtilities.framework */,
+				0DDA619921823B1B0089C577 /* GoogleUtilities.framework */,
+				0DDA619A21823B1B0089C577 /* module.modulemap */,
+				0DDA619B21823B1B0089C577 /* MyAppBanner.h */,
+				0DDA619C21823B1B0089C577 /* MyAppBanner.m */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+		0DDA618A21823B1B0089C577 /* Ad_images */ = {
+			isa = PBXGroup;
+			children = (
+				0DDA618B21823B1B0089C577 /* ramayn-ad_ipad.jpg */,
+				0DDA618C21823B1B0089C577 /* ramayn-ad_iphone5.jpg */,
+				0DDA618D21823B1B0089C577 /* ramayn-ad_iphone6.jpg */,
+				0DDA618E21823B1B0089C577 /* ramayn-ad_iphone6plus.jpg */,
+				0DDA618F21823B1B0089C577 /* ramayn-ad_ratina.jpg */,
+			);
+			path = Ad_images;
 			sourceTree = "<group>";
 		};
 		0DF475A5214E121900091276 /* core data classes */ = {
@@ -880,8 +880,8 @@
 		D7B378261FD7079B00841A50 /* MySecretPasswordManager */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA618921823B1B0089C577 /* AdMob */,
 				0DDA618021823A4B0089C577 /* InApp */,
-				0DDA615E21823A440089C577 /* AdMob */,
 				04EDA4C62093A477003C7BEF /* First Time Flow */,
 				D71C4EA3203F2D4B0088185A /* Reachability.m */,
 				D71C4EA4203F2D4B0088185A /* Reachability.h */,
@@ -1237,14 +1237,14 @@
 				D7CF16051FFFFCE9005D982F /* CreditCardViewController.xib in Resources */,
 				D7FEF6641FF025FD005B24F0 /* CategoryDetailViewController.xib in Resources */,
 				04173258207D01F500DF4F33 /* share_category.png in Resources */,
-				0DDA617421823A440089C577 /* ramayn-ad_iphone6.jpg in Resources */,
+				0DDA619F21823B1B0089C577 /* ramayn-ad_iphone6.jpg in Resources */,
 				04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */,
 				043B756520769F6B0059C8C5 /* SPIdentityViewController.xib in Resources */,
 				D71220081FE842D200A169B2 /* Category_13.png in Resources */,
-				0DDA617321823A440089C577 /* ramayn-ad_iphone5.jpg in Resources */,
+				0DDA619E21823B1B0089C577 /* ramayn-ad_iphone5.jpg in Resources */,
 				04067780208E5ECA00757437 /* delete_highlighted@2x.png in Resources */,
 				D7727B891FD85B8200AFD405 /* ViewOff@3x.png in Resources */,
-				0DDA617621823A440089C577 /* ramayn-ad_ratina.jpg in Resources */,
+				0DDA61A121823B1B0089C577 /* ramayn-ad_ratina.jpg in Resources */,
 				D71220121FE842D200A169B2 /* Category_9.png in Resources */,
 				0406777F208E5ECA00757437 /* delete_highlighted.png in Resources */,
 				9E639C172142D5700041CE6D /* SPCategoryMembershipViewController.xib in Resources */,
@@ -1254,7 +1254,7 @@
 				04EDA4DD2093A477003C7BEF /* Close@3x.png in Resources */,
 				9EB9D95D2170F7EF006BDE00 /* arrowHelp.png in Resources */,
 				04067788208E5ECA00757437 /* share_normal@2x.png in Resources */,
-				0DDA617521823A440089C577 /* ramayn-ad_iphone6plus.jpg in Resources */,
+				0DDA61A021823B1B0089C577 /* ramayn-ad_iphone6plus.jpg in Resources */,
 				D7121FE41FE81C0B00A169B2 /* SettingsViewController.xib in Resources */,
 				D72AFD602018E479004DEFA9 /* SPBankAccountsViewController.xib in Resources */,
 				9EBE82BC216BD0210001EC9A /* check_White.png in Resources */,
@@ -1280,7 +1280,7 @@
 				734FE51E20896443008E3915 /* img1.jpg in Resources */,
 				D7727B831FD85A7800AFD405 /* textField@3x.png in Resources */,
 				D7727B7C1FD85A7800AFD405 /* AppIcon.png in Resources */,
-				0DDA617C21823A440089C577 /* GoogleService-Info.plist in Resources */,
+				0DDA61A721823B1B0089C577 /* GoogleService-Info.plist in Resources */,
 				73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */,
 				D7B3785B1FD70F9C00841A50 /* Add@3x.png in Resources */,
 				9E50FDB2216E60BE00E8AE54 /* PasscodeSettingsViewController.xib in Resources */,
@@ -1304,7 +1304,7 @@
 				D712200D1FE842D200A169B2 /* Category_4.png in Resources */,
 				04EDA4DC2093A477003C7BEF /* Close.png in Resources */,
 				D7121FE91FE83DC100A169B2 /* CategoriesViewController.xib in Resources */,
-				0DDA617221823A440089C577 /* ramayn-ad_ipad.jpg in Resources */,
+				0DDA619D21823B1B0089C577 /* ramayn-ad_ipad.jpg in Resources */,
 				9EF59890212B411200873A87 /* ImageShowViewController.xib in Resources */,
 				D71220051FE842D200A169B2 /* Category_10.png in Resources */,
 				734FE52020896443008E3915 /* img3.jpg in Resources */,
@@ -1350,6 +1350,7 @@
 				9EF5988F212B411200873A87 /* ImageShowViewController.m in Sources */,
 				D7C7E10220336AA3003AB467 /* SecureNoteObject.m in Sources */,
 				D7FEF69B1FF03050005B24F0 /* LoginTable+CoreDataProperties.m in Sources */,
+				0DDA61AA21823B1B0089C577 /* MyAppBanner.m in Sources */,
 				D7121FE31FE81C0B00A169B2 /* SettingsViewController.m in Sources */,
 				D7C7E0F3203365C7003AB467 /* Identity+CoreDataProperties.m in Sources */,
 				D72AFD6320190B2C004DEFA9 /* BankAccountObject.m in Sources */,
@@ -1358,12 +1359,10 @@
 				0DF475A8214E166B00091276 /* DrivingLicenceObject.m in Sources */,
 				D7C0C8F01FEAD76B0014EEF9 /* GettingStartedViewController.m in Sources */,
 				0DF475AE214E169A00091276 /* PassportObject.m in Sources */,
-				0DDA617F21823A440089C577 /* MyAppBanner.m in Sources */,
 				D7C7E0F1203365C7003AB467 /* Login+CoreDataProperties.m in Sources */,
 				D7FEF65E1FF025D9005B24F0 /* BankAccountsViewController.m in Sources */,
 				9E22185F216525000099A1A4 /* NoteViewController.m in Sources */,
 				043B756420769F6B0059C8C5 /* SPIdentityViewController.m in Sources */,
-				0DDA617721823A440089C577 /* AdMob.m in Sources */,
 				0DDA618521823A4B0089C577 /* InAppPurchase.m in Sources */,
 				D7C7E0F2203365C7003AB467 /* Identity+CoreDataClass.m in Sources */,
 				D77C0B622003EF7200BC25C2 /* JSDatePickerCell.m in Sources */,
@@ -1388,6 +1387,7 @@
 				D7C7E0FF20336A8E003AB467 /* LoginPasswordObject.m in Sources */,
 				D7491371205A9B160060FE38 /* FBEncryptorAES.m in Sources */,
 				D7491372205A9B160060FE38 /* NSData+Base64.m in Sources */,
+				0DDA61A221823B1B0089C577 /* AdMob.m in Sources */,
 				04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */,
 				9EBE82B7216BC3600001EC9A /* ThemeViewController.m in Sources */,
 				D7CF15FE1FFFF9D3005D982F /* CreditCard+CoreDataClass.m in Sources */,
