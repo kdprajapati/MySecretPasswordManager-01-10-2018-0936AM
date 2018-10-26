@@ -19,6 +19,8 @@
     CGFloat scrollViewHeight;
     NSString *recordIDCategory;
     BOOL isSavedData;
+    UILabel *noImageYetLabel;
+
 }
 @end
 
@@ -57,6 +59,13 @@
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self funSetDataToViews];
+    
+    noImageYetLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.collectionViewPhotos.frame.size.width, 44)];
+    noImageYetLabel.text = @"No Photos Yet!";
+    noImageYetLabel.textAlignment = NSTextAlignmentCenter;
+    noImageYetLabel.center = self.collectionViewPhotos.center;
+    [self.collectionViewPhotos addSubview:noImageYetLabel];
+    noImageYetLabel.hidden = true;
     
     [self prepareImages];
     
@@ -226,6 +235,11 @@
     [self.collectionViewPhotos reloadData];
 }
 
+-(void)viewDidLayoutSubviews
+{
+    noImageYetLabel.frame = CGRectMake(0, self.collectionViewPhotos.frame.size.height/2 - 22, self.view.frame.size.width - 8, 44);
+}
+
 -(void)prepareImages
 {
     NSMutableArray *tmp = [[NSMutableArray alloc]init];
@@ -263,6 +277,15 @@
         images = [[NSMutableArray alloc] init];
     }
     [images addObjectsFromArray:tmp];
+    
+    if (arrayListFiles.count > 0)
+    {
+        noImageYetLabel.hidden = true;
+    }
+    else
+    {
+        noImageYetLabel.hidden = false;
+    }
 }
 
 -(void)setUpCollection
