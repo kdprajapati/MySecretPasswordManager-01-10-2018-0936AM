@@ -27,6 +27,8 @@
 
     self.scrollViewLogin.contentSize = CGSizeMake(self.scrollViewLogin.frame.size.width, self.loginView.frame.size.height * 4.5);
   
+    [self funAllocBottomBarButtons];
+
     [self funSetDataToViews];
     
     self.loginNameTxt.delegate = self;
@@ -50,7 +52,6 @@
         [self funChangeRighBarButtonItemEditSave:true];
     }
     
-    [self funAllocBottomBarButtons];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -68,11 +69,11 @@
     
     UIBarButtonItem *flexibalSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    UIButton *favBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [favBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
-    [favBtn addTarget:self action:@selector(funDoFavourite) forControlEvents:UIControlEventTouchUpInside];
-    favBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithCustomView:favBtn];
+    self.favouriteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    [self.favouriteButton addTarget:self action:@selector(funDoFavourite) forControlEvents:UIControlEventTouchUpInside];
+    self.favouriteButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    UIBarButtonItem *favouriteBarBtn = [[UIBarButtonItem alloc] initWithCustomView:self.favouriteButton];
     
     UIButton *shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [shareBtn setImage:[UIImage imageNamed:@"share_normal.png"] forState:UIControlStateNormal];
@@ -87,7 +88,7 @@
     
     self.navigationController.toolbarHidden = false;
     
-    self.toolbarItems = [NSArray arrayWithObjects: favouriteBtn,flexibalSpace, shareBtnBar,flexibalSpace, deleteBtnBar, nil];
+    self.toolbarItems = [NSArray arrayWithObjects: favouriteBarBtn,flexibalSpace, shareBtnBar,flexibalSpace, deleteBtnBar, nil];
     
     
 }
@@ -167,14 +168,17 @@
         {
             self.isFavourite = false;
             [self.favouriteButton setSelected:false];
-//            [self.favouriteButton setBackgroundImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+            
+            
             
         }
         else
         {
             self.isFavourite = true;
             [self.favouriteButton setSelected:true];
-//            [self.favouriteButton setBackgroundImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateSelected];
+            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+
         }
         
     }
@@ -299,14 +303,16 @@
         {
             self.isFavourite = true;
             [self.favouriteButton setSelected:true];
-//            [self.favouriteButton setBackgroundImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateSelected];
+            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+            
+ 
             
         }
         else
         {
             self.isFavourite = false;
             [self.favouriteButton setSelected:false];
-//            [self.favouriteButton setBackgroundImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
         }
     }
 }

@@ -1,40 +1,42 @@
 Pending things
 
+App Name
+Text to finalize
+Rate us URL
+Remove ads - verify variable
+
+
+
 First time flow
 ================================================================
 √- skip text to change as Done at last page
-
 
 MainView
 ================================================================
 √- add 3 more categories
 √- remove '+' button for this version
 
-
 Detail view (show per category data)
 ================================================================
-- show arrow below '+' button to help - add new data
+√- show arrow below '+' button to help - add new data
 
 
 Category Add data view
 ================================================================
-- text view at note
-- add edit option - edit and done to save
-- change background colour to white of all views
-- add photo thumbnail to photo collection view at bottom,
+√- text view at note
+√- add edit option - edit and done to save
+√- change background colour to white of all views
+√- add photo thumbnail to photo collection view at bottom,
 	- close button with shadow
-- bottom options alignment to check (more space to add)
-- remove description text
-- eye button icon in place of show button
+√- bottom options alignment to check (more space to add)
 
-
+√ - eye button icon in place of show button (show/hide instead)
 - Note:- per category to store data - encrypted or not text
-
 
 Settings
 ================================================================
 - Lock on screen - 1min, 3mins, 5min, never
-- security ->
+√- security ->
 	- Passcode-> change passcode
 	- password -> change password
 
@@ -42,7 +44,7 @@ Settings
 - remove ads logic
 - rate us link
 
-Add colour theme
+√- Add colour theme
 
 About US section
 ================================================================
@@ -70,5 +72,7 @@ Note:- Save your personal Notes.
 Bugs:- 
 ================================================================
 - favourite button select/deselect issue
-- category -> share -> share Now button not working
+√- category -> share -> share Now button not working
 - check at reset password encryption/decryption
+
+
