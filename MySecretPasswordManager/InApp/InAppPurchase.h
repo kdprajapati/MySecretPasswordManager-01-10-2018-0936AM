@@ -4,7 +4,7 @@
 //
 //  Created by Ganesh on 17/04/15.
 //  Copyright Ganesh 2015. All rights reserved.
-//
+// my inapp
 #import <StoreKit/StoreKit.h>
 @protocol InAppPurchaseProtocolDelegate <NSObject>
 @required
