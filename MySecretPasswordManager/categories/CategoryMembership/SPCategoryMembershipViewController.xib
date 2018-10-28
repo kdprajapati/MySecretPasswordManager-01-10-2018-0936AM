@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +45,7 @@
                                     <rect key="frame" x="4" y="4" width="312" height="162"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bid-6e-AFv">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bid-6e-AFv">
                                         <size key="itemSize" width="50" height="50"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -438,24 +435,14 @@
                         </mask>
                     </variation>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jlj-UP-bsz" userLabel="ad view">
-                    <rect key="frame" x="0.0" y="1137" width="320" height="50"/>
-                    <color key="backgroundColor" red="0.085244058710000001" green="0.086342763289999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="qxQ-UE-IKh"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="top" secondItem="rCh-Yh-pTJ" secondAttribute="top" id="4ig-UB-3no"/>
-                <constraint firstItem="Jlj-UP-bsz" firstAttribute="centerX" secondItem="rCh-Yh-pTJ" secondAttribute="centerX" id="EXI-oX-OBP"/>
-                <constraint firstAttribute="bottomMargin" secondItem="Jlj-UP-bsz" secondAttribute="bottom" id="FRD-aY-JEf"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="centerX" secondItem="rCh-Yh-pTJ" secondAttribute="centerX" id="HuM-MT-Rqd"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="height" secondItem="rCh-Yh-pTJ" secondAttribute="height" multiplier="1150:568" id="UHX-cU-n7D"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="height" secondItem="rCh-Yh-pTJ" secondAttribute="height" id="aQk-2B-Hdj"/>
                 <constraint firstItem="eEG-WQ-XbY" firstAttribute="width" secondItem="rCh-Yh-pTJ" secondAttribute="width" id="ore-ao-7QC"/>
-                <constraint firstItem="Jlj-UP-bsz" firstAttribute="width" secondItem="rCh-Yh-pTJ" secondAttribute="width" id="zGT-Sd-Dyz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="yAi-Ki-eFN"/>

@@ -37,7 +37,7 @@
     
     BOOL isSavedData;
     UILabel *noImageYetLabel;
-
+    
 }
 
 - (void)viewDidLoad {
@@ -57,7 +57,7 @@
     selectedIndexPath = [[NSIndexPath alloc] init];
     
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
     //    [self funCreateDataPicker];
@@ -510,7 +510,7 @@
     
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateStyle = kCFDateFormatterShortStyle;
+    //    formatter.dateStyle = kCFDateFormatterShortStyle;
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     NSString *stringDate = [formatter stringFromDate:pickedDate];//[NSString stringWithFormat:@"%@",pickedDate];
@@ -561,7 +561,7 @@
             self.txtMemberPassword.text = decPass;
         }
         self.txtWebsite.text = [self.ObjectMembership valueForKey:@"website"];
-//        self.txtNote.text = [self.ObjectMembership valueForKey:@"note"];
+        //        self.txtNote.text = [self.ObjectMembership valueForKey:@"note"];
         if ([self.ObjectMembership valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.ObjectMembership valueForKey:@"note"] forState:UIControlStateNormal];
@@ -719,7 +719,7 @@
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:self.memberSinceDateButton.titleLabel.text forKey:@"memberSinceDate"];
     [object setValue:[NSNumber numberWithInt:7] forKey:@"categoryType"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -758,7 +758,7 @@
     [object setValue:self.txtWebsite.text forKey:@"website"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:self.memberSinceDateButton.titleLabel.text forKey:@"memberSinceDate"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -851,13 +851,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

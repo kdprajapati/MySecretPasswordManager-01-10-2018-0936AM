@@ -37,7 +37,7 @@
     
     BOOL isSavedData;
     UILabel *noImageYetLabel;
-
+    
 }
 
 - (void)viewDidLoad {
@@ -56,7 +56,7 @@
     selectedIndexPath = [[NSIndexPath alloc] init];
     
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
     //    [self funCreateDataPicker];
@@ -511,7 +511,7 @@
     
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateStyle = kCFDateFormatterShortStyle;
+    //    formatter.dateStyle = kCFDateFormatterShortStyle;
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     NSString *stringDate = [formatter stringFromDate:pickedDate]; //[NSString stringWithFormat:@"%@",pickedDate];
@@ -558,7 +558,7 @@
         self.txtLicenceNumber.text = [self.ObjectDrivingLicence valueForKey:@"licenceNumber"];
         self.txtClassType.text = [self.ObjectDrivingLicence valueForKey:@"classType"];
         self.txtDocumentNumber.text = [self.ObjectDrivingLicence valueForKey:@"documentNumber"];
-//        self.txtNote.text = [self.ObjectDrivingLicence valueForKey:@"note"];
+        //        self.txtNote.text = [self.ObjectDrivingLicence valueForKey:@"note"];
         if ([self.ObjectDrivingLicence valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.ObjectDrivingLicence valueForKey:@"note"] forState:UIControlStateNormal];
@@ -712,7 +712,7 @@
     [object setValue:self.issueDateButton.titleLabel.text forKey:@"issueDate"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:[NSNumber numberWithInt:6] forKey:@"categoryType"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -752,7 +752,7 @@
     [object setValue:self.DateOfBirthButton.titleLabel.text forKey:@"DOB"];
     [object setValue:self.issueDateButton.titleLabel.text forKey:@"issueDate"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -831,13 +831,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

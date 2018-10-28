@@ -56,7 +56,23 @@
     [skipDoneButton setTitle:@"Skip" forState:UIControlStateNormal];
     [skipDoneButton.titleLabel setTextAlignment:NSTextAlignmentRight];
     [skipDoneButton addTarget:self action:@selector(funGetStarted:) forControlEvents:UIControlEventTouchUpInside];
-    skipDoneButton.center = CGPointMake([UIScreen mainScreen].bounds.size.width - 55, [UIScreen mainScreen].bounds.size.height - 22);
+    if (@available(iOS 11.0, *))
+    {
+        UIEdgeInsets insets = [[UIApplication sharedApplication] keyWindow].safeAreaInsets;
+        if (insets.bottom > 0)
+        {
+            skipDoneButton.center = CGPointMake([UIScreen mainScreen].bounds.size.width - 55, [UIScreen mainScreen].bounds.size.height - 22 - insets.bottom);
+        }
+        else
+        {
+            skipDoneButton.center = CGPointMake([UIScreen mainScreen].bounds.size.width - 55, [UIScreen mainScreen].bounds.size.height - 22);
+        }
+    }
+    else
+    {
+        skipDoneButton.center = CGPointMake([UIScreen mainScreen].bounds.size.width - 55, [UIScreen mainScreen].bounds.size.height - 22);
+    }
+    
     [self.pageController.view addSubview:skipDoneButton];
     
     self.pageController.view.backgroundColor = [UIColor colorWithRed:81.0/255.0 green:38.0/255.0 blue:171.0/255.0 alpha:1.0];

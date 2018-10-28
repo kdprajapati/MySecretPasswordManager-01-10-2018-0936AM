@@ -28,6 +28,13 @@
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     NSInteger theme = [userdefaults integerForKey:@"AppTheme"];
     [self funUpdateThemeSelection:theme];
+    
+    self.purpleButton.layer.cornerRadius = 4.0;
+    self.blueButton.layer.cornerRadius = 4.0;
+    self.pinkButton.layer.cornerRadius = 4.0;
+    self.yellowButton.layer.cornerRadius = 4.0;
+    self.greenButton.layer.cornerRadius = 4.0;
+    self.redButton.layer.cornerRadius = 4.0;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -78,76 +85,81 @@
     CGColorRef borderColorWhite = [UIColor whiteColor].CGColor;
     CGColorRef borderColorClear = [UIColor clearColor].CGColor;
     float borderwidth = 3.0;
-    switch (themeNumber) {
-        case 1:
-            self.purpleButton.layer.borderColor = borderColorWhite;
-            self.purpleButton.layer.borderWidth = borderwidth;
-            [self.purpleButton addSubview:checkImage];
-            
-            self.blueButton.layer.borderColor = borderColorClear;
-            self.pinkButton.layer.borderColor = borderColorClear;
-            self.yellowButton.layer.borderColor = borderColorClear;
-            self.greenButton.layer.borderColor = borderColorClear;
-            self.redButton.layer.borderColor = borderColorClear;
-            break;
-        case 2:
-            self.purpleButton.layer.borderColor = borderColorClear;
-            self.blueButton.layer.borderColor = borderColorWhite;
-            self.blueButton.layer.borderWidth = borderwidth;
-            [self.blueButton addSubview:checkImage];
-            
-            self.pinkButton.layer.borderColor = borderColorClear;
-            self.yellowButton.layer.borderColor = borderColorClear;
-            self.greenButton.layer.borderColor = borderColorClear;
-            self.redButton.layer.borderColor = borderColorClear;
-            break;
-        case 3:
-            self.purpleButton.layer.borderColor = borderColorClear;
-            self.blueButton.layer.borderColor = borderColorClear;
-            self.pinkButton.layer.borderColor = borderColorWhite;
-            self.pinkButton.layer.borderWidth = borderwidth;
-            [self.pinkButton addSubview:checkImage];
-            
-            self.yellowButton.layer.borderColor = borderColorClear;
-            self.greenButton.layer.borderColor = borderColorClear;
-            self.redButton.layer.borderColor = borderColorClear;
-            break;
-        case 4:
-            self.purpleButton.layer.borderColor = borderColorClear;
-            self.blueButton.layer.borderColor = borderColorClear;
-            self.pinkButton.layer.borderColor = borderColorClear;
-            self.yellowButton.layer.borderColor = borderColorWhite;
-            self.yellowButton.layer.borderWidth = borderwidth;
-            [self.yellowButton addSubview:checkImage];
-            
-            self.greenButton.layer.borderColor = borderColorClear;
-            self.redButton.layer.borderColor = borderColorClear;
-            break;
-        case 5:
-            self.purpleButton.layer.borderColor = borderColorClear;
-            self.blueButton.layer.borderColor = borderColorClear;
-            self.pinkButton.layer.borderColor = borderColorClear;
-            self.yellowButton.layer.borderColor = borderColorClear;
-            self.greenButton.layer.borderColor = borderColorWhite;
-            self.greenButton.layer.borderWidth = borderwidth;
-            [self.greenButton addSubview:checkImage];
-            
-            self.redButton.layer.borderColor = borderColorClear;
-            break;
-        case 6:
-            self.purpleButton.layer.borderColor = borderColorClear;
-            self.blueButton.layer.borderColor = borderColorClear;
-            self.pinkButton.layer.borderColor = borderColorClear;
-            self.yellowButton.layer.borderColor = borderColorClear;
-            self.greenButton.layer.borderColor = borderColorClear;
-            self.redButton.layer.borderColor = borderColorWhite;
-            self.redButton.layer.borderWidth = borderwidth;
-            [self.redButton addSubview:checkImage];
-            break;
-            
-        default:
-            break;
-    }
+    
+    [UIView animateWithDuration:0.7 animations:^{
+        switch (themeNumber) {
+            case 1:
+                self.purpleButton.layer.borderColor = borderColorWhite;
+                self.purpleButton.layer.borderWidth = borderwidth;
+                [self.purpleButton addSubview:checkImage];
+                
+                self.blueButton.layer.borderColor = borderColorClear;
+                self.pinkButton.layer.borderColor = borderColorClear;
+                self.yellowButton.layer.borderColor = borderColorClear;
+                self.greenButton.layer.borderColor = borderColorClear;
+                self.redButton.layer.borderColor = borderColorClear;
+                break;
+            case 2:
+                self.purpleButton.layer.borderColor = borderColorClear;
+                self.blueButton.layer.borderColor = borderColorWhite;
+                self.blueButton.layer.borderWidth = borderwidth;
+                [self.blueButton addSubview:checkImage];
+                
+                self.pinkButton.layer.borderColor = borderColorClear;
+                self.yellowButton.layer.borderColor = borderColorClear;
+                self.greenButton.layer.borderColor = borderColorClear;
+                self.redButton.layer.borderColor = borderColorClear;
+                break;
+            case 3:
+                self.purpleButton.layer.borderColor = borderColorClear;
+                self.blueButton.layer.borderColor = borderColorClear;
+                self.pinkButton.layer.borderColor = borderColorWhite;
+                self.pinkButton.layer.borderWidth = borderwidth;
+                [self.pinkButton addSubview:checkImage];
+                
+                self.yellowButton.layer.borderColor = borderColorClear;
+                self.greenButton.layer.borderColor = borderColorClear;
+                self.redButton.layer.borderColor = borderColorClear;
+                break;
+            case 4:
+                self.purpleButton.layer.borderColor = borderColorClear;
+                self.blueButton.layer.borderColor = borderColorClear;
+                self.pinkButton.layer.borderColor = borderColorClear;
+                self.yellowButton.layer.borderColor = borderColorWhite;
+                self.yellowButton.layer.borderWidth = borderwidth;
+                [self.yellowButton addSubview:checkImage];
+                
+                self.greenButton.layer.borderColor = borderColorClear;
+                self.redButton.layer.borderColor = borderColorClear;
+                break;
+            case 5:
+                self.purpleButton.layer.borderColor = borderColorClear;
+                self.blueButton.layer.borderColor = borderColorClear;
+                self.pinkButton.layer.borderColor = borderColorClear;
+                self.yellowButton.layer.borderColor = borderColorClear;
+                self.greenButton.layer.borderColor = borderColorWhite;
+                self.greenButton.layer.borderWidth = borderwidth;
+                [self.greenButton addSubview:checkImage];
+                
+                self.redButton.layer.borderColor = borderColorClear;
+                break;
+            case 6:
+                self.purpleButton.layer.borderColor = borderColorClear;
+                self.blueButton.layer.borderColor = borderColorClear;
+                self.pinkButton.layer.borderColor = borderColorClear;
+                self.yellowButton.layer.borderColor = borderColorClear;
+                self.greenButton.layer.borderColor = borderColorClear;
+                self.redButton.layer.borderColor = borderColorWhite;
+                self.redButton.layer.borderWidth = borderwidth;
+                [self.redButton addSubview:checkImage];
+                break;
+                
+            default:
+                break;
+        }
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -82,7 +82,7 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
         if (switchPIN == nil)
         {
-            switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 80, 6, 60, 30)];
+            switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 65, 10, 60, 30)];
         }
         [switchPIN addTarget:self action:@selector(changeSwitch:) forControlEvents:UIControlEventValueChanged];
         [cell.contentView addSubview:switchPIN];

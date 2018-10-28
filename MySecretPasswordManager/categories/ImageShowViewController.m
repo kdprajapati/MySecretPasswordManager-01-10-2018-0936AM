@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.view.backgroundColor = [UIColor blackColor];
     self.imageView.image = self.imageDetail;
     
     UIImage *shareImage = [UIImage imageNamed:@"share_normal.png"];

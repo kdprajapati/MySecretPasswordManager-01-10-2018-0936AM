@@ -24,11 +24,11 @@
     
     // Do any additional setup after loading the view from its nib.
     self.title = @"Login/Password";
-
+    
     self.scrollViewLogin.contentSize = CGSizeMake(self.scrollViewLogin.frame.size.width, self.loginView.frame.size.height * 4.5);
-  
+    
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
     self.loginNameTxt.delegate = self;
@@ -178,7 +178,7 @@
             self.isFavourite = true;
             [self.favouriteButton setSelected:true];
             [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
-
+            
         }
         
     }
@@ -222,7 +222,7 @@
 
 - (IBAction)funPreviewShare:(id)sender
 {
-//    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
+    //    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
     PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
     
     categoryVC.previewObject = [self funReturnCurrentObjectForPreview];
@@ -238,7 +238,7 @@
     [object setValue:self.loginNameTxt.text forKey:@"loginName"];
     [object setValue:self.urlWebTxt.text forKey:@"url"];
     [object setValue:self.usernameTxt.text forKey:@"username"];
-//    [object setValue:self.noteTxt.text forKey:@"note"];
+    //    [object setValue:self.noteTxt.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -285,7 +285,7 @@
         self.loginNameTxt.text = [self.loginObject valueForKey:@"title"];
         self.urlWebTxt.text = [self.loginObject valueForKey:@"url"];
         self.usernameTxt.text = [self.loginObject valueForKey:@"username"];
-//        self.noteTxt.text = [self.loginObject valueForKey:@"note"];
+        //        self.noteTxt.text = [self.loginObject valueForKey:@"note"];
         if ([self.loginObject valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.loginObject valueForKey:@"note"] forState:UIControlStateNormal];
@@ -296,7 +296,7 @@
         if (decPassword != nil)
         {
             self.passwordTxt.text = decPassword;
-        }        
+        }
         self.isFavourite = [[self.loginObject valueForKey:@"isFavourite"] boolValue];
         
         if (self.isFavourite == true)
@@ -305,7 +305,7 @@
             [self.favouriteButton setSelected:true];
             [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
             
- 
+            
             
         }
         else
@@ -401,7 +401,7 @@
     {
         [object setValue:@"" forKey:@"password"];
     }
-//    [object setValue:self.noteTxt.text forKey:@"note"];
+    //    [object setValue:self.noteTxt.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -448,13 +448,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

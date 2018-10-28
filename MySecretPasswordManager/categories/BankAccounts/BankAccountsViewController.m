@@ -43,11 +43,11 @@
     
     // Do any additional setup after loading the view from its nib.
     self.title = @"Bank Account";
-   
+    
     [self funAllocBottomBarButtons];
     
     [self funSetDataToViews];
- 
+    
     self.txtBankName.delegate = self;
     self.txtAccountNumber.delegate = self;
     self.txtAccountHolderName.delegate = self;
@@ -117,7 +117,7 @@
     self.navigationController.toolbarHidden = false;
     
     self.toolbarItems = [NSArray arrayWithObjects: favouriteBarBtn,flexibalSpace, shareBtnBar,flexibalSpace, deleteBtnBar, nil];
-
+    
     
 }
 
@@ -271,7 +271,7 @@
         {
             [tmp addObject:image];
         }
-
+        
     }
     
     if (images != nil)
@@ -395,7 +395,7 @@
 
 - (IBAction)funPreviewShare:(id)sender
 {
-//    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
+    //    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
     
     PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
     
@@ -440,7 +440,7 @@
         
         [topViewController presentViewController:alert animated:YES completion:nil];
     }
-
+    
     
 }
 
@@ -479,7 +479,7 @@
         self.txtBranchCode.text = [self.bankObject valueForKey:@"branchCode"];
         self.txtBranchPhone.text = [self.bankObject valueForKey:@"branchPhone"];
         self.txtBranchAddress.text = [self.bankObject valueForKey:@"branchAddress"];
-//        self.txtNote.text = [self.bankObject valueForKey:@"note"];
+        //        self.txtNote.text = [self.bankObject valueForKey:@"note"];
         if ([self.bankObject valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.bankObject valueForKey:@"note"] forState:UIControlStateNormal];
@@ -638,7 +638,7 @@
     [object setValue:self.txtBranchCode.text forKey:@"branchCode"];
     [object setValue:self.txtBranchPhone.text forKey:@"branchPhone"];
     [object setValue:self.txtBranchAddress.text forKey:@"branchAddress"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -673,7 +673,7 @@
     [object setValue:self.txtBranchCode.text forKey:@"branchCode"];
     [object setValue:self.txtBranchPhone.text forKey:@"branchPhone"];
     [object setValue:self.txtBranchAddress.text forKey:@"branchAddress"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];

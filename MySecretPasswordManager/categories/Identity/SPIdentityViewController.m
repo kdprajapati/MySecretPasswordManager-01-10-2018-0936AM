@@ -20,7 +20,7 @@
     NSString *recordIDCategory;
     BOOL isSavedData;
     UILabel *noImageYetLabel;
-
+    
 }
 @end
 
@@ -35,12 +35,12 @@
     
     self.title = @"Identity";
     
-//    _scrollViewIdentity.frame = CGRectMake(_scrollViewIdentity.frame.origin.x, _scrollViewIdentity.frame.origin.y, _scrollViewIdentity.frame.size.width, [UIScreen mainScreen].bounds.size.height - 55);
+    //    _scrollViewIdentity.frame = CGRectMake(_scrollViewIdentity.frame.origin.x, _scrollViewIdentity.frame.origin.y, _scrollViewIdentity.frame.size.width, [UIScreen mainScreen].bounds.size.height - 55);
     
     self.scrollViewIdentity.contentSize = CGSizeMake(self.scrollViewIdentity.frame.size.width, self.noteView.frame.size.height * 15 + 50);
-  
+    
     datePicker = [[UIDatePicker alloc] init];
-
+    
     self.txtIdentityTitle.delegate = self;
     self.txtFirstName.delegate = self;
     self.txtLastName.delegate = self;
@@ -59,7 +59,7 @@
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
     noImageYetLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.collectionViewPhotos.frame.size.width, 44)];
@@ -358,11 +358,11 @@
     
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateStyle = kCFDateFormatterShortStyle;
+    //    formatter.dateStyle = kCFDateFormatterShortStyle;
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     NSString *stringDate = [formatter stringFromDate:pickedDate];//[NSString stringWithFormat:@"%@",pickedDate];
-
+    
     [self.birthDate setTitle:stringDate forState:UIControlStateNormal];
     [self.identityObject setValue:pickedDate forKey:@"birthDate"];
     
@@ -478,7 +478,7 @@
 
 - (IBAction)funPreviewShare:(id)sender
 {
-//    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
+    //    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
     PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
     
     categoryVC.previewObject = [self funReturnCurrentObjectForPreview];
@@ -500,7 +500,7 @@
     [object setValue:self.txtWebsite.text forKey:@"webSite"];
     [object setValue:self.txtAddress.text forKey:@"address"];
     [object setValue:self.txtCountry.text forKey:@"country"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -538,7 +538,7 @@
         self.txtWebsite.text = [self.identityObject valueForKey:@"webSite"];
         self.txtAddress.text = [self.identityObject valueForKey:@"address"];
         self.txtCountry.text = [self.identityObject valueForKey:@"country"];
-//        self.txtNote.text = [self.identityObject valueForKey:@"note"];
+        //        self.txtNote.text = [self.identityObject valueForKey:@"note"];
         if ([self.identityObject valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.identityObject valueForKey:@"note"] forState:UIControlStateNormal];
@@ -546,7 +546,7 @@
         else{
             [self.noteButton setTitle:[self.identityObject valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
         }
-
+        
         self.isFavourite = [[self.identityObject valueForKey:@"isFavourite"] boolValue];
         if (self.isFavourite == true)
         {
@@ -625,7 +625,7 @@
     self.noteButton.userInteractionEnabled = true;
     
     self.birthDate.userInteractionEnabled = true;
-
+    
     self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
@@ -684,7 +684,7 @@
     [object setValue:self.txtWebsite.text forKey:@"webSite"];
     [object setValue:self.txtAddress.text forKey:@"address"];
     [object setValue:self.txtCountry.text forKey:@"country"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -700,7 +700,7 @@
         [object setValue:[NSNumber numberWithBool:false] forKey:@"isFavourite"];
     }
     [object setValue:self.birthDate.titleLabel.text forKey:@"birthDate"];
-
+    
     
     //Save plist and in memory object
     NSMutableDictionary *saveDict = [[NSMutableDictionary alloc] init];
@@ -778,13 +778,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

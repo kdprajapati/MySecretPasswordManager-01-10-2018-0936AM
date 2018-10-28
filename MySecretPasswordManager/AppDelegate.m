@@ -136,12 +136,16 @@
     if(strPasscode == nil || strPasscode.length == 0)
     {
         //Open first Flow
-//        self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+        //        self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
         GettingStartedViewController *homeVc = [[GettingStartedViewController alloc]initWithNibName:@"GettingStartedViewController" bundle:[NSBundle mainBundle]];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVc];
         nav.navigationBar.backgroundColor = [UIColor clearColor];
         self.window.rootViewController = nav;
         [self.window makeKeyAndVisible];
+        
+        NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+        [userdefaults setInteger:1 forKey:@"AppTheme"];
+        [userdefaults synchronize];
     }
     else
     {

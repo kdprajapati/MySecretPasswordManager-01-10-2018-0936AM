@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +44,7 @@
                                     <rect key="frame" x="4" y="4" width="312" height="162"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Azr-jl-PEq">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Azr-jl-PEq">
                                         <size key="itemSize" width="50" height="50"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -428,24 +425,14 @@
                         </mask>
                     </variation>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptV-6X-hgB" userLabel="ad view">
-                    <rect key="frame" x="0.0" y="1137" width="320" height="50"/>
-                    <color key="backgroundColor" red="0.085244058710000001" green="0.086342763289999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="dOW-pQ-G1K"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ptV-6X-hgB" firstAttribute="centerX" secondItem="PDU-sP-jaP" secondAttribute="centerX" id="5UF-qH-h2w"/>
                 <constraint firstItem="8M5-Bj-xTj" firstAttribute="centerX" secondItem="PDU-sP-jaP" secondAttribute="centerX" id="6Ga-SY-1tB"/>
                 <constraint firstItem="8M5-Bj-xTj" firstAttribute="height" secondItem="PDU-sP-jaP" secondAttribute="height" id="GgQ-r7-C6Y"/>
-                <constraint firstItem="ptV-6X-hgB" firstAttribute="width" secondItem="PDU-sP-jaP" secondAttribute="width" id="Kvh-bO-u5j"/>
                 <constraint firstItem="8M5-Bj-xTj" firstAttribute="width" secondItem="PDU-sP-jaP" secondAttribute="width" id="QrV-3A-fre"/>
                 <constraint firstItem="8M5-Bj-xTj" firstAttribute="top" secondItem="PDU-sP-jaP" secondAttribute="top" id="hGO-bv-wsB"/>
                 <constraint firstItem="8M5-Bj-xTj" firstAttribute="height" secondItem="PDU-sP-jaP" secondAttribute="height" multiplier="1150:568" id="ocY-q9-L8B"/>
-                <constraint firstAttribute="bottomMargin" secondItem="ptV-6X-hgB" secondAttribute="bottom" id="vUf-ah-Hu8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="amR-Gi-e7I"/>

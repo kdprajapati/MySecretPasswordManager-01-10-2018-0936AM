@@ -33,7 +33,7 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
     self.txtNoteName.delegate = self;
@@ -228,7 +228,7 @@
 
 - (IBAction)funPreviewShare:(id)sender
 {
-//    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
+    //    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
     PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
     
     categoryVC.previewObject = [self funReturnCurrentObjectForPreview];
@@ -286,7 +286,7 @@
 {
     self.txtNoteName.userInteractionEnabled = true;
     self.textViewNote.userInteractionEnabled = true;
-        
+    
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
@@ -386,13 +386,12 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

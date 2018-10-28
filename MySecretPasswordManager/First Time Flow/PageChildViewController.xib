@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,13 +30,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-yl-d7t">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJj-yl-d7t">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="531"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="Help-0.png" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-X8-IJM">
-                            <rect key="frame" x="55" y="100" width="210" height="210"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="Help-0.png" translatesAutoresizingMaskIntoConstraints="NO" id="kjc-X8-IJM">
+                            <rect key="frame" x="55" y="80" width="210" height="210"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="kjc-X8-IJM" secondAttribute="height" multiplier="1:1" id="94l-7v-UPR"/>
+                            </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Secure Documents Details with Photos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAQ-uX-LrH">
                             <rect key="frame" x="0.0" y="360" width="320" height="51"/>
@@ -54,9 +55,20 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.31764705882352939" green="0.14901960784313725" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="kjc-X8-IJM" firstAttribute="width" secondItem="XJj-yl-d7t" secondAttribute="width" multiplier="210:320" id="2jp-FA-Ivr"/>
+                        <constraint firstItem="kjc-X8-IJM" firstAttribute="centerX" secondItem="XJj-yl-d7t" secondAttribute="centerX" id="BI5-OO-WmZ"/>
+                        <constraint firstItem="kjc-X8-IJM" firstAttribute="bottom" secondItem="XJj-yl-d7t" secondAttribute="bottom" multiplier="310:568" id="HR8-4I-FYf"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XJj-yl-d7t" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="QAw-h1-ec0"/>
+                <constraint firstItem="XJj-yl-d7t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UKS-4a-g0Z"/>
+                <constraint firstItem="XJj-yl-d7t" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="XDO-5t-BI2"/>
+                <constraint firstItem="XJj-yl-d7t" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qco-Wy-WA1"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>

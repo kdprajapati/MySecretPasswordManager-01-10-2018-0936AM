@@ -458,61 +458,55 @@
 
 -(void)funSetPassportInfoToArray
 {
-    NSString *firstName = [self.previewObject valueForKey:@"firstName"];
-    NSString *lastName = [self.previewObject valueForKey:@"lastName"];
-    NSString *email = [self.previewObject valueForKey:@"email"];
-    NSString *occupation = [self.previewObject valueForKey:@"occupation"];
-    NSString *phoneNumber = [self.previewObject valueForKey:@"phoneNumber"];
-    NSString *webSite = [self.previewObject valueForKey:@"webSite"];
-    NSString *address = [self.previewObject valueForKey:@"address"];
-    NSString *country = [self.previewObject valueForKey:@"country"];
-    NSString *birthDate = [self.previewObject valueForKey:@"birthDate"];
+    NSString *fullName = [self.previewObject valueForKey:@"fullName"];
+    NSString *passportType = [self.previewObject valueForKey:@"passportType"];
+    NSString *issuingCountry = [self.previewObject valueForKey:@"issuingCountry"];
+    NSString *nationality = [self.previewObject valueForKey:@"nationality"];
+    NSString *issuingAuthority = [self.previewObject valueForKey:@"issuingAuthority"];
+    NSString *DOB = [self.previewObject valueForKey:@"DOB"];
+    NSString *issueDate = [self.previewObject valueForKey:@"issueDate"];
+    NSString *expiryDate = [self.previewObject valueForKey:@"expiryDate"];
     NSString *note = [self.previewObject valueForKey:@"note"];
     
-    if (firstName != nil)
+    if (fullName != nil)
     {
-        [previewItemsArray addObject:firstName];
+        [previewItemsArray addObject:fullName];
         [previewKeyArray addObject:@"First Name"];
     }
-    if (lastName != nil)
+    if (passportType != nil)
     {
-        [previewItemsArray addObject:lastName];
+        [previewItemsArray addObject:passportType];
         [previewKeyArray addObject:@"Last Name"];
     }
-    if (email != nil)
+    if (issuingCountry != nil)
     {
-        [previewItemsArray addObject:email];
+        [previewItemsArray addObject:issuingCountry];
         [previewKeyArray addObject:@"Personal Email"];
     }
-    if (occupation != nil)
+    if (nationality != nil)
     {
-        [previewItemsArray addObject:occupation];
+        [previewItemsArray addObject:nationality];
         [previewKeyArray addObject:@"Occupation"];
     }
-    if (phoneNumber != nil)
+    if (issuingAuthority != nil)
     {
-        [previewItemsArray addObject:phoneNumber];
+        [previewItemsArray addObject:issuingAuthority];
         [previewKeyArray addObject:@"Phone Number"];
     }
-    if (webSite != nil)
+    if (DOB != nil)
     {
-        [previewItemsArray addObject:webSite];
+        [previewItemsArray addObject:DOB];
         [previewKeyArray addObject:@"Website"];
     }
-    if (address != nil)
+    if (issueDate != nil)
     {
-        [previewItemsArray addObject:address];
+        [previewItemsArray addObject:issueDate];
         [previewKeyArray addObject:@"Address"];
     }
-    if (country != nil)
+    if (expiryDate != nil)
     {
-        [previewItemsArray addObject:country];
+        [previewItemsArray addObject:expiryDate];
         [previewKeyArray addObject:@"Country"];
-    }
-    if (birthDate != nil)
-    {
-        [previewItemsArray addObject:birthDate];
-        [previewKeyArray addObject:@"Birth date"];
     }
     if (note != nil)
     {

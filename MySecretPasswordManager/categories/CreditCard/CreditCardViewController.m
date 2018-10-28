@@ -37,7 +37,7 @@
     
     BOOL isSavedData;
     UILabel *noImageYetLabel;
-
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,17 +51,17 @@
     self.title = @"Credit Card";
     
     
-//    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
-//
-//    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
+    //    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
+    //
+    //    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     selectedIndexPath = [[NSIndexPath alloc] init];
     
     [self funAllocBottomBarButtons];
-
+    
     [self funSetDataToViews];
     
-//    [self funCreateDataPicker];
+    //    [self funCreateDataPicker];
     datePicker = [[UIDatePicker alloc] init];
     
     self.txtBankName.delegate = self;
@@ -73,7 +73,7 @@
     self.txtTollFree.delegate = self;
     self.txtWebsite.delegate = self;
     self.txtNote.delegate = self;
- 
+    
     scrollViewHeight = _scrolViewCreditCard.frame.size.height;
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -352,8 +352,8 @@
 
 - (IBAction)funPreviewShare:(id)sender
 {
-//    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
-     PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
+    //    SPPreviewViewPopupController *categoryVC = [[SPPreviewViewPopupController alloc]initWithNibName:@"SPPreviewViewPopupController" bundle:[NSBundle mainBundle]];
+    PreviewNewViewController *categoryVC = [[PreviewNewViewController alloc]initWithNibName:@"PreviewNewViewController" bundle:[NSBundle mainBundle]];
     
     categoryVC.previewObject = [self funReturnCurrentObjectForPreview];
     categoryVC.categoryType = KCategoryCreditCard;
@@ -516,7 +516,7 @@
     
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    formatter.dateStyle = kCFDateFormatterShortStyle;
+    //    formatter.dateStyle = kCFDateFormatterShortStyle;
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     NSString *stringDate = [formatter stringFromDate:pickedDate]; //[NSString stringWithFormat:@"%@",pickedDate];
@@ -569,7 +569,7 @@
         self.txtLocalPhone.text = [self.ObjectCreditCard valueForKey:@"localPhone"];
         self.txtTollFree.text = [self.ObjectCreditCard valueForKey:@"tollFreePhone"];
         self.txtWebsite.text = [self.ObjectCreditCard valueForKey:@"website"];
-//        self.txtNote.text = [self.ObjectCreditCard valueForKey:@"note"];
+        //        self.txtNote.text = [self.ObjectCreditCard valueForKey:@"note"];
         if ([self.ObjectCreditCard valueForKey:@"note"] != nil)
         {
             [self.noteButton setTitle:[self.ObjectCreditCard valueForKey:@"note"] forState:UIControlStateNormal];
@@ -748,7 +748,7 @@
     
     [object setValue:[NSNumber numberWithInt:2] forKey:@"categoryType"];
     
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];
@@ -790,7 +790,7 @@
     [object setValue:self.txtWebsite.text forKey:@"website"];
     [object setValue:self.expiryDateButton.titleLabel.text forKey:@"expiryDate"];
     [object setValue:self.validFromButton.titleLabel.text forKey:@"validFrom"];
-//    [object setValue:self.txtNote.text forKey:@"note"];
+    //    [object setValue:self.txtNote.text forKey:@"note"];
     if (![self.noteButton.titleLabel.text isEqualToString:@"Tap to create note"])
     {
         [object setValue:self.noteButton.titleLabel.text forKey:@"note"];

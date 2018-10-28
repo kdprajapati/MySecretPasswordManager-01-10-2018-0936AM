@@ -24,6 +24,7 @@
     NSMutableArray *otherItems;
     AppDelegate *appdelegate;
     NSString *askPasscodeAfterString;
+    UIView *themeColorView;
 }
 
 @end
@@ -60,6 +61,8 @@
 {
     [self.navigationController setToolbarHidden:true animated:true];
     [[AppData sharedAppData] showAddAtBottom];
+    
+    [self.settingsTableView reloadData];
 }
 
 -(NSString *)funReturnAskPasscodeString
@@ -94,13 +97,20 @@
     [securityItems addObject:@"Password"];
     [securityItems addObject:@"Passcode"];
     [securityItems addObject:askPasscodeAfterString];
-//    [securityItems addObject:@"Theme"];
     
     
     //otherItems allocation
     otherItems = [[NSMutableArray alloc] init];
     [otherItems addObject:@"Set a Theme"];
-    [otherItems addObject:@"Remove Ads"];
+    if (![[AppData sharedAppData] isRemoveAdPurchased])
+    {
+        [otherItems addObject:@"Remove Ads"];
+        [otherItems addObject:@"Restore InApp"];
+    }
+    else
+    {
+        
+    }
     [otherItems addObject:@"Share This App"];
     [otherItems addObject:@"Rate Us"];
 }
@@ -161,6 +171,17 @@
     {
         cell.textLabel.text = [otherItems objectAtIndex:indexPath.row];
 
+        if (indexPath.row == 0)
+        {
+            if (themeColorView == nil)
+            {
+                themeColorView = [[UIView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 70, 10, 30, 30)];
+                themeColorView.layer.cornerRadius = 3.0;
+                [cell.contentView addSubview:themeColorView];
+            }
+            [themeColorView setBackgroundColor:[[AppData sharedAppData] funGetThemeColor]];
+            
+        }
     }
     else
     {
@@ -221,26 +242,64 @@
 #pragma  mark :- tableview delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        //change passcode
-        [self funOpenPasswordSettingsViewController];
-        return;
-    }
-    if (indexPath.section == 0 && indexPath.row == 1) {
-        [self funOpenPasscodeSettingsViewController];
-    }
-    else if (indexPath.section == 0 && indexPath.row == 2)
+    if (indexPath.section == 0)
     {
-        [self funChooseAppLockTime];
+        if (indexPath.row == 0) {
+            //change passcode
+            [self funOpenPasswordSettingsViewController];
+        }
+        else if (indexPath.row == 1) {
+            [self funOpenPasscodeSettingsViewController];
+        }
+        else if (indexPath.row == 2)
+        {
+            [self funChooseAppLockTime];
+        }
     }
-    else if (indexPath.section == 1 && indexPath.row == 0)
+    else if (indexPath.section == 1)
     {
-        [self funOpenThemeViewController];
+        if (![[AppData sharedAppData] isRemoveAdPurchased])
+        {
+            if (indexPath.row == 0)
+            {
+                [self funOpenThemeViewController];
+            }
+            else if (indexPath.row == 1)
+            {
+                [self funRemoveAd];
+            }
+            else if (indexPath.row == 2)
+            {
+                [self funRestoreInApp];
+            }
+            else if (indexPath.row == 3)
+            {
+                //share this app method
+            }
+            else if (indexPath.row == 4)
+            {
+                //Rate US method
+            }
+        }
+        else
+        {
+            if (indexPath.row == 0)
+            {
+                [self funOpenThemeViewController];
+            }
+            else if (indexPath.row == 1)
+            {
+                //share this app method
+            }
+            else if (indexPath.row == 2)
+            {
+                //Rate US method
+            }
+        }
+        
     }
-    else if (indexPath.section == 1 && indexPath.row == 1)
-    {
-        [self funRemoveAd];
-    }
+    
+    
 }
 -(void)inAppPurchaseDoneForID:(NSString*)strInAppItemID
 {
@@ -256,6 +315,14 @@
     inAppPurchase.delegate=self;
     [inAppPurchase purchaseProduct:[inAppPurchase getProductWithID:InAppId]];
 }
+
+-(void)funRestoreInApp
+{
+    InAppPurchase *inAppPurchase=[InAppPurchase sharedInAppPurchase];
+    inAppPurchase.delegate=self;
+    [inAppPurchase restoredInAppPurchased];
+}
+
 -(void)funOpenPasswordSettingsViewController
 {
     PasswordSettingsViewController *passwordSettingsVc = [[PasswordSettingsViewController alloc]initWithNibName:@"PasswordSettingsViewController" bundle:[NSBundle mainBundle]];

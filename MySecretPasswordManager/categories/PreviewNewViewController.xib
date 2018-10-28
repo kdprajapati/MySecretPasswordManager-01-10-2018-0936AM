@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,7 +33,7 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10m-Dd-d5G">
-                    <rect key="frame" x="20" y="500" width="280" height="44"/>
+                    <rect key="frame" x="20" y="495" width="280" height="44"/>
                     <color key="backgroundColor" red="0.17567905783653259" green="0.67043143510818481" blue="0.74269664287567139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="10m-Dd-d5G" secondAttribute="height" multiplier="70:11" id="Suh-6z-AsQ"/>
@@ -55,7 +53,7 @@
                 <constraint firstItem="10m-Dd-d5G" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BCx-0i-pSo"/>
                 <constraint firstItem="10m-Dd-d5G" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="280:320" id="ach-MU-IzA"/>
                 <constraint firstItem="FNp-L5-fLj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="lrZ-II-hpa"/>
-                <constraint firstItem="10m-Dd-d5G" firstAttribute="top" secondItem="FNp-L5-fLj" secondAttribute="bottom" constant="25" id="t1Y-xt-2VD"/>
+                <constraint firstItem="10m-Dd-d5G" firstAttribute="top" secondItem="FNp-L5-fLj" secondAttribute="bottom" constant="20" id="t1Y-xt-2VD"/>
                 <constraint firstItem="FNp-L5-fLj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ubd-Av-j46"/>
             </constraints>
         </view>
