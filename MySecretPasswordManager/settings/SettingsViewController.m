@@ -41,6 +41,16 @@
     self.settingsTableView.dataSource = self;
     
     [self funAllocSectionItems];
+    
+    self.settingsTableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
+    self.settingsTableView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 50);
+    if ([[AppData  sharedAppData] isRemoveAdPurchased] == false)
+    {
+        self.settingsTableView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+        self.settingsTableView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 100);
+        
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated

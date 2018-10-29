@@ -65,7 +65,7 @@ static AppData *_sharedAppData = nil;
         [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
         [userdefaults synchronize];
         
-        self.isRemoveAdPurchased = true;//comment after test
+//        self.isRemoveAdPurchased = true;//comment after test
         
         if(!self.isRemoveAdPurchased)
         {
@@ -1077,44 +1077,15 @@ static AppData *_sharedAppData = nil;
                 NSString *objectKey = [object valueForKey:@"recordID"];
                 NSMutableDictionary *dictObject = [dictBankAc valueForKey:objectKey];
                 
-                /*NSString *decCardPIN = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardPIN"] withKey:[AppData sharedAppData].userAppPassword];
-                if (decCardPIN != nil && ![decCardPIN isEqualToString:@""])
+                NSString *password = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"password"] withKey:[AppData sharedAppData].userAppPassword];
+                if (password != nil && ![password isEqualToString:@""])
                 {
-                    NSString *encCardPIN = [[AppData sharedAppData] encrypt:decCardPIN withKey:newPasscode];
-                    [dictObject setValue:encCardPIN forKey:@"cardPIN"];
-                }
-                NSString *decCardNumber = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardNumber"] withKey:[AppData sharedAppData].userAppPassword];;
-                if (decCardNumber != nil && ![decCardNumber isEqualToString:@""])
-                {
-                    NSString *encCardNumber = [[AppData sharedAppData] encrypt:decCardNumber withKey:newPasscode];
-                    if (encCardNumber != nil)
+                    NSString *encPassword = [[AppData sharedAppData] encrypt:password withKey:newPasscode];
+                    if (encPassword != nil)
                     {
-                        [dictObject setValue:encCardNumber forKey:@"cardNumber"];
+                        [dictObject setValue:encPassword forKey:@"password"];
                     }
-                }*/
-            }
-            case KCategoryIdentity:
-            {
-                NSMutableDictionary *dictBankAc = [self.dictAllCategoryData objectForKey:CategoryIdentity];
-                //[dictBankAc setObject:categoryDict forKey:objectKey];
-                NSString *objectKey = [object valueForKey:@"recordID"];
-                NSMutableDictionary *dictObject = [dictBankAc valueForKey:objectKey];
-                
-                /*NSString *decCardPIN = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardPIN"] withKey:[AppData sharedAppData].userAppPassword];
-                if (decCardPIN != nil && ![decCardPIN isEqualToString:@""])
-                {
-                    NSString *encCardPIN = [[AppData sharedAppData] encrypt:decCardPIN withKey:newPasscode];
-                    [dictObject setValue:encCardPIN forKey:@"cardPIN"];
                 }
-                NSString *decCardNumber = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardNumber"] withKey:[AppData sharedAppData].userAppPassword];;
-                if (decCardNumber != nil && ![decCardNumber isEqualToString:@""])
-                {
-                    NSString *encCardNumber = [[AppData sharedAppData] encrypt:decCardNumber withKey:newPasscode];
-                    if (encCardNumber != nil)
-                    {
-                        [dictObject setValue:encCardNumber forKey:@"cardNumber"];
-                    }
-                }*/
             }
             case KCategoryMemberShip:
             {
@@ -1123,23 +1094,18 @@ static AppData *_sharedAppData = nil;
                 NSString *objectKey = [object valueForKey:@"recordID"];
                 NSMutableDictionary *dictObject = [dictBankAc valueForKey:objectKey];
                 
-                /*NSString *decCardPIN = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardPIN"] withKey:[AppData sharedAppData].userAppPassword];
-                if (decCardPIN != nil && ![decCardPIN isEqualToString:@""])
+                
+                NSString *memberPassword = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"memberPassword"] withKey:[AppData sharedAppData].userAppPassword];;
+                if (memberPassword != nil && ![memberPassword isEqualToString:@""])
                 {
-                    NSString *encCardPIN = [[AppData sharedAppData] encrypt:decCardPIN withKey:newPasscode];
-                    [dictObject setValue:encCardPIN forKey:@"cardPIN"];
-                }
-                NSString *decCardNumber = [[AppData sharedAppData] decrypt:[dictObject valueForKey:@"cardNumber"] withKey:[AppData sharedAppData].userAppPassword];;
-                if (decCardNumber != nil && ![decCardNumber isEqualToString:@""])
-                {
-                    NSString *encCardNumber = [[AppData sharedAppData] encrypt:decCardNumber withKey:newPasscode];
-                    if (encCardNumber != nil)
+                    NSString *encMemberPassword = [[AppData sharedAppData] encrypt:memberPassword withKey:newPasscode];
+                    if (encMemberPassword != nil)
                     {
-                        [dictObject setValue:encCardNumber forKey:@"cardNumber"];
+                        [dictObject setValue:encMemberPassword forKey:@"memberPassword"];
                     }
-                }*/
+                }
             }
-            
+                
             default:
                 break;
         }
