@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1229"
             endingLineNumber = "1229"
-            landmarkName = "-alertForNotificationOnViewController:"
+            landmarkName = "-showAlertForRateUsOnViewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
