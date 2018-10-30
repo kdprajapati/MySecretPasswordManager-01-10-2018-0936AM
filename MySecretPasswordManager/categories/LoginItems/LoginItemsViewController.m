@@ -384,7 +384,7 @@
     }
     else
     {
-        objectKey = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        objectKey = [[AppData sharedAppData] funGenerateUDID];
     }
     
     NSString *encPassword = [[AppData sharedAppData] encrypt:self.passwordTxt.text withKey:[AppData sharedAppData].userAppPassword];

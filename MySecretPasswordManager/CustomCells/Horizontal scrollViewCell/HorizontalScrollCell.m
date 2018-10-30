@@ -179,13 +179,30 @@
 
 -(void)funRemoveImage:(UIButton *)sender
 {
-    if([_cellDelegate respondsToSelector:@selector(funRemoveImage:)])
-    {
-        [_cellDelegate funRemoveImage:sender.tag];
-        
-        UIView *deletedView = [self.scroll viewWithTag:sender.tag];
-        [deletedView removeFromSuperview];
-    }
+    UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Alert" message:@"Are you sure want to Delete Image?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yes = [UIAlertAction
+                           actionWithTitle:@"Yes"
+                           style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * action)
+                           {
+                               if([_cellDelegate respondsToSelector:@selector(funRemoveImage:)])
+                               {
+//                                   UIView *deletedView = [self.scroll viewWithTag:sender.tag];
+//                                   [deletedView removeFromSuperview];
+                                   [_cellDelegate funRemoveImage:sender.tag];
+                               }
+                               
+                           }];
+    [alert addAction:yes];
+    UIAlertAction* no = [UIAlertAction
+                          actionWithTitle:@"No"
+                          style:UIAlertActionStyleCancel
+                          handler:^(UIAlertAction * action){}];
+    [alert addAction:no];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    
     
 }
 

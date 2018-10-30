@@ -41,8 +41,12 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"Membership";
+    
+    self.automaticallyAdjustsScrollViewInsets = false;
+    
     // Do any additional setup after loading the view from its nib.
     CGFloat contentRatio = ([UIScreen mainScreen].bounds.size.height*230)/320;
     self.scrolViewMembership.contentSize = CGSizeMake(self.scrolViewMembership.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
@@ -371,7 +375,10 @@
 -(void)funUpdateCollectionPhotos
 {
     [self prepareImages];
-    [self.collectionViewPhotos reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionViewPhotos reloadData];
+    });
+    
 }
 
 #pragma mark:- keyboard notifications
@@ -626,7 +633,7 @@
     }
     else
     {
-        recordIDCategory = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        recordIDCategory = [[AppData sharedAppData] funGenerateUDID];
         isSavedData = false;
     }
 }

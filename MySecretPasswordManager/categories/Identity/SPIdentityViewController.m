@@ -587,7 +587,7 @@
     }
     else
     {
-        recordIDCategory = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        recordIDCategory = [[AppData sharedAppData] funGenerateUDID];
         isSavedData = false;
     }
 }
@@ -669,7 +669,7 @@
     }
     else
     {
-        objectKey = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        objectKey = [[AppData sharedAppData] funGenerateUDID];
     }
     
     

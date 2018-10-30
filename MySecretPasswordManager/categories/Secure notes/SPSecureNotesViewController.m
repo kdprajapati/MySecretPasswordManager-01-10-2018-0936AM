@@ -328,7 +328,7 @@
     }
     else
     {
-        objectKey = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        objectKey = [[AppData sharedAppData] funGenerateUDID];
     }
     
     

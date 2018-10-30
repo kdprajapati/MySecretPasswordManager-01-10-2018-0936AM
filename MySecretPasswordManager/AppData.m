@@ -65,7 +65,7 @@ static AppData *_sharedAppData = nil;
         [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
         [userdefaults synchronize];
         
-//        self.isRemoveAdPurchased = true;//comment after test
+        self.isRemoveAdPurchased = true;//comment after test
         
         if(!self.isRemoveAdPurchased)
         {
@@ -224,6 +224,14 @@ static AppData *_sharedAppData = nil;
         }
     }
     return nil;
+}
+
+#pragma mark - UDID
+-(NSString *)funGenerateUDID
+{
+    NSUUID  *UUID = [NSUUID UUID];
+    NSString* stringUUID = [UUID UUIDString];
+    return stringUUID;
 }
 
 #pragma mark - Save objects
