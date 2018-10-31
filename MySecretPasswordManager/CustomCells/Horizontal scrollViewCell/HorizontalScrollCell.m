@@ -191,6 +191,9 @@
 //                                   UIView *deletedView = [self.scroll viewWithTag:sender.tag];
 //                                   [deletedView removeFromSuperview];
                                    [_cellDelegate funRemoveImage:sender.tag];
+                                   
+                                   UIView *deletedView = [self.scroll viewWithTag:sender.tag];
+                                   [deletedView removeFromSuperview];
                                }
                                
                            }];

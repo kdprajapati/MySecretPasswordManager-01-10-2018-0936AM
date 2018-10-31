@@ -90,7 +90,7 @@
     
     [self setUpCollection];
     
-    if (self.creditCardObject == nil)
+    if (self.ObjectCreditCard == nil)
     {
         [self funChangeRighBarButtonItemEditSave:false];
     }
@@ -225,16 +225,18 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    int i;
+
     AppData *appData = [AppData sharedAppData];
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     NSData *pngData = UIImagePNGRepresentation(chosenImage);
     NSString *filePath = [appData funGetCategoryRecordIDDirectory:KCategoryCreditCard recordID:recordIDCategory];
     NSArray *arrayFileCount = [appData getListOfDirectoryOfCategoryType:KCategoryCreditCard recordID:recordIDCategory];
-    i=arrayFileCount.count;
+    
+    NSString *imageID = [[AppData sharedAppData] funGenerateUDID];
     
     //get full path
-    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"image_%lu.png",(unsigned long)i]];
+    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",imageID]];
+    
     
     //create directory
     [appData funCreateCategoryPhotosForRecordId:KCategoryCreditCard recordID:recordIDCategory];
@@ -242,6 +244,9 @@
     [pngData writeToFile:filePath atomically:YES];
     [picker dismissViewControllerAnimated:YES completion:^{
         [self funUpdateCollectionPhotos];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionViewPhotos reloadData];
+        });
     }];
     
 }
@@ -371,13 +376,18 @@
     [[NSFileManager defaultManager] removeItemAtPath:imageToDeletePath error:&error];
     NSLog(@"error deleting photo - %@",error);
     
-    [self performSelector:@selector(funUpdateCollectionPhotos) withObject:nil afterDelay:0.5];
+    [self funUpdateCollectionPhotos];
+    [self.collectionViewPhotos deleteItemsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:tag inSection:0], nil]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionViewPhotos reloadData];
+    });
+//    [self performSelector:@selector(funUpdateCollectionPhotos) withObject:nil afterDelay:0.5];
 }
 
 -(void)funUpdateCollectionPhotos
 {
     [self prepareImages];
-    [self.collectionViewPhotos reloadData];
+//    [self.collectionViewPhotos reloadData];
 }
 
 #pragma mark:- keyboard notifications
