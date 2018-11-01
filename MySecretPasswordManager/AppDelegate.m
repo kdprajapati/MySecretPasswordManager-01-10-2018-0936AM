@@ -135,17 +135,18 @@
     NSString *strPasscode = [defaults valueForKey:@"APP_Password"];
     if(strPasscode == nil || strPasscode.length == 0)
     {
-        //Open first Flow
-        //        self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-        GettingStartedViewController *homeVc = [[GettingStartedViewController alloc]initWithNibName:@"GettingStartedViewController" bundle:[NSBundle mainBundle]];
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVc];
-        nav.navigationBar.backgroundColor = [UIColor clearColor];
-        self.window.rootViewController = nav;
-        [self.window makeKeyAndVisible];
+        BOOL isConsentTaken = [defaults boolForKey:@"ConsentStatusAgree"];
+        [self funOpenGettingStartedControllerAfterConsent];
         
-        NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-        [userdefaults setInteger:1 forKey:@"AppTheme"];
-        [userdefaults synchronize];
+        if(isConsentTaken)
+        {
+//            [self funOpenGettingStartedControllerAfterConsent];
+        }
+        else
+        {
+            [self funOpenConsentAlertController];
+        }
+        
     }
     else
     {
@@ -215,6 +216,45 @@
     }
 }
 
+-(void)funOpenConsentAlertController
+{
+    UIAlertController *getStartedController = [UIAlertController alertControllerWithTitle:@"Read Once" message:@"Please review our Private Policy to agree the terms." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *agree = [UIAlertAction actionWithTitle:@"Agree" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [self funOpenGettingStartedControllerAfterConsent];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:true forKey:@"ConsentStatusAgree"];
+        [defaults synchronize];
+    }];
+    
+    UIAlertAction *privacy = [UIAlertAction actionWithTitle:@"Privacy Policy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    UIAlertAction *terms = [UIAlertAction actionWithTitle:@"Terms of Service" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [getStartedController addAction:agree];
+    [getStartedController addAction:privacy];
+    [getStartedController addAction:terms];
+    
+    [self.window.rootViewController presentViewController:getStartedController animated:true completion:nil];
+}
+
+-(void)funOpenGettingStartedControllerAfterConsent
+{
+    //Open first Flow
+    GettingStartedViewController *homeVc = [[GettingStartedViewController alloc]initWithNibName:@"GettingStartedViewController" bundle:[NSBundle mainBundle]];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVc];
+    nav.navigationBar.backgroundColor = [UIColor clearColor];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    [userdefaults setInteger:1 forKey:@"AppTheme"];
+    [userdefaults synchronize];
+}
 
 -(void)funSuccessPassCode
 {
