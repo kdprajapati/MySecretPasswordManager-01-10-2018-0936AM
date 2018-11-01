@@ -69,7 +69,7 @@
                                             action:@selector(handleSingleTap:)];
     [custom addGestureRecognizer:singleFingerTap];
     
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(custom.frame.size.width-21, 1, 20, 20)];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(custom.frame.size.width-25, 5, 20, 20)];
     [closeButton setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
     [closeButton setImage:[UIImage imageNamed:@"Close.png"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(funRemoveImage:) forControlEvents:UIControlEventTouchUpInside];
