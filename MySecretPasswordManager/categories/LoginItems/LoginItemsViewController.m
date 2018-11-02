@@ -14,6 +14,7 @@
 @interface LoginItemsViewController ()
 {
     CGFloat scrollViewHeight;
+    UIImage *favouriteTintImage;
 }
 @end
 
@@ -52,6 +53,7 @@
         [self funChangeRighBarButtonItemEditSave:true];
     }
     
+    favouriteTintImage = [[UIImage imageNamed:@"Fav_Unselect.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -59,6 +61,26 @@
     [self.navigationController setToolbarHidden:false animated:true];
     
     [[AppData sharedAppData] showAddOnTopOfToolBar];
+    
+    [self funSetFavouriteButtonBottom];
+}
+
+-(void)funSetFavouriteButtonBottom
+{
+    if (self.isFavourite == true)
+    {
+        self.isFavourite = true;
+        [self.favouriteButton setSelected:true];
+        //            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+        [self.favouriteButton setImage:favouriteTintImage forState:UIControlStateNormal];
+        [self.favouriteButton setTintColor:[[AppData sharedAppData] funGetThemeColor]];
+    }
+    else
+    {
+        self.isFavourite = false;
+        [self.favouriteButton setSelected:false];
+        [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    }
 }
 
 /**
@@ -177,7 +199,9 @@
         {
             self.isFavourite = true;
             [self.favouriteButton setSelected:true];
-            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+//            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+            [self.favouriteButton setImage:favouriteTintImage forState:UIControlStateNormal];
+            [self.favouriteButton setTintColor:[[AppData sharedAppData] funGetThemeColor]];
             
         }
         
@@ -299,21 +323,7 @@
         }
         self.isFavourite = [[self.loginObject valueForKey:@"isFavourite"] boolValue];
         
-        if (self.isFavourite == true)
-        {
-            self.isFavourite = true;
-            [self.favouriteButton setSelected:true];
-            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
-            
-            
-            
-        }
-        else
-        {
-            self.isFavourite = false;
-            [self.favouriteButton setSelected:false];
-            [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
-        }
+        [self funSetFavouriteButtonBottom];
     }
 }
 

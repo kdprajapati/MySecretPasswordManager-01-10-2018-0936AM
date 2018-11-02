@@ -74,6 +74,21 @@
 		73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D8170C20816F69002057D2 /* SPSecureNotesViewController.xib */; };
 		9E22185F216525000099A1A4 /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22185D216525000099A1A4 /* NoteViewController.m */; };
 		9E221860216525000099A1A4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E22185E216525000099A1A4 /* NoteViewController.xib */; };
+		9E40980E218CBC890009A128 /* theme-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409802218CBC890009A128 /* theme-1.png */; };
+		9E40980F218CBC890009A128 /* theme-1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409803218CBC890009A128 /* theme-1@3x.png */; };
+		9E409810218CBC890009A128 /* theme-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409804218CBC890009A128 /* theme-2.png */; };
+		9E409811218CBC890009A128 /* theme-2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409805218CBC890009A128 /* theme-2@3x.png */; };
+		9E409812218CBC890009A128 /* theme-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409806218CBC890009A128 /* theme-3.png */; };
+		9E409813218CBC890009A128 /* theme-3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409807218CBC890009A128 /* theme-3@3x.png */; };
+		9E409814218CBC890009A128 /* theme-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409808218CBC890009A128 /* theme-4.png */; };
+		9E409815218CBC890009A128 /* theme-4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E409809218CBC890009A128 /* theme-4@3x.png */; };
+		9E409816218CBC890009A128 /* theme-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40980A218CBC890009A128 /* theme-5.png */; };
+		9E409817218CBC890009A128 /* theme-5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40980B218CBC890009A128 /* theme-5@3x.png */; };
+		9E409818218CBC890009A128 /* theme-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40980C218CBC890009A128 /* theme-6.png */; };
+		9E409819218CBC890009A128 /* theme-6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40980D218CBC890009A128 /* theme-6@3x.png */; };
+		9E40981B218CC0990009A128 /* SettingsTheme.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40981A218CC0980009A128 /* SettingsTheme.png */; };
+		9E40981E218CC5020009A128 /* noImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40981C218CC5010009A128 /* noImage.png */; };
+		9E40981F218CC5020009A128 /* noImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E40981D218CC5010009A128 /* noImage@3x.png */; };
 		9E50FDAC216E60AE00E8AE54 /* PasswordSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E50FDAA216E60AE00E8AE54 /* PasswordSettingsViewController.m */; };
 		9E50FDAD216E60AE00E8AE54 /* PasswordSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E50FDAB216E60AE00E8AE54 /* PasswordSettingsViewController.xib */; };
 		9E50FDB1216E60BE00E8AE54 /* PasscodeSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E50FDAF216E60BE00E8AE54 /* PasscodeSettingsViewController.m */; };
@@ -304,6 +319,21 @@
 		9E22185C216525000099A1A4 /* NoteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
 		9E22185D216525000099A1A4 /* NoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		9E22185E216525000099A1A4 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		9E409802218CBC890009A128 /* theme-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-1.png"; sourceTree = "<group>"; };
+		9E409803218CBC890009A128 /* theme-1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-1@3x.png"; sourceTree = "<group>"; };
+		9E409804218CBC890009A128 /* theme-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-2.png"; sourceTree = "<group>"; };
+		9E409805218CBC890009A128 /* theme-2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-2@3x.png"; sourceTree = "<group>"; };
+		9E409806218CBC890009A128 /* theme-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-3.png"; sourceTree = "<group>"; };
+		9E409807218CBC890009A128 /* theme-3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-3@3x.png"; sourceTree = "<group>"; };
+		9E409808218CBC890009A128 /* theme-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-4.png"; sourceTree = "<group>"; };
+		9E409809218CBC890009A128 /* theme-4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-4@3x.png"; sourceTree = "<group>"; };
+		9E40980A218CBC890009A128 /* theme-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-5.png"; sourceTree = "<group>"; };
+		9E40980B218CBC890009A128 /* theme-5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-5@3x.png"; sourceTree = "<group>"; };
+		9E40980C218CBC890009A128 /* theme-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-6.png"; sourceTree = "<group>"; };
+		9E40980D218CBC890009A128 /* theme-6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-6@3x.png"; sourceTree = "<group>"; };
+		9E40981A218CC0980009A128 /* SettingsTheme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTheme.png; sourceTree = "<group>"; };
+		9E40981C218CC5010009A128 /* noImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImage.png; sourceTree = "<group>"; };
+		9E40981D218CC5010009A128 /* noImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noImage@3x.png"; sourceTree = "<group>"; };
 		9E50FDA9216E60AE00E8AE54 /* PasswordSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordSettingsViewController.h; sourceTree = "<group>"; };
 		9E50FDAA216E60AE00E8AE54 /* PasswordSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordSettingsViewController.m; sourceTree = "<group>"; };
 		9E50FDAB216E60AE00E8AE54 /* PasswordSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordSettingsViewController.xib; sourceTree = "<group>"; };
@@ -667,6 +697,25 @@
 			path = NoteView;
 			sourceTree = "<group>";
 		};
+		9E409801218CBC890009A128 /* ThemeIcon */ = {
+			isa = PBXGroup;
+			children = (
+				9E409802218CBC890009A128 /* theme-1.png */,
+				9E409803218CBC890009A128 /* theme-1@3x.png */,
+				9E409804218CBC890009A128 /* theme-2.png */,
+				9E409805218CBC890009A128 /* theme-2@3x.png */,
+				9E409806218CBC890009A128 /* theme-3.png */,
+				9E409807218CBC890009A128 /* theme-3@3x.png */,
+				9E409808218CBC890009A128 /* theme-4.png */,
+				9E409809218CBC890009A128 /* theme-4@3x.png */,
+				9E40980A218CBC890009A128 /* theme-5.png */,
+				9E40980B218CBC890009A128 /* theme-5@3x.png */,
+				9E40980C218CBC890009A128 /* theme-6.png */,
+				9E40980D218CBC890009A128 /* theme-6@3x.png */,
+			);
+			path = ThemeIcon;
+			sourceTree = "<group>";
+		};
 		9E639C0B2142D5350041CE6D /* CategoryPassport */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +760,8 @@
 		D70437C5203DEE78003C9259 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				9E40981C218CC5010009A128 /* noImage.png */,
+				9E40981D218CC5010009A128 /* noImage@3x.png */,
 				04067775208E5ECA00757437 /* delete_highlighted.png */,
 				04067776208E5ECA00757437 /* delete_highlighted@2x.png */,
 				04067777208E5ECA00757437 /* delete_normal.png */,
@@ -1014,6 +1065,7 @@
 		D7B378421FD70F9C00841A50 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9E409801218CBC890009A128 /* ThemeIcon */,
 				D70437C5203DEE78003C9259 /* Others */,
 				D7121FF21FE842D200A169B2 /* Category */,
 				D7727B731FD85A7800AFD405 /* passcode and password */,
@@ -1025,6 +1077,7 @@
 		D7B378431FD70F9C00841A50 /* Main menu */ = {
 			isa = PBXGroup;
 			children = (
+				9E40981A218CC0980009A128 /* SettingsTheme.png */,
 				9E631EE6215419F800572B0E /* menu-5.png */,
 				9E631EE3215419F700572B0E /* menu-5@3x.png */,
 				9E631EE4215419F800572B0E /* menu-6.png */,
@@ -1186,6 +1239,7 @@
 				D7727B881FD85B8200AFD405 /* ViewOff.png in Resources */,
 				9EB9D95F2170F7EF006BDE00 /* stopBadge.png in Resources */,
 				D7B3786D1FD70F9C00841A50 /* Settings@3x.png in Resources */,
+				9E409813218CBC890009A128 /* theme-3@3x.png in Resources */,
 				D7B378681FD70F9C00841A50 /* menu-3.png in Resources */,
 				D72EBD792059A03E00E05154 /* Fav_Unselect.png in Resources */,
 				04EDA4DB2093A477003C7BEF /* Checkmark@3x.png in Resources */,
@@ -1198,10 +1252,12 @@
 				D7B378601FD70F9C00841A50 /* favouriteActive.png in Resources */,
 				04067773208E5E5900757437 /* favourite_menu.png in Resources */,
 				9EBE82B8216BC3600001EC9A /* ThemeViewController.xib in Resources */,
+				9E409815218CBC890009A128 /* theme-4@3x.png in Resources */,
 				D7E9F273201A464D00B20BF0 /* SPCreditCardViewController.xib in Resources */,
 				D72EBD882059B00000E05154 /* FavouriteViewController.xib in Resources */,
 				04067781208E5ECA00757437 /* delete_normal.png in Resources */,
 				D7B3786C1FD70F9C00841A50 /* Settings.png in Resources */,
+				9E40980F218CBC890009A128 /* theme-1@3x.png in Resources */,
 				D7B3786B1FD70F9C00841A50 /* menu-4@3x.png in Resources */,
 				D71220091FE842D200A169B2 /* Category_14.png in Resources */,
 				D71220071FE842D200A169B2 /* Category_12.png in Resources */,
@@ -1232,10 +1288,12 @@
 				9E631EEC215419F900572B0E /* menu-5.png in Resources */,
 				D7B378321FD7079B00841A50 /* Main.storyboard in Resources */,
 				9E631EED215419F900572B0E /* menu-6@3x.png in Resources */,
+				9E409811218CBC890009A128 /* theme-2@3x.png in Resources */,
 				D712200F1FE842D200A169B2 /* Category_6.png in Resources */,
 				D7B378611FD70F9C00841A50 /* favouriteActive@3x.png in Resources */,
 				D7CF16051FFFFCE9005D982F /* CreditCardViewController.xib in Resources */,
 				D7FEF6641FF025FD005B24F0 /* CategoryDetailViewController.xib in Resources */,
+				9E409812218CBC890009A128 /* theme-3.png in Resources */,
 				04173258207D01F500DF4F33 /* share_category.png in Resources */,
 				0DDA619F21823B1B0089C577 /* ramayn-ad_iphone6.jpg in Resources */,
 				04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */,
@@ -1251,6 +1309,8 @@
 				D71220041FE842D200A169B2 /* Category_1.png in Resources */,
 				D7B3785D1FD70F9C00841A50 /* Arrow@3x.png in Resources */,
 				9E639C1C2142D5810041CE6D /* SPCategoryPassportViewController.xib in Resources */,
+				9E409814218CBC890009A128 /* theme-4.png in Resources */,
+				9E409819218CBC890009A128 /* theme-6@3x.png in Resources */,
 				04EDA4DD2093A477003C7BEF /* Close@3x.png in Resources */,
 				9EB9D95D2170F7EF006BDE00 /* arrowHelp.png in Resources */,
 				04067788208E5ECA00757437 /* share_normal@2x.png in Resources */,
@@ -1259,6 +1319,7 @@
 				D72AFD602018E479004DEFA9 /* SPBankAccountsViewController.xib in Resources */,
 				9EBE82BC216BD0210001EC9A /* check_White.png in Resources */,
 				9E631EEA215419F900572B0E /* menu-6.png in Resources */,
+				9E409818218CBC890009A128 /* theme-6.png in Resources */,
 				D712200E1FE842D200A169B2 /* Category_5.png in Resources */,
 				D7B3785F1FD70F9C00841A50 /* favourite@3x.png in Resources */,
 				D7727B821FD85A7800AFD405 /* textField.png in Resources */,
@@ -1286,6 +1347,7 @@
 				9E50FDB2216E60BE00E8AE54 /* PasscodeSettingsViewController.xib in Resources */,
 				D7B3785C1FD70F9C00841A50 /* Arrow.png in Resources */,
 				9EBE82BB216BD0210001EC9A /* check_White@3x.png in Resources */,
+				9E40981F218CC5020009A128 /* noImage@3x.png in Resources */,
 				D788D1602024E144002EECD5 /* SPPreviewViewController.xib in Resources */,
 				04EDA4DA2093A477003C7BEF /* Checkmark.png in Resources */,
 				04067784208E5ECA00757437 /* Fav_Unselect@2x.png in Resources */,
@@ -1294,15 +1356,19 @@
 				734FE51D20896443008E3915 /* img0.jpg in Resources */,
 				D7B3786A1FD70F9C00841A50 /* menu-4.png in Resources */,
 				D7B378671FD70F9C00841A50 /* menu-2@3x.png in Resources */,
+				9E409810218CBC890009A128 /* theme-2.png in Resources */,
 				04E5C8C220BC7EAB00E1DECF /* PreviewNewViewController.xib in Resources */,
 				04EDA4E02093A477003C7BEF /* Help-1.png in Resources */,
+				9E40981E218CC5020009A128 /* noImage.png in Resources */,
 				04067786208E5ECA00757437 /* share_highlighted@2x.png in Resources */,
 				9E639C122142D5590041CE6D /* SPCategoryDrivingLicenceViewController.xib in Resources */,
 				D7121FF11FE8412E00A169B2 /* CategoryCollectionViewCell.xib in Resources */,
 				D71220061FE842D200A169B2 /* Category_11.png in Resources */,
 				D7C0C8F11FEAD76B0014EEF9 /* GettingStartedViewController.xib in Resources */,
 				D712200D1FE842D200A169B2 /* Category_4.png in Resources */,
+				9E40981B218CC0990009A128 /* SettingsTheme.png in Resources */,
 				04EDA4DC2093A477003C7BEF /* Close.png in Resources */,
+				9E409817218CBC890009A128 /* theme-5@3x.png in Resources */,
 				D7121FE91FE83DC100A169B2 /* CategoriesViewController.xib in Resources */,
 				0DDA619D21823B1B0089C577 /* ramayn-ad_ipad.jpg in Resources */,
 				9EF59890212B411200873A87 /* ImageShowViewController.xib in Resources */,
@@ -1310,6 +1376,7 @@
 				734FE52020896443008E3915 /* img3.jpg in Resources */,
 				D71220111FE842D200A169B2 /* Category_8.png in Resources */,
 				D7B378641FD70F9C00841A50 /* menu-1.png in Resources */,
+				9E409816218CBC890009A128 /* theme-5.png in Resources */,
 				D7B378631FD70F9C00841A50 /* menu-0@3x.png in Resources */,
 				734FE51F20896443008E3915 /* img2.jpg in Resources */,
 				D71220101FE842D200A169B2 /* Category_7.png in Resources */,
@@ -1317,6 +1384,7 @@
 				04067774208E5E5900757437 /* favourite_menu@3x.png in Resources */,
 				D7727B7D1FD85A7800AFD405 /* AppIcon@3x.png in Resources */,
 				0417325A207D021F00DF4F33 /* delete_category.png in Resources */,
+				9E40980E218CBC890009A128 /* theme-1.png in Resources */,
 				D7B378691FD70F9C00841A50 /* menu-3@3x.png in Resources */,
 				04067785208E5ECA00757437 /* share_highlighted.png in Resources */,
 			);

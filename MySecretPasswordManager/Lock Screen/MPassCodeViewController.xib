@@ -27,6 +27,7 @@
                 <outlet property="oneBtn" destination="XiF-ir-kkX" id="qNQ-8w-s9E"/>
                 <outlet property="sevenBtn" destination="XEJ-qA-9SB" id="a1B-aX-bmd"/>
                 <outlet property="sixBtn" destination="KSn-CK-W6h" id="Vrb-ry-euM"/>
+                <outlet property="themeIconImageView" destination="8gb-md-El3" id="Pq2-8r-Dt4"/>
                 <outlet property="threeBtn" destination="UnV-En-wbW" id="gjW-lc-quh"/>
                 <outlet property="twoBtn" destination="UBC-sR-NlD" id="xf6-uF-mhs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

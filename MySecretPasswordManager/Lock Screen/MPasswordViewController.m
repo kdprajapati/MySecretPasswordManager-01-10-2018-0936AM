@@ -38,10 +38,20 @@
     
     self.view.backgroundColor = [[AppData sharedAppData] funGetThemeColor];
     
+    [self funSetThemeIcon];
     /*[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;*/
+}
+
+-(void)funSetThemeIcon
+{
+    //themeIconImageView
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger theme = [userdefaults integerForKey:@"AppTheme"];
+    self.themeIconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"theme-%ld",(long)theme]];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
