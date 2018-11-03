@@ -44,6 +44,8 @@
 		04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D62093A477003C7BEF /* InAppViewController.xib */; };
 		04EDA4E82093A477003C7BEF /* PageChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDA4D82093A477003C7BEF /* PageChildViewController.m */; };
 		04EDA4E92093A477003C7BEF /* PageChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDA4D92093A477003C7BEF /* PageChildViewController.xib */; };
+		0D0C2025218E24A700D68C25 /* LaunchAppIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0C2023218E24A600D68C25 /* LaunchAppIcon@3x.png */; };
+		0D0C2026218E24A700D68C25 /* LaunchAppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D0C2024218E24A600D68C25 /* LaunchAppIcon@2x.png */; };
 		0D9989C5218DC26F00CECC1A /* SettingsTheme.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9989C4218DC26E00CECC1A /* SettingsTheme.png */; };
 		0D9989EB218DC31200CECC1A /* theme-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9989DF218DC31200CECC1A /* theme-1.png */; };
 		0D9989EC218DC31200CECC1A /* theme-1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9989E0218DC31200CECC1A /* theme-1@3x.png */; };
@@ -162,8 +164,6 @@
 		D76C6222200539D10023AF1C /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76C6221200539D10023AF1C /* DatePickerCell.swift */; };
 		D7727B711FD8576B00AFD405 /* MPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7727B6F1FD8576B00AFD405 /* MPasswordViewController.m */; };
 		D7727B721FD8576B00AFD405 /* MPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7727B701FD8576B00AFD405 /* MPasswordViewController.xib */; };
-		D7727B7C1FD85A7800AFD405 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D7727B741FD85A7800AFD405 /* AppIcon.png */; };
-		D7727B7D1FD85A7800AFD405 /* AppIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7727B751FD85A7800AFD405 /* AppIcon@3x.png */; };
 		D7727B7E1FD85A7800AFD405 /* Paging.png in Resources */ = {isa = PBXBuildFile; fileRef = D7727B761FD85A7800AFD405 /* Paging.png */; };
 		D7727B7F1FD85A7800AFD405 /* Paging@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7727B771FD85A7800AFD405 /* Paging@3x.png */; };
 		D7727B801FD85A7800AFD405 /* PagingActive.png in Resources */ = {isa = PBXBuildFile; fileRef = D7727B781FD85A7800AFD405 /* PagingActive.png */; };
@@ -278,6 +278,8 @@
 		04EDA4D72093A477003C7BEF /* PageChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageChildViewController.h; sourceTree = "<group>"; };
 		04EDA4D82093A477003C7BEF /* PageChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageChildViewController.m; sourceTree = "<group>"; };
 		04EDA4D92093A477003C7BEF /* PageChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PageChildViewController.xib; sourceTree = "<group>"; };
+		0D0C2023218E24A600D68C25 /* LaunchAppIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchAppIcon@3x.png"; sourceTree = "<group>"; };
+		0D0C2024218E24A600D68C25 /* LaunchAppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchAppIcon@2x.png"; sourceTree = "<group>"; };
 		0D9989C4218DC26E00CECC1A /* SettingsTheme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsTheme.png; sourceTree = "<group>"; };
 		0D9989DF218DC31200CECC1A /* theme-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-1.png"; sourceTree = "<group>"; };
 		0D9989E0218DC31200CECC1A /* theme-1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "theme-1@3x.png"; sourceTree = "<group>"; };
@@ -434,8 +436,6 @@
 		D7727B6E1FD8576B00AFD405 /* MPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPasswordViewController.h; sourceTree = "<group>"; };
 		D7727B6F1FD8576B00AFD405 /* MPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPasswordViewController.m; sourceTree = "<group>"; };
 		D7727B701FD8576B00AFD405 /* MPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MPasswordViewController.xib; sourceTree = "<group>"; };
-		D7727B741FD85A7800AFD405 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
-		D7727B751FD85A7800AFD405 /* AppIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon@3x.png"; sourceTree = "<group>"; };
 		D7727B761FD85A7800AFD405 /* Paging.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Paging.png; sourceTree = "<group>"; };
 		D7727B771FD85A7800AFD405 /* Paging@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Paging@3x.png"; sourceTree = "<group>"; };
 		D7727B781FD85A7800AFD405 /* PagingActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PagingActive.png; sourceTree = "<group>"; };
@@ -856,12 +856,12 @@
 		D7727B731FD85A7800AFD405 /* passcode and password */ = {
 			isa = PBXGroup;
 			children = (
+				0D0C2024218E24A600D68C25 /* LaunchAppIcon@2x.png */,
+				0D0C2023218E24A600D68C25 /* LaunchAppIcon@3x.png */,
 				D7727B841FD85B8200AFD405 /* ViewOff.png */,
 				D7727B851FD85B8200AFD405 /* ViewOff@3x.png */,
 				D7727B861FD85B8200AFD405 /* ViewOn.png */,
 				D7727B871FD85B8200AFD405 /* ViewOn@3x.png */,
-				D7727B741FD85A7800AFD405 /* AppIcon.png */,
-				D7727B751FD85A7800AFD405 /* AppIcon@3x.png */,
 				D7727B761FD85A7800AFD405 /* Paging.png */,
 				D7727B771FD85A7800AFD405 /* Paging@3x.png */,
 				D7727B781FD85A7800AFD405 /* PagingActive.png */,
@@ -1299,6 +1299,7 @@
 				04EDA4E72093A477003C7BEF /* InAppViewController.xib in Resources */,
 				043B756520769F6B0059C8C5 /* SPIdentityViewController.xib in Resources */,
 				D71220081FE842D200A169B2 /* Category_13.png in Resources */,
+				0D0C2026218E24A700D68C25 /* LaunchAppIcon@2x.png in Resources */,
 				0DDA619E21823B1B0089C577 /* ramayn-ad_iphone5.jpg in Resources */,
 				04067780208E5ECA00757437 /* delete_highlighted@2x.png in Resources */,
 				D7727B891FD85B8200AFD405 /* ViewOff@3x.png in Resources */,
@@ -1339,7 +1340,6 @@
 				734FE51E20896443008E3915 /* img1.jpg in Resources */,
 				D7727B831FD85A7800AFD405 /* textField@3x.png in Resources */,
 				0D9989ED218DC31200CECC1A /* theme-2.png in Resources */,
-				D7727B7C1FD85A7800AFD405 /* AppIcon.png in Resources */,
 				0DDA61A721823B1B0089C577 /* GoogleService-Info.plist in Resources */,
 				0D9989F3218DC31200CECC1A /* theme-5.png in Resources */,
 				73D8170E20816F69002057D2 /* SPSecureNotesViewController.xib in Resources */,
@@ -1359,6 +1359,7 @@
 				D7B3786A1FD70F9C00841A50 /* menu-4.png in Resources */,
 				D7B378671FD70F9C00841A50 /* menu-2@3x.png in Resources */,
 				04E5C8C220BC7EAB00E1DECF /* PreviewNewViewController.xib in Resources */,
+				0D0C2025218E24A700D68C25 /* LaunchAppIcon@3x.png in Resources */,
 				0D9989EE218DC31200CECC1A /* theme-2@3x.png in Resources */,
 				04EDA4E02093A477003C7BEF /* Help-1.png in Resources */,
 				9E40981E218CC5020009A128 /* noImage.png in Resources */,
@@ -1383,7 +1384,6 @@
 				D71220101FE842D200A169B2 /* Category_7.png in Resources */,
 				9E50FDAD216E60AE00E8AE54 /* PasswordSettingsViewController.xib in Resources */,
 				04067774208E5E5900757437 /* favourite_menu@3x.png in Resources */,
-				D7727B7D1FD85A7800AFD405 /* AppIcon@3x.png in Resources */,
 				0417325A207D021F00DF4F33 /* delete_category.png in Resources */,
 				D7B378691FD70F9C00841A50 /* menu-3@3x.png in Resources */,
 				04067785208E5ECA00757437 /* share_highlighted.png in Resources */,
