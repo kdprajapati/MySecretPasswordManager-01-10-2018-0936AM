@@ -37,12 +37,15 @@
     
     BOOL isSavedData;
     UILabel *noImageYetLabel;
-    
+    UIImageView *noImageView;
+    UIImage *favouriteTintImage;
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"Membership";
+    
     // Do any additional setup after loading the view from its nib.
     CGFloat contentRatio = ([UIScreen mainScreen].bounds.size.height*230)/320;
     self.scrolViewMembership.contentSize = CGSizeMake(self.scrolViewMembership.frame.size.width, self.onView.frame.size.height * 13.5 + 50);
@@ -76,12 +79,19 @@
     [center addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [center addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    noImageYetLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.collectionViewPhotos.frame.size.width, 44)];
+    /*noImageYetLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.collectionViewPhotos.frame.size.width, 44)];
     noImageYetLabel.text = @"No Photos Yet!";
     noImageYetLabel.textAlignment = NSTextAlignmentCenter;
     noImageYetLabel.center = self.collectionViewPhotos.center;
     [self.collectionViewPhotos addSubview:noImageYetLabel];
-    noImageYetLabel.hidden = true;
+    noImageYetLabel.hidden = true;*/
+    
+    noImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIImage *imageNoImg = [[UIImage imageNamed:@"noImage.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    noImageView.image = imageNoImg;
+    [noImageView setTintColor:[[AppData sharedAppData] funGetThemeColor]];
+    [self.collectionViewPhotos addSubview:noImageView];
+    noImageView.hidden = true;
     
     [self prepareImages];
     
@@ -96,6 +106,7 @@
         [self funChangeRighBarButtonItemEditSave:true];
     }
     
+    favouriteTintImage = [[UIImage imageNamed:@"Fav_Unselect.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 /**
@@ -155,6 +166,25 @@
     
     [[AppData sharedAppData] showAddOnTopOfToolBar];
     
+    [self funSetFavouriteButtonBottom];
+}
+
+-(void)funSetFavouriteButtonBottom
+{
+    if (self.isFavourite == true)
+    {
+        self.isFavourite = true;
+        [self.favouriteBtn setSelected:true];
+        //            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+        [self.favouriteBtn setImage:favouriteTintImage forState:UIControlStateNormal];
+        [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
+    }
+    else
+    {
+        self.isFavourite = false;
+        [self.favouriteBtn setSelected:false];
+        [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -223,16 +253,18 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    int i;
+
     AppData *appData = [AppData sharedAppData];
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     NSData *pngData = UIImagePNGRepresentation(chosenImage);
     NSString *filePath = [appData funGetCategoryRecordIDDirectory:KCategoryMemberShip recordID:recordIDCategory];
     NSArray *arrayFileCount = [appData getListOfDirectoryOfCategoryType:KCategoryMemberShip recordID:recordIDCategory];
-    i=arrayFileCount.count;
+    
+    NSString *imageID = [[AppData sharedAppData] funGenerateUDID];
     
     //get full path
-    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"image_%lu.png",(unsigned long)i]];
+    filePath = [filePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",imageID]];
+    
     
     //create directory
     [appData funCreateCategoryPhotosForRecordId:KCategoryMemberShip recordID:recordIDCategory];
@@ -240,13 +272,17 @@
     [pngData writeToFile:filePath atomically:YES];
     [picker dismissViewControllerAnimated:YES completion:^{
         [self funUpdateCollectionPhotos];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionViewPhotos reloadData];
+        });
     }];
     
 }
 
 -(void)viewDidLayoutSubviews
 {
-    noImageYetLabel.frame = CGRectMake(0, self.collectionViewPhotos.frame.size.height/2 - 22, self.view.frame.size.width - 8, 44);
+//    noImageYetLabel.frame = CGRectMake(0, self.collectionViewPhotos.frame.size.height/2 - 22, self.view.frame.size.width - 8, 44);
+    noImageView.frame = CGRectMake(self.collectionViewPhotos.frame.size.width/2-22, self.collectionViewPhotos.frame.size.height/2 - 22, 44, 44);
 }
 
 -(void)prepareImages
@@ -289,11 +325,13 @@
     
     if (arrayListFiles.count > 0)
     {
-        noImageYetLabel.hidden = true;
+//        noImageYetLabel.hidden = true;
+        noImageView.hidden = true;
     }
     else
     {
-        noImageYetLabel.hidden = false;
+//        noImageYetLabel.hidden = false;
+        noImageView.hidden = false;
     }
 }
 
@@ -365,13 +403,21 @@
     [[NSFileManager defaultManager] removeItemAtPath:imageToDeletePath error:&error];
     NSLog(@"error deleting photo - %@",error);
     
-    [self performSelector:@selector(funUpdateCollectionPhotos) withObject:nil afterDelay:0.5];
+    [self funUpdateCollectionPhotos];
+    [self.collectionViewPhotos deleteItemsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:tag inSection:0], nil]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionViewPhotos reloadData];
+    });
+//    [self performSelector:@selector(funUpdateCollectionPhotos) withObject:nil afterDelay:0.5];
 }
 
 -(void)funUpdateCollectionPhotos
 {
     [self prepareImages];
-    [self.collectionViewPhotos reloadData];
+    /*dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionViewPhotos reloadData];
+    });*/
+    
 }
 
 #pragma mark:- keyboard notifications
@@ -440,7 +486,9 @@
         {
             self.isFavourite = true;
             [self.favouriteBtn setSelected:true];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+//            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+            [self.favouriteBtn setImage:favouriteTintImage forState:UIControlStateNormal];
+            [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
     }
@@ -595,18 +643,7 @@
         
         self.isFavourite = [[self.ObjectMembership valueForKey:@"isFavourite"] boolValue];
         
-        if (self.isFavourite == true)
-        {
-            self.isFavourite = true;
-            [self.favouriteBtn setSelected:true];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
-        }
-        else
-        {
-            self.isFavourite = false;
-            [self.favouriteBtn setSelected:false];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
-        }
+        [self funSetFavouriteButtonBottom];
         
     }
     else
@@ -626,7 +663,7 @@
     }
     else
     {
-        recordIDCategory = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        recordIDCategory = [[AppData sharedAppData] funGenerateUDID];
         isSavedData = false;
     }
 }

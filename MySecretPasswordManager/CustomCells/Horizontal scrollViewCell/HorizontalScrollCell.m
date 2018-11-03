@@ -69,7 +69,7 @@
                                             action:@selector(handleSingleTap:)];
     [custom addGestureRecognizer:singleFingerTap];
     
-    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(custom.frame.size.width-21, 1, 20, 20)];
+    UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(custom.frame.size.width-25, 5, 20, 20)];
     [closeButton setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
     [closeButton setImage:[UIImage imageNamed:@"Close.png"] forState:UIControlStateNormal];
     [closeButton addTarget:self action:@selector(funRemoveImage:) forControlEvents:UIControlEventTouchUpInside];
@@ -179,13 +179,33 @@
 
 -(void)funRemoveImage:(UIButton *)sender
 {
-    if([_cellDelegate respondsToSelector:@selector(funRemoveImage:)])
-    {
-        [_cellDelegate funRemoveImage:sender.tag];
-        
-        UIView *deletedView = [self.scroll viewWithTag:sender.tag];
-        [deletedView removeFromSuperview];
-    }
+    UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Alert" message:@"Are you sure want to Delete Image?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yes = [UIAlertAction
+                           actionWithTitle:@"Yes"
+                           style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * action)
+                           {
+                               if([_cellDelegate respondsToSelector:@selector(funRemoveImage:)])
+                               {
+//                                   UIView *deletedView = [self.scroll viewWithTag:sender.tag];
+//                                   [deletedView removeFromSuperview];
+                                   [_cellDelegate funRemoveImage:sender.tag];
+                                   
+                                   UIView *deletedView = [self.scroll viewWithTag:sender.tag];
+                                   [deletedView removeFromSuperview];
+                               }
+                               
+                           }];
+    [alert addAction:yes];
+    UIAlertAction* no = [UIAlertAction
+                          actionWithTitle:@"No"
+                          style:UIAlertActionStyleCancel
+                          handler:^(UIAlertAction * action){}];
+    [alert addAction:no];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+    
     
 }
 

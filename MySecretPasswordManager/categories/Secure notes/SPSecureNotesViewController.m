@@ -14,6 +14,7 @@
 @interface SPSecureNotesViewController ()
 {
     CGFloat scrollViewHeight;
+    UIImage *favouriteTintImage;
 }
 
 @end
@@ -57,6 +58,7 @@
         [self funChangeRighBarButtonItemEditSave:true];
     }
     
+    favouriteTintImage = [[UIImage imageNamed:@"Fav_Unselect.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 /**
@@ -116,6 +118,25 @@
     
     [[AppData sharedAppData] showAddOnTopOfToolBar];
     
+    [self funSetFavouriteButtonBottom];
+}
+
+-(void)funSetFavouriteButtonBottom
+{
+    if (self.isFavourite == true)
+    {
+        self.isFavourite = true;
+        [self.favouriteBtn setSelected:true];
+        //            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+        [self.favouriteBtn setImage:favouriteTintImage forState:UIControlStateNormal];
+        [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
+    }
+    else
+    {
+        self.isFavourite = false;
+        [self.favouriteBtn setSelected:false];
+        [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark:- keyboard notifications
@@ -185,7 +206,9 @@
         {
             self.isFavourite = true;
             [self.favouriteBtn setSelected:true];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+//            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
+            [self.favouriteBtn setImage:favouriteTintImage forState:UIControlStateNormal];
+            [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
     }
@@ -260,18 +283,7 @@
         
         self.isFavourite = [[self.noteObject valueForKey:@"isFavourite"] boolValue];
         
-        if (self.isFavourite == true)
-        {
-            self.isFavourite = true;
-            [self.favouriteBtn setSelected:true];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Selected.png"] forState:UIControlStateNormal];
-        }
-        else
-        {
-            self.isFavourite = false;
-            [self.favouriteBtn setSelected:false];
-            [self.favouriteBtn setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
-        }
+        [self funSetFavouriteButtonBottom];
     }
 }
 
@@ -328,7 +340,7 @@
     }
     else
     {
-        objectKey = [[CoreDataStackManager sharedManager] funGenerateUDID];
+        objectKey = [[AppData sharedAppData] funGenerateUDID];
     }
     
     

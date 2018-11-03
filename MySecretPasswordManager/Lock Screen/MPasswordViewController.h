@@ -36,5 +36,6 @@
 
 @property(nonatomic, strong) NSString *passwordToReEnter;
 @property (strong, nonatomic) IBOutlet UILabel *passwordHintLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *themeIconImageView;
 
 @end

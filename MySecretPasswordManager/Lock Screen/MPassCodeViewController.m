@@ -83,6 +83,15 @@
     self.cancelBtn.layer.borderWidth = 0.3;
     self.cancelBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
     
+    [self funSetThemeIcon];
+}
+
+-(void)funSetThemeIcon
+{
+    //themeIconImageView
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSInteger theme = [userdefaults integerForKey:@"AppTheme"];
+    self.themeIconImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"theme-%ld",(long)theme]];
     
 }
 

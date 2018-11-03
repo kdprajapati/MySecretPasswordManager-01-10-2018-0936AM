@@ -23,3 +23,8 @@
 -(void)funOpenSecurity;
 @end
 
+/*
+ - get started screen
+ -privacy policy
+ - terms of service
+ */

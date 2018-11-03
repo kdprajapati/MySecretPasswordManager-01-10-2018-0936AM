@@ -73,4 +73,7 @@
 
 -(void)showAddOnTopOfToolBar;
 -(void)showAddAtBottom;
+
+#pragma mark - UDID
+-(NSString *)funGenerateUDID;
 @end

@@ -24,6 +24,8 @@
 @implementation ViewController
 {
     NSMutableArray *mainMenuItems;
+    UIButton *favBtn;
+    UIButton *settingBtn;
 }
 
 - (void)viewDidLoad {
@@ -85,6 +87,8 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [[AppData sharedAppData] showAddOnTopOfToolBar];
     
+    [favBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
+    [settingBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
 }
 
 - (void)orientationChanged:(NSNotification *)notification{
@@ -104,11 +108,13 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     
     UIBarButtonItem *flexibalSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
-    UIButton *favBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [favBtn setImage:[UIImage imageNamed:@"favourite_menu.png"] forState:UIControlStateNormal];
+    UIImage *imageFav = [[UIImage imageNamed:@"Fav_Unselect.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    favBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [favBtn setImage:imageFav forState:UIControlStateNormal];
 //    [favBtn setImage:[UIImage imageNamed:@"favouriteActive.png"] forState:UIControlStateHighlighted];
     [favBtn addTarget:self action:@selector(funOpenFavouriteViewController) forControlEvents:UIControlEventTouchUpInside];
     favBtn.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    [favBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
     UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithCustomView:favBtn];
     
     UIButton *addBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -117,10 +123,13 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     addBtn.imageEdgeInsets = UIEdgeInsetsMake(1, 1, 1, 1);
     UIBarButtonItem *plusBtn = [[UIBarButtonItem alloc] initWithCustomView:addBtn];
     
-    UIButton *settingBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [settingBtn setImage:[UIImage imageNamed:@"Settings.png"] forState:UIControlStateNormal];
-    [settingBtn setImage:[UIImage imageNamed:@"SettingsActive.png"] forState:UIControlStateHighlighted];
+    UIImage *imageSettings = [[UIImage imageNamed:@"Settings.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    settingBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [settingBtn setImage:imageSettings forState:UIControlStateNormal];
+//    [settingBtn setImage:[UIImage imageNamed:@"SettingsActive.png"] forState:UIControlStateHighlighted];
     [settingBtn addTarget:self action:@selector(funOpenSettingViewController) forControlEvents:UIControlEventTouchUpInside];
+    
+    [settingBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
     UIBarButtonItem *settingsBtn = [[UIBarButtonItem alloc] initWithCustomView:settingBtn];
     
     self.navigationController.toolbarHidden = false;

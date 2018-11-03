@@ -55,5 +55,6 @@
 @property(nonatomic, strong) NSString *passCodeToReEnter;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelTitlePasscode;
+@property (weak, nonatomic) IBOutlet UIImageView *themeIconImageView;
 
 @end
