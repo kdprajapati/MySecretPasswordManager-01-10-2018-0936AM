@@ -234,7 +234,9 @@
     }];
     
     UIAlertAction *privacy = [UIAlertAction actionWithTitle:@"Privacy Policy" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        //https://s3.amazonaws.com/nilapps.com/privacy-policy.html
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://s3.amazonaws.com/nilapps.com/privacy-policy.html"]];
+
     }];
     
 //    UIAlertAction *terms = [UIAlertAction actionWithTitle:@"Terms of Service" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
