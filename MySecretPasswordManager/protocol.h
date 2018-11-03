@@ -26,11 +26,11 @@ static NSURL *AppPlistPath = [[[[NSFileManager defaultManager] URLsForDirectory:
 #define CategoryPassport  @"CategoryPassport"
 
 
-#define AppId @"1362178166"
-#define InAppId @"chalisa_removeads"
-#define ADMob_AppID @"ca-app-pub-9071153832703835~4115629510"
-#define ADMob_BannerID @"ca-app-pub-9071153832703835/5241008927"
-#define ADMob_FullScreenID @"ca-app-pub-9071153832703835/6781730424"
+#define AppId @"1441211373"
+#define InAppId @"PasswordManager_RemoveAllAds"
+#define ADMob_AppID @"ca-app-pub-9071153832703835~5612056277"
+#define ADMob_BannerID @"ca-app-pub-9071153832703835/2578698829"
+#define ADMob_FullScreenID @"ca-app-pub-9071153832703835/2195555440"
 #define AdMobFullScreenRepeatCount 4
 
 typedef enum : int {
