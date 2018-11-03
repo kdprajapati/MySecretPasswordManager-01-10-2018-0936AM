@@ -141,6 +141,7 @@
         if(isConsentTaken)
         {
 //            [self funOpenGettingStartedControllerAfterConsent];
+//             [self funOpneApp];
         }
         else
         {
@@ -150,51 +151,18 @@
     }
     else
     {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSInteger onOffStatus = [[defaults valueForKey:AppPasscodeOnOffKey] integerValue];
-        if (onOffStatus == 1)
-        {
-            if ([AppData sharedAppData].numOfTimeWrong >= 2)
-            {
-                //Ask Password
-                MPasswordViewController *homeVc = [[MPasswordViewController alloc]initWithNibName:@"MPasswordViewController" bundle:[NSBundle mainBundle]];
-                homeVc.passwordModeType = 2;
-                if (isLaunching == true)
-                {
-                    self.window.rootViewController = homeVc;
-                }
-                else
-                {
-                    self.pascodeWindow.rootViewController = homeVc;
-                }
-            }
-            else
-            {
-                //Ask Password
-                MPassCodeViewController *homeVc = [[MPassCodeViewController alloc]initWithNibName:@"MPassCodeViewController" bundle:[NSBundle mainBundle]];
-                homeVc.passcodeModeType = 2;
-                if (isLaunching == true)
-                {
-                    self.window.rootViewController = homeVc;
-                }
-                else
-                {
-                    self.pascodeWindow.rootViewController = homeVc;
-                }
-            }
-            
-            if (isLaunching == true)
-            {
-                [self.window makeKeyWindow];
-                [self.window makeKeyAndVisible];
-            }
-            else
-            {
-                [self.pascodeWindow makeKeyWindow];
-                [self.pascodeWindow makeKeyAndVisible];
-            }
-        }
-        else
+        
+        [self funOpneApp];
+    }
+}
+
+-(void)funOpneApp
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger onOffStatus = [[defaults valueForKey:AppPasscodeOnOffKey] integerValue];
+    if (onOffStatus == 1)
+    {
+        if ([AppData sharedAppData].numOfTimeWrong >= 2)
         {
             //Ask Password
             MPasswordViewController *homeVc = [[MPasswordViewController alloc]initWithNibName:@"MPasswordViewController" bundle:[NSBundle mainBundle]];
@@ -202,17 +170,55 @@
             if (isLaunching == true)
             {
                 self.window.rootViewController = homeVc;
-                [self.window makeKeyWindow];
-                [self.window makeKeyAndVisible];
             }
             else
             {
                 self.pascodeWindow.rootViewController = homeVc;
-                [self.pascodeWindow makeKeyWindow];
-                [self.pascodeWindow makeKeyAndVisible];
+            }
+        }
+        else
+        {
+            //Ask Password
+            MPassCodeViewController *homeVc = [[MPassCodeViewController alloc]initWithNibName:@"MPassCodeViewController" bundle:[NSBundle mainBundle]];
+            homeVc.passcodeModeType = 2;
+            if (isLaunching == true)
+            {
+                self.window.rootViewController = homeVc;
+            }
+            else
+            {
+                self.pascodeWindow.rootViewController = homeVc;
             }
         }
         
+        if (isLaunching == true)
+        {
+            [self.window makeKeyWindow];
+            [self.window makeKeyAndVisible];
+        }
+        else
+        {
+            [self.pascodeWindow makeKeyWindow];
+            [self.pascodeWindow makeKeyAndVisible];
+        }
+    }
+    else
+    {
+        //Ask Password
+        MPasswordViewController *homeVc = [[MPasswordViewController alloc]initWithNibName:@"MPasswordViewController" bundle:[NSBundle mainBundle]];
+        homeVc.passwordModeType = 2;
+        if (isLaunching == true)
+        {
+            self.window.rootViewController = homeVc;
+            [self.window makeKeyWindow];
+            [self.window makeKeyAndVisible];
+        }
+        else
+        {
+            self.pascodeWindow.rootViewController = homeVc;
+            [self.pascodeWindow makeKeyWindow];
+            [self.pascodeWindow makeKeyAndVisible];
+        }
     }
 }
 
@@ -231,13 +237,13 @@
         
     }];
     
-    UIAlertAction *terms = [UIAlertAction actionWithTitle:@"Terms of Service" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
+//    UIAlertAction *terms = [UIAlertAction actionWithTitle:@"Terms of Service" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//    }];
     
     [getStartedController addAction:agree];
     [getStartedController addAction:privacy];
-    [getStartedController addAction:terms];
+//    [getStartedController addAction:terms];
     
     [self.window.rootViewController presentViewController:getStartedController animated:true completion:nil];
 }

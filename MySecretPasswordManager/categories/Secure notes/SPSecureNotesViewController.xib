@@ -49,7 +49,7 @@
                                 <constraint firstAttribute="width" secondItem="tgi-Yj-Ubn" secondAttribute="height" multiplier="64:15" id="qaM-dc-mor"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" maximumZoomScale="2" text="Enter secure note here" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-ma-iAG">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-ma-iAG">
                             <rect key="frame" x="20.5" y="75" width="279" height="300"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>

@@ -65,7 +65,7 @@ static AppData *_sharedAppData = nil;
         [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
         [userdefaults synchronize];
         
-        self.isRemoveAdPurchased = true;//comment after test
+//        self.isRemoveAdPurchased = true;//comment after test
         
         if(!self.isRemoveAdPurchased)
         {

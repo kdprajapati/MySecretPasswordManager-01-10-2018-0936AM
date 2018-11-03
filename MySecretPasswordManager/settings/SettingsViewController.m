@@ -106,7 +106,7 @@
     securityItems = [[NSMutableArray alloc] init];
     [securityItems addObject:@"Password"];
     [securityItems addObject:@"Passcode"];
-    [securityItems addObject:askPasscodeAfterString];
+//    [securityItems addObject:askPasscodeAfterString];
     
     
     //otherItems allocation
@@ -167,15 +167,15 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if(indexPath.section == 0)
     {
-        if (indexPath.row == 2)
+        /*if (indexPath.row == 2)
         {
             cell.textLabel.text = askPasscodeAfterString;
         }
         else
-        {
+        {*/
             cell.textLabel.text = [securityItems objectAtIndex:indexPath.row];
             
-        }
+//        }
     }
     else if (indexPath.section == 1)
     {
@@ -261,10 +261,10 @@
         else if (indexPath.row == 1) {
             [self funOpenPasscodeSettingsViewController];
         }
-        else if (indexPath.row == 2)
+        /*else if (indexPath.row == 2)
         {
             [self funChooseAppLockTime];
-        }
+        }*/
     }
     else if (indexPath.section == 1)
     {

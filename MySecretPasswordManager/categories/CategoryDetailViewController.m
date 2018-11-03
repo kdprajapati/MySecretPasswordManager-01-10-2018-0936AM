@@ -386,7 +386,7 @@
         NSIndexPath *indexPath = [self.categoryDetailTableView indexPathForCell:cell];
         
         
-        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Wait!!" message:@"Are you sure you want to Delete?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Are you sure you want to Delete?" preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* no = [UIAlertAction actionWithTitle:@"No"
                                                      style:UIAlertActionStyleDefault
