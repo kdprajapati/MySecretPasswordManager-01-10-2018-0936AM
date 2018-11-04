@@ -76,4 +76,6 @@
 
 #pragma mark - UDID
 -(NSString *)funGenerateUDID;
+
+-(void)sharePopUpWithTextMessage:(nullable NSString *)strMessage image:(nullable UIImage *)image andURL:(nullable NSString *)strURL onViewConrroller:(nullable UIViewController*) viewController;
 @end

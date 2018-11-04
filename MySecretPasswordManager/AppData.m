@@ -65,7 +65,6 @@ static AppData *_sharedAppData = nil;
         [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
         [userdefaults synchronize];
         
-//        self.isRemoveAdPurchased = true;//comment after test
         
         if(!self.isRemoveAdPurchased)
         {
@@ -232,6 +231,40 @@ static AppData *_sharedAppData = nil;
     NSUUID  *UUID = [NSUUID UUID];
     NSString* stringUUID = [UUID UUIDString];
     return stringUUID;
+}
+
+-(void)sharePopUpWithTextMessage:(NSString *)strMessage image:(UIImage *)image andURL:(NSString *)strURL onViewConrroller:(UIViewController*) viewController
+{
+    //NSString *text = @"Chalisa All in One - 23 Indian Gods and Goddesses Chalisa with Aduio and Text";
+    
+    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/app/id%@",AppId]];
+    NSURL *url = [NSURL URLWithString:strURL];
+    
+    //UIImage *image = [UIImage  imageNamed:@""];
+    UIActivityViewController *controller;
+    if(image!=nil)
+    {
+        controller=[[UIActivityViewController alloc]
+                    initWithActivityItems:@[strMessage,image,url]
+                    applicationActivities:nil];
+    }
+    else
+    {
+        controller=[[UIActivityViewController alloc]
+                    initWithActivityItems:@[strMessage,url]
+                    applicationActivities:nil];
+    }
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        [viewController presentViewController:controller animated:YES completion:nil];
+    }
+    else
+    {
+        controller.popoverPresentationController.sourceView =viewController.view;
+        [viewController presentViewController:controller animated:YES completion:nil];
+        
+    }
 }
 
 #pragma mark - Save objects
@@ -1144,7 +1177,7 @@ static AppData *_sharedAppData = nil;
     self.activityLoaderView.center = appdelegate.window.center;
     self.activityLoaderView.hidesWhenStopped = TRUE;
     self.activityLoaderView.hidden= YES;
-    self.activityLoaderView.backgroundColor=[UIColor clearColor];
+    self.activityLoaderView.backgroundColor=[UIColor blackColor];
     [self.viewActivityLoaderBG addSubview:self.activityLoaderView];
 }
 -(void)showActivityLoaderInView:(UIView *)view
@@ -1270,7 +1303,7 @@ static AppData *_sharedAppData = nil;
 {
     if([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.3)
     {
-        
+        [SKStoreReviewController requestReview];
     }
     else
     {

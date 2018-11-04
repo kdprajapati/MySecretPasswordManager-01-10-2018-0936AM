@@ -155,6 +155,7 @@ static InAppPurchase *_sharedInAppPurchase = nil;
                     [self.delegate inAppPurchaseDoneForID:transaction.payment.productIdentifier];
                 }
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                 [self hideActivityLoader];
                 break;
             case SKPaymentTransactionStateRestored:
                 
@@ -163,15 +164,16 @@ static InAppPurchase *_sharedInAppPurchase = nil;
                     [self.delegate inAppPurchaseDoneForID:transaction.payment.productIdentifier];
                 }
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+                 [self hideActivityLoader];
                 break;
             case SKPaymentTransactionStateFailed:
-                
+                 [self hideActivityLoader];
                 break;
             default:
                 break;
         }
     }
-    [self hideActivityLoader];
+//    [self hideActivityLoader];
 }
 
 @end

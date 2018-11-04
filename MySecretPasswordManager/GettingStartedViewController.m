@@ -31,7 +31,7 @@
     
     titleTextArray = [[NSArray alloc] initWithObjects:@"Add Secure Documents\nDetails with Photos",@"SafeGuard Your Social Media\nAccounts and Passwords",@"Save All Passwords\nin One Place", nil];
     
-    subTitleTextArray = [[NSArray alloc] initWithObjects:@"You can create multiple documents\nlists details with adding photos.",@"Relax we realy secure your social\naccounts with safeguard",@"Get inside your financial life and make\neasy smart changes right away", nil];
+    subTitleTextArray = [[NSArray alloc] initWithObjects:@"You can create multiple documents\nlists details with adding photos.",@"Relax we realy secure your social\naccounts with safeguard",@"Tired of remembering multiple passwords or \nforgetting them?Then you are at right place.", nil];
     
     self.pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
     

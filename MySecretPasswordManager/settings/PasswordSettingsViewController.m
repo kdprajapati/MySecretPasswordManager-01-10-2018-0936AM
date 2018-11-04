@@ -31,6 +31,8 @@
     self.PasswordSettingsTableView.dataSource = self;
     
     [self funAllocSectionItems];
+    
+    self.title = @"Password";
 }
 
 -(void)viewWillAppear:(BOOL)animated

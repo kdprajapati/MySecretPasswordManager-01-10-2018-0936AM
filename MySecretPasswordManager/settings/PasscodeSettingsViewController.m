@@ -33,6 +33,8 @@
     self.PasscodeSettingsTableView.dataSource = self;
     
     [self funAllocSectionItems];
+    
+    self.title = @"Passcode";
 }
 
 -(void)viewDidAppear:(BOOL)animated

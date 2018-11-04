@@ -51,6 +51,8 @@
         
     }
     
+    self.title = @"Settings";
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -285,10 +287,12 @@
             else if (indexPath.row == 3)
             {
                 //share this app method
+                [[AppData sharedAppData] sharePopUpWithTextMessage: @"nPassword Manager - Tired of remembering multiple passwords or forgetting them? Looking for secure & easy way to save all passwords and sensitive data? then you are at right place." image:nil andURL:[NSString stringWithFormat:@"https://itunes.apple.com/app/id%@",AppId] onViewConrroller:self];
             }
             else if (indexPath.row == 4)
             {
                 //Rate US method
+                [[AppData sharedAppData] rateUs];
             }
         }
         else
@@ -300,10 +304,12 @@
             else if (indexPath.row == 1)
             {
                 //share this app method
+                [[AppData sharedAppData] sharePopUpWithTextMessage: @"nPassword Manager - Tired of remembering multiple passwords or forgetting them? Looking for secure & easy way to save all passwords and sensitive data? then you are at right place." image:nil andURL:[NSString stringWithFormat:@"https://itunes.apple.com/app/id%@",AppId] onViewConrroller:self];
             }
             else if (indexPath.row == 2)
             {
                 //Rate US method
+                [[AppData sharedAppData] rateUs];
             }
         }
         
@@ -318,6 +324,8 @@
     [AppData sharedAppData].isRemoveAdPurchased=YES;
     [[AppData sharedAppData].adMob hideAllAds];
     [AppData sharedAppData].adMob=nil;
+    
+    [self.settingsTableView reloadData];
 }
 -(void)funRemoveAd
 {
@@ -331,6 +339,17 @@
     InAppPurchase *inAppPurchase=[InAppPurchase sharedInAppPurchase];
     inAppPurchase.delegate=self;
     [inAppPurchase restoredInAppPurchased];
+    
+    [self.settingsTableView reloadData];
+}
+
+-(void)showActivityLoader
+{
+    [[AppData sharedAppData] showActivityLoaderInView:self.view];
+}
+-(void)hideActivityLoader
+{
+    [[AppData sharedAppData] hideActivityLoader];
 }
 
 -(void)funOpenPasswordSettingsViewController

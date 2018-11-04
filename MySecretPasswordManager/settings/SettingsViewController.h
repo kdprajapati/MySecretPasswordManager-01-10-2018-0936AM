@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InAppPurchase.h"
 
-@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SettingsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, InAppPurchaseProtocolDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
  
 

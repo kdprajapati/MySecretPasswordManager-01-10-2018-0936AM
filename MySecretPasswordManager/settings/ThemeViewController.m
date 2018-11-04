@@ -35,6 +35,8 @@
     self.yellowButton.layer.cornerRadius = 4.0;
     self.greenButton.layer.cornerRadius = 4.0;
     self.redButton.layer.cornerRadius = 4.0;
+    
+    self.title = @"Theme";
 }
 
 -(void)viewDidAppear:(BOOL)animated

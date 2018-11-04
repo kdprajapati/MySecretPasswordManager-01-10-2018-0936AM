@@ -84,6 +84,8 @@
     self.cancelBtn.layer.borderColor = [UIColor colorWithRed:229/255 green:229/255 blue:229/255 alpha:1.0].CGColor;
     
     [self funSetThemeIcon];
+    
+    self.title = @"Passcode";
 }
 
 -(void)funSetThemeIcon

@@ -24,7 +24,8 @@
     
     titleTextArray = [[NSArray alloc] initWithObjects:@"Keep All your Credentials\nSafe at one place.",@"Secure All your Document\nDetails with Photos",@"Manage Unlimitted Account Details\nfor Free", nil];
     
-    subTitleTextArray = [[NSArray alloc] initWithObjects:@"Get inside your financial life and make\neasy smart changes right away",@"You can create multiple documents\nlists details with adding photos.",@"Relax we realy secure your social\naccounts with safeguard", nil];
+    subTitleTextArray = [[NSArray alloc] initWithObjects:@"Tired of remembering multiple passwords or \nforgetting them? Then you are at right place.",@"You can create multiple documents\nlists details with adding photos.",@"Relax we realy secure your social\naccounts with safeguard", nil];
+//    subTitleTextArray = [[NSArray alloc] initWithObjects:@"You can create multiple documents\nlists details with adding photos.",@"Relax we realy secure your social\naccounts with safeguard",@"Tired of remembering multiple passwords or \nforgetting them?Then you are at right place.", nil];
     
     
     self.imageViewHelp.image = [UIImage imageNamed:[NSString stringWithFormat:@"Help-%d.png",self.index]];

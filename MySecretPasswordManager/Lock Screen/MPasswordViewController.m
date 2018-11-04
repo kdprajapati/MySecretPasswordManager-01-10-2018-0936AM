@@ -43,6 +43,8 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];
     self.navigationController.navigationBar.translucent = YES;*/
+    
+    self.title = @"Password";
 }
 
 -(void)funSetThemeIcon
