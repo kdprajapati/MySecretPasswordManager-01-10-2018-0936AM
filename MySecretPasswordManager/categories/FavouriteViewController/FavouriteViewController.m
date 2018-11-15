@@ -54,6 +54,8 @@
     //    labelNoData.center = self.view.center;
     labelNoData.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:labelNoData];
+    
+    _favouriteTableView.hidden = true;
 }
 
 

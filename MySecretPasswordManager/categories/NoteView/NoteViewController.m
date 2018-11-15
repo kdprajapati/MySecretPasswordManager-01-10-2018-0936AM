@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(funSaveNoteToCategory)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(funSaveNoteToCategory:)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     self.noteTextView.layer.borderWidth = 1.5;
@@ -39,13 +39,17 @@
     [self.navigationController setToolbarHidden:true animated:true];
 }
 
--(void)funSaveNoteToCategory
+-(void)funSaveNoteToCategory:(BOOL)isFromFavourite
 {
     if (self.delegate != nil && [self.delegate respondsToSelector:@selector(funNoteTextForCategory:)])
     {
         [self.delegate funNoteTextForCategory:self.noteTextView.text];
         
-        [self.navigationController popViewControllerAnimated:true];
+        if (isFromFavourite == false)
+        {
+            //pop to list view
+            [self.navigationController popViewControllerAnimated:true];
+        }
     }
 }
 

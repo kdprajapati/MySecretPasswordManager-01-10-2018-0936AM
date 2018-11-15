@@ -50,7 +50,7 @@
     NSLog(@"scrolViewPassport - %@",NSStringFromCGSize(self.scrolViewPassport.contentSize));
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSavePassport)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSavePassport:)];
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
@@ -176,7 +176,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSavePassport)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSavePassport:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -484,6 +484,10 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.ObjectPassport != nil)
+        {
+            [self AddSavePassport:true];
+        }
     }
 }
 
@@ -705,7 +709,7 @@
 //    [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSavePassport
+-(void)AddSavePassport:(BOOL)isFromFavourite
 {
     //Validation
     //1. should have to enter bankName, accountNumber
@@ -773,8 +777,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(NSMutableDictionary *)funReturnCurrentObjectForPreview

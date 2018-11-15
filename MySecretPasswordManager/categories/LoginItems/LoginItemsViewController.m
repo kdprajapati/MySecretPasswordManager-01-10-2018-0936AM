@@ -126,7 +126,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveLogin:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -205,6 +205,10 @@
             
         }
         
+        if (self.loginObject != nil)
+        {
+            [self AddSaveLogin:true];
+        }
     }
 }
 
@@ -356,7 +360,7 @@
     [[AppData sharedAppData] showAlertWithMessage:@"\"Username\" Copied successfuly." andTitle:@"Success"];
 }
 
--(void)AddSaveLogin
+-(void)AddSaveLogin:(BOOL)isFromFavourite
 {
     
     //Validation
@@ -399,8 +403,17 @@
     
     NSString *encPassword = [[AppData sharedAppData] encrypt:self.passwordTxt.text withKey:[AppData sharedAppData].userAppPassword];
     
-    [object setValue:self.loginNameTxt.text forKey:@"title"];
-    [object setValue:self.loginNameTxt.text forKey:@"loginName"];
+    if (self.loginNameTxt.text.length == 0)
+    {
+        [object setValue:self.usernameTxt.text forKey:@"title"];
+        [object setValue:self.usernameTxt.text forKey:@"loginName"];
+    }
+    else
+    {
+        [object setValue:self.loginNameTxt.text forKey:@"title"];
+        [object setValue:self.loginNameTxt.text forKey:@"loginName"];
+    }
+    
     [object setValue:self.urlWebTxt.text forKey:@"url"];
     [object setValue:self.usernameTxt.text forKey:@"username"];
     if (encPassword != nil)
@@ -433,8 +446,11 @@
     
     [[AppData sharedAppData] funSaveCategoryData:KCategoryLoginPassword objectKey:objectKey dictionary:object];
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 

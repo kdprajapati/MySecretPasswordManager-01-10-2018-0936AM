@@ -155,7 +155,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveCreditCard:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -494,6 +494,10 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.ObjectCreditCard != nil)
+        {
+            [self AddSaveCreditCard:true];
+        }
     }
 }
 
@@ -715,7 +719,7 @@
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveCreditCard
+-(void)AddSaveCreditCard:(BOOL)isFromFavourite
 {
     //Validation
     //1. should have to enter bankName, accountNumber
@@ -805,8 +809,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(NSMutableDictionary *)funReturnCurrentObjectForPreview

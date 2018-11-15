@@ -50,7 +50,7 @@
     NSLog(@"scrolViewDrivingLicence - %@",NSStringFromCGSize(self.scrolViewDrivingLicence.contentSize));
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence:)];
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
@@ -176,7 +176,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveDrivingLicence:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -482,6 +482,10 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.ObjectDrivingLicence != nil)
+        {
+            [self AddSaveDrivingLicence:true];
+        }
     }
 }
 
@@ -700,7 +704,7 @@
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveDrivingLicence
+-(void)AddSaveDrivingLicence:(BOOL)isFromFavourite
 {
     
     //Validation
@@ -767,8 +771,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(NSMutableDictionary *)funReturnCurrentObjectForPreview
