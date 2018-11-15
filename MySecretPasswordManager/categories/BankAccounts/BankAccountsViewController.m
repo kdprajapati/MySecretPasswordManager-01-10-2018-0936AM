@@ -566,7 +566,7 @@
     self.txtBranchAddress.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -583,7 +583,7 @@
     self.txtBranchAddress.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }

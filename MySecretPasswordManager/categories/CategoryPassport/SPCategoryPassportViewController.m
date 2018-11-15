@@ -686,7 +686,7 @@
     self.issueDateButton.userInteractionEnabled = false;
     self.expiryDateButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -702,7 +702,7 @@
     self.expiryDateButton.userInteractionEnabled = true;
     self.collectionViewPhotos.userInteractionEnabled = true;
     
-    [self funChangeRighBarButtonItemEditSave:false];
+//    [self funChangeRighBarButtonItemEditSave:false];
 }
 
 -(void)AddSavePassport

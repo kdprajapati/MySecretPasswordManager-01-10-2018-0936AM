@@ -680,7 +680,7 @@
     self.memberSinceDateButton.userInteractionEnabled = false;
     self.expiryDateButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -696,7 +696,7 @@
     self.memberSinceDateButton.userInteractionEnabled = true;
     self.expiryDateButton.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }

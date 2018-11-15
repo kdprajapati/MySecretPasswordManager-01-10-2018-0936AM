@@ -641,7 +641,7 @@
     
     self.birthDate.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -659,7 +659,7 @@
     
     self.birthDate.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }

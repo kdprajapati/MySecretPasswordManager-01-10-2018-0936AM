@@ -691,7 +691,7 @@
     self.expiryDateButton.userInteractionEnabled = false;
     self.validFromButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
     
 }
 
@@ -710,7 +710,7 @@
     self.expiryDateButton.userInteractionEnabled = true;
     self.validFromButton.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }
