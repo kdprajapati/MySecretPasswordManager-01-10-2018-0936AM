@@ -20,6 +20,8 @@
  -
  */
 
+#import <LocalAuthentication/LocalAuthentication.h>
+
 #import "AppDelegate.h"
 #import "MPassCodeViewController.h"
 #import "MPasswordViewController.h"
@@ -152,7 +154,48 @@
     else
     {
         
-        [self funOpneApp];
+//        [self funOpneApp];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSInteger onOffStatus = [[defaults valueForKey:AppTouchIDKey] integerValue];
+        
+        if (onOffStatus == 1)
+        {
+            LAContext *context = [[LAContext alloc] init];
+            
+            NSError *errorContext;
+            BOOL canEvaluate = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&errorContext];
+            
+            if(canEvaluate)
+            {
+                [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"Authenticate With ToucID" reply:^(BOOL success, NSError * _Nullable error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (success)
+                        {
+                            NSLog(@"TouchID Success...");
+                            [self funStartApp];
+                        }
+                        else
+                        {
+                            NSLog(@"TouchID Wrong...");
+                            [self funOpneApp];
+                        }
+                    });
+                    
+                }];
+            }
+            else
+            {
+                NSLog(@"Setup Touch ID from settings or no support for this device...");
+                NSLog(@"Error :- %@",errorContext);
+                
+                [self funOpneApp];
+            }
+        }
+        else
+        {
+            [self funOpneApp];
+        }
     }
 }
 
