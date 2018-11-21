@@ -303,10 +303,25 @@
             [defaults setInteger:0 forKey:AppTouchIDKey];
             UIAlertController * alert;
             
-            UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Sorry you can't use this feature. \n\nPlease Setup Touch ID/Face ID and allow to use from Settings or Your Device may not have support of Touch ID/Face ID." preferredStyle:UIAlertControllerStyleAlert];
+            if(errorContext.code==kLAErrorTouchIDNotAvailable)
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Allow Use of TouchID/FaceID for this App from Settings OR Your Device Does Not Support TouchID/FaceID" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else if(errorContext.code==kLAErrorPasscodeNotSet)
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Please Setup TouchID/FaceID From Settings" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else if(errorContext.code==kLAErrorTouchIDNotEnrolled)
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Please Setup TouchID/FaceID From Settings" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Setup TouchID/FaceID from Settings or your Device does not support TouchID/FaceID" preferredStyle:UIAlertControllerStyleAlert];
+            }
             
             UIAlertAction* Done = [UIAlertAction
-                                   actionWithTitle:@"Got It!!"
+                                   actionWithTitle:@"Got It"
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action)
                                    {
