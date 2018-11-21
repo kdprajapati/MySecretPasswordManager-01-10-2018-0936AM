@@ -53,9 +53,7 @@
         self.settingsTableView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 100);
         
     }
-    
     self.title = @"Settings";
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -303,11 +301,12 @@
         {
             [sender setOn:false];
             [defaults setInteger:0 forKey:AppTouchIDKey];
+            UIAlertController * alert;
             
             UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Sorry you can't use this feature. \n\nPlease Setup Touch ID/Face ID and allow to use from Settings or Your Device may not have support of Touch ID/Face ID." preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* Done = [UIAlertAction
-                                   actionWithTitle:@"Got It!!"
+                                   actionWithTitle:@"Got It"
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action)
                                    {
