@@ -53,9 +53,7 @@
         self.settingsTableView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 100);
         
     }
-    
     self.title = @"Settings";
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -290,11 +288,27 @@
         {
             [sender setOn:false];
             [defaults setInteger:0 forKey:AppTouchIDKey];
+            UIAlertController * alert;
             
-            UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Setup TouchID from Settings or your Device does not support TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            if(errorContext.code==kLAErrorTouchIDNotAvailable)
+            {
+               alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Your Device Does Not Support TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else if(errorContext.code==kLAErrorPasscodeNotSet)
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Please Setup TouchID From Settings" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else if(errorContext.code==kLAErrorTouchIDNotEnrolled)
+            {
+                alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Please Setup TouchID From Settings" preferredStyle:UIAlertControllerStyleAlert];
+            }
+            else
+            {
+              alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Setup TouchID from Settings or your Device does not support TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            }
             
             UIAlertAction* Done = [UIAlertAction
-                                   actionWithTitle:@"Got It!!"
+                                   actionWithTitle:@"Got It"
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action)
                                    {
