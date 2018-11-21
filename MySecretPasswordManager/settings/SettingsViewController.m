@@ -306,7 +306,7 @@
             UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Sorry you can't use this feature. \n\nPlease Setup Touch ID/Face ID and allow to use from Settings or Your Device may not have support of Touch ID/Face ID." preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* Done = [UIAlertAction
-                                   actionWithTitle:@"Got It"
+                                   actionWithTitle:@"Got It!!"
                                    style:UIAlertActionStyleDefault
                                    handler:^(UIAlertAction * action)
                                    {
