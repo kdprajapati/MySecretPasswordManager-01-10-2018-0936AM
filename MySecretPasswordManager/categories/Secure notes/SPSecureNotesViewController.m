@@ -30,7 +30,7 @@
     self.secureNotesScrollView.contentSize = CGSizeMake(self.secureNotesScrollView.frame.size.width, self.view.frame.size.height + 20);
     
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveSecureNote)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveSecureNote:)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     
     [self funAllocBottomBarButtons];
@@ -104,7 +104,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveSecureNote)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveSecureNote:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -211,6 +211,10 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.noteObject != nil)
+        {
+            [self AddSaveSecureNote:true];
+        }
     }
 }
 - (IBAction)funDeleteObject:(id)sender
@@ -302,7 +306,7 @@
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveSecureNote
+-(void)AddSaveSecureNote:(BOOL)isFromFavourite
 {
     
     //Validation
@@ -362,8 +366,11 @@
     
     [[AppData sharedAppData] funSaveCategoryData:KCategorySecureNote objectKey:objectKey dictionary:object];
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(void)funShowValidationAlert:(int)validationType

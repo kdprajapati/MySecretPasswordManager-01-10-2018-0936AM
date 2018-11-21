@@ -165,7 +165,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveIdentity)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveIdentity:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -480,6 +480,10 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.identityObject != nil)
+        {
+            [self AddSaveIdentity:true];
+        }
     }
 }
 
@@ -641,7 +645,7 @@
     
     self.birthDate.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -659,12 +663,12 @@
     
     self.birthDate.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveIdentity
+-(void)AddSaveIdentity:(BOOL)isFromFavourite
 {
     
     //Validation
@@ -743,8 +747,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(void)funShowValidationAlert:(int)validationType

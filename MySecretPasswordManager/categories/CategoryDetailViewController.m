@@ -57,6 +57,7 @@
     [self.view addSubview:noDataHelpVC.view];
     noDataHelpVC.view.hidden = true;
 
+    _categoryDetailTableView.hidden = true;
 }
 
 -(NSString *)funGetTitle
@@ -224,7 +225,7 @@
     
     cell.delegate = self;
     cell.dataSource = self;
-    cell.cellRevealMode = SWCellRevealModeReversedWithAction;
+    cell.cellRevealMode = SWCellRevealModeNormal;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.lblTitle.text = [[detailArray objectAtIndex:indexPath.row] valueForKey:@"title"];
@@ -385,8 +386,8 @@
         
         NSIndexPath *indexPath = [self.categoryDetailTableView indexPathForCell:cell];
         
-        
-        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Are you sure you want to Delete?" preferredStyle:UIAlertControllerStyleAlert];
+        NSString *message = [NSString stringWithFormat:@"Are you sure you want to Delete '%@' ?",cell.lblTitle.text];
+        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Alert!!" message:message preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* no = [UIAlertAction actionWithTitle:@"No"
                                                      style:UIAlertActionStyleDefault

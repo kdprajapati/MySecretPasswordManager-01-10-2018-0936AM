@@ -141,7 +141,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveBankAccount:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -435,6 +435,10 @@
             //favouriteTintImage
         }
         
+        if (self.bankObject != nil)
+        {
+            [self AddSaveBankAccount:true];
+        }
     }
 }
 
@@ -566,7 +570,7 @@
     self.txtBranchAddress.userInteractionEnabled = false;
     self.noteButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -583,12 +587,12 @@
     self.txtBranchAddress.userInteractionEnabled = true;
     self.noteButton.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveBankAccount
+-(void)AddSaveBankAccount:(BOOL)isFromFavourite
 {
     
     //Validation
@@ -634,8 +638,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(NSMutableDictionary *)funReturnCurrentObjectToSave

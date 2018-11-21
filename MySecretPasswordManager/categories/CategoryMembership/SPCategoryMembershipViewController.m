@@ -52,7 +52,7 @@
     NSLog(@"scrolViewMembership - %@",NSStringFromCGSize(self.scrolViewMembership.contentSize));
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveMembership)];
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveMembership:)];
     
     
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
@@ -152,7 +152,7 @@
     }
     else
     {
-        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveMembership)];
+        UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(AddSaveMembership:)];
         self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects: saveButton, nil];
     }
     
@@ -491,6 +491,11 @@
             [self.favouriteBtn setTintColor:[[AppData sharedAppData] funGetThemeColor]];
         }
         
+        if (self.ObjectMembership != nil)
+        {
+            [self AddSaveMembership:true];
+        }
+        
     }
 }
 
@@ -680,7 +685,7 @@
     self.memberSinceDateButton.userInteractionEnabled = false;
     self.expiryDateButton.userInteractionEnabled = false;
     
-    self.collectionViewPhotos.userInteractionEnabled = false;
+//    self.collectionViewPhotos.userInteractionEnabled = false;
 }
 
 -(void)EditCategory
@@ -696,12 +701,12 @@
     self.memberSinceDateButton.userInteractionEnabled = true;
     self.expiryDateButton.userInteractionEnabled = true;
     
-    self.collectionViewPhotos.userInteractionEnabled = true;
+//    self.collectionViewPhotos.userInteractionEnabled = true;
     
     [self funChangeRighBarButtonItemEditSave:false];
 }
 
--(void)AddSaveMembership
+-(void)AddSaveMembership:(BOOL)isFromFavourite
 {
     //Validation
     //1. should have to enter bankName, accountNumber
@@ -779,8 +784,11 @@
     
     isSavedData = true;
     
-    //pop to list view
-    [self.navigationController popViewControllerAnimated:true];
+    if (isFromFavourite == false)
+    {
+        //pop to list view
+        [self.navigationController popViewControllerAnimated:true];
+    }
 }
 
 -(NSMutableDictionary *)funReturnCurrentObjectForPreview

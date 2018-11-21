@@ -6,6 +6,8 @@
 //  Copyright © 2017 nil. All rights reserved.
 //
 
+#import <LocalAuthentication/LocalAuthentication.h>
+
 #import "SettingsViewController.h"
 #import "MPassCodeViewController.h"
 
@@ -25,6 +27,7 @@
     AppDelegate *appdelegate;
     NSString *askPasscodeAfterString;
     UIView *themeColorView;
+    UISwitch *switchPIN;
 }
 
 @end
@@ -108,6 +111,7 @@
     securityItems = [[NSMutableArray alloc] init];
     [securityItems addObject:@"Password"];
     [securityItems addObject:@"Passcode"];
+    [securityItems addObject:@"Touch ID"];
 //    [securityItems addObject:askPasscodeAfterString];
     
     
@@ -178,6 +182,27 @@
             cell.textLabel.text = [securityItems objectAtIndex:indexPath.row];
             
 //        }
+        if (indexPath.row == 2)
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            if (switchPIN == nil)
+            {
+                switchPIN = [[UISwitch alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 65, 10, 60, 30)];
+            }
+            [switchPIN addTarget:self action:@selector(changeSwitchTouchID:) forControlEvents:UIControlEventValueChanged];
+            [cell.contentView addSubview:switchPIN];
+            
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSInteger onOffStatus = [[defaults valueForKey:AppTouchIDKey] integerValue];
+            if (onOffStatus == 1)
+            {
+                [switchPIN setOn:true];
+            }
+            else
+            {
+                [switchPIN setOn:false];
+            }
+        }
     }
     else if (indexPath.section == 1)
     {
@@ -249,6 +274,46 @@
         return container;
     }
     return [[UIView alloc] init];
+}
+
+- (void)changeSwitchTouchID:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([sender isOn])
+    {
+        LAContext *context = [[LAContext alloc] init];
+        
+        NSError *errorContext;
+        BOOL canEvaluate = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&errorContext];
+        
+        if (canEvaluate == false)
+        {
+            [sender setOn:false];
+            [defaults setInteger:0 forKey:AppTouchIDKey];
+            
+            UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Setup TouchID from Settings or your Device does not support TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* Done = [UIAlertAction
+                                   actionWithTitle:@"Got It!!"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action)
+                                   {
+                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                   }];
+            [alert addAction:Done];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
+            [defaults setInteger:1 forKey:AppTouchIDKey];
+        }
+        
+    }
+    else
+    {
+        [defaults setInteger:0 forKey:AppTouchIDKey];
+    }
+    [defaults synchronize];
 }
 
 #pragma  mark :- tableview delegate

@@ -17,6 +17,7 @@
 #define AppPasswordKey @"APP_Password"
 #define AppPasscodeOnOffKey @"PasscodeOnOffStatus"
 #define AppPasscodeKey @"APP_Passcode"
+#define AppTouchIDKey @"APP_TocuhID_Status"
 
 @property(assign,nonatomic)int appLaunchCount,admobFullScreenDislplayCount,notificationQuatesIndex;
 @property (assign, nonatomic)BOOL isChalisaPlaying;
