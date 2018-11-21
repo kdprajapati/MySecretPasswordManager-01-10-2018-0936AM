@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Media Library</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>To Authenticate User</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Advertisement would like to use bluetooth.</string>
 	<key>NSCalendarsUsageDescription</key>

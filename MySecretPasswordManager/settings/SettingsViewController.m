@@ -111,7 +111,7 @@
     securityItems = [[NSMutableArray alloc] init];
     [securityItems addObject:@"Password"];
     [securityItems addObject:@"Passcode"];
-    [securityItems addObject:@"Touch ID"];
+    [securityItems addObject:@"Touch ID / Face ID"];
 //    [securityItems addObject:askPasscodeAfterString];
     
     
@@ -196,7 +196,20 @@
             NSInteger onOffStatus = [[defaults valueForKey:AppTouchIDKey] integerValue];
             if (onOffStatus == 1)
             {
-                [switchPIN setOn:true];
+                LAContext *context = [[LAContext alloc] init];
+                NSError *errorContext;
+                
+                BOOL canEvaluate = [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&errorContext];
+                
+                if (canEvaluate == true)
+                {
+                    [switchPIN setOn:true];
+                }
+                else
+                {
+                    [switchPIN setOn:false];
+                }
+                
             }
             else
             {
@@ -291,7 +304,7 @@
             [sender setOn:false];
             [defaults setInteger:0 forKey:AppTouchIDKey];
             
-            UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Setup TouchID from Settings or your Device does not support TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alert =  [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Sorry you can't use this feature. \n\nPlease Setup Touch ID/Face ID and allow to use from Settings or Your Device may not have support of Touch ID/Face ID." preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* Done = [UIAlertAction
                                    actionWithTitle:@"Got It!!"
