@@ -204,6 +204,17 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     cell.lblTitle.text = [mainMenuItems objectAtIndex:indexPath.row];
     
   
+    NSArray *categoryArray = [[AppData sharedAppData] funGetDetailObject:(indexPath.row + 1) isFavArrayToReturn:false];
+    
+    int dataCount = 0;
+    if (categoryArray != nil)
+    {
+        dataCount = categoryArray.count;
+    }
+    cell.lblDataCount.frame = CGRectMake(cell.contentView.frame.size.width - 70, 12, 70, 20);
+    cell.lblDataCount.textAlignment = NSTextAlignmentRight;
+    cell.lblDataCount.text = [NSString stringWithFormat:@"%d ",dataCount];
+    
     return cell;
 
 }

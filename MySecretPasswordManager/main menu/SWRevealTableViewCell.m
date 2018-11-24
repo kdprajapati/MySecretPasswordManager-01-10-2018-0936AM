@@ -874,8 +874,8 @@ const NSInteger SWCellRevealPositionNone = 0xff;
     self.lblSubTitle.textColor = [UIColor colorWithRed:179.0/255.0 green:179.0/255.0 blue:179.0/255.0 alpha:1.0];
     [self.contentView addSubview:self.lblSubTitle];
     
-    self.lblDataCount = [[UILabel alloc] initWithFrame:CGRectMake(110, 60, 190, 19)];
-    self.lblDataCount.font = [UIFont fontWithName:HEL size:11];
+    self.lblDataCount = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 150, 12, 50, 20)];
+    self.lblDataCount.font = [UIFont fontWithName:HEL size:13];
     self.lblDataCount.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
     self.lblDataCount.textColor = [UIColor colorWithRed:151.0/255.0 green:151.0/255.0 blue:151.0/255.0 alpha:1.0];
     self.lblDataCount.backgroundColor = [UIColor clearColor];
