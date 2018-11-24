@@ -7,15 +7,11 @@
 //
 
 #import <LocalAuthentication/LocalAuthentication.h>
-
 #import "SettingsViewController.h"
 #import "MPassCodeViewController.h"
-
 #import "MPasswordViewController.h"
-
 #import "AppDelegate.h"
 #import "AppData.h"
-
 #import "ThemeViewController.h"
 #import "PasswordSettingsViewController.h"
 #import "PasscodeSettingsViewController.h"
@@ -29,7 +25,6 @@
     UIView *themeColorView;
     UISwitch *switchPIN;
 }
-
 @end
 
 @implementation SettingsViewController
@@ -129,7 +124,8 @@
     [otherItems addObject:@"Rate Us"];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -334,7 +330,6 @@
         {
             [defaults setInteger:1 forKey:AppTouchIDKey];
         }
-        
     }
     else
     {
