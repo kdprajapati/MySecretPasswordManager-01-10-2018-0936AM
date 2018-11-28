@@ -192,7 +192,7 @@
             NSString *filePath = [[AppData sharedAppData] funGetCategoryRecordIDDirectory:KCategoryPassport recordID:recordIDCategory];
             NSError *error;
             [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
-            NSLog(@"error deleting photo - %@",error);
+            
         }
     }
 }
@@ -397,7 +397,7 @@
     NSString *imageToDeletePath = [imagePathsArray objectAtIndex:tag];
     NSError *error;
     [[NSFileManager defaultManager] removeItemAtPath:imageToDeletePath error:&error];
-    NSLog(@"error deleting photo - %@",error);
+    
     
     [self funUpdateCollectionPhotos];
     [self.collectionViewPhotos deleteItemsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:tag inSection:0], nil]];
@@ -494,7 +494,7 @@
 - (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
     CGFloat keyboardHeight = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
-    NSLog(@"%f", keyboardHeight);
+    
     
 }
 
@@ -615,8 +615,8 @@
             [self.noteButton setTitle:[self.ObjectPassport valueForKey:@"Tap to create note"] forState:UIControlStateNormal];
         }
         
-        NSLog(@"expirydate- %@",[self.ObjectPassport valueForKey:@"expiryDate"]);
-        NSLog(@"validFrom date- %@",[self.ObjectPassport valueForKey:@"validFrom"]);
+        //NSLog(@"expirydate- %@",[self.ObjectPassport valueForKey:@"expiryDate"]);
+        //NSLog(@"validFrom date- %@",[self.ObjectPassport valueForKey:@"validFrom"]);
         
         id dob = [self.ObjectPassport valueForKey:@"DOB"];
         if (dob != nil)

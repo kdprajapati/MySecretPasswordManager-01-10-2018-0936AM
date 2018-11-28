@@ -31,7 +31,7 @@ static NSURL *AppPlistPath = [[[[NSFileManager defaultManager] URLsForDirectory:
 #define ADMob_AppID @"ca-app-pub-9071153832703835~5612056277"
 #define ADMob_BannerID @"ca-app-pub-9071153832703835/2578698829"
 #define ADMob_FullScreenID @"ca-app-pub-9071153832703835/2195555440"
-#define AdMobFullScreenRepeatCount 4
+#define AdMobFullScreenRepeatCount 8
 
 typedef enum : int {
     KCategoryBankAccount=1,

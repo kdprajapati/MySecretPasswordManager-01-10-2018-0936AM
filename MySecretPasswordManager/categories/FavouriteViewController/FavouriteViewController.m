@@ -124,7 +124,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.lblTitle.text = [[detailArray objectAtIndex:indexPath.row] valueForKey:@"title"];
     
-    NSLog(@"cetgory -fav - %@",[[detailArray objectAtIndex:indexPath.row] valueForKey:@"categoryType"]);
+    //NSLog(@"cetgory -fav - %@",[[detailArray objectAtIndex:indexPath.row] valueForKey:@"categoryType"]);
     NSNumber *categoryType = [[detailArray objectAtIndex:indexPath.row] valueForKey:@"categoryType"];
     switch (categoryType.intValue) {
         case 1://Bank Account

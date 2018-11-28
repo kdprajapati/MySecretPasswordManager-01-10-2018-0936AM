@@ -76,6 +76,7 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
 {
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(orientationChanged:)    name:UIDeviceOrientationDidChangeNotification  object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(handlePurchaseNotification:) name:@"IAPHelperPurchaseNotification"  object:nil];
+    [self.mainMenuTableView reloadData];
 }
 -(void)handlePurchaseNotification:(NSNotification *)notification
 {
@@ -209,12 +210,19 @@ RazeFaceProducts.store.requestProducts{ [weak self] success, products in
     int dataCount = 0;
     if (categoryArray != nil)
     {
-        dataCount = categoryArray.count;
+        dataCount = (int)categoryArray.count;
     }
     cell.lblDataCount.frame = CGRectMake(cell.contentView.frame.size.width - 70, 12, 70, 20);
     cell.lblDataCount.textAlignment = NSTextAlignmentRight;
     cell.lblDataCount.text = [NSString stringWithFormat:@"%d ",dataCount];
-    
+    if(dataCount<=0)
+    {
+        cell.lblDataCount.hidden=YES;
+    }
+    else
+    {
+       cell.lblDataCount.hidden=NO;
+    }
     return cell;
 
 }

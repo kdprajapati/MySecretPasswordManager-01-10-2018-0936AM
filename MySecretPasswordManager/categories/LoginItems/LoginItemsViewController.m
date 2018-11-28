@@ -94,7 +94,7 @@
     self.favouriteButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [self.favouriteButton setImage:[UIImage imageNamed:@"Fav_Unselect.png"] forState:UIControlStateNormal];
     [self.favouriteButton addTarget:self action:@selector(funDoFavourite) forControlEvents:UIControlEventTouchUpInside];
-    self.favouriteButton.imageEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.favouriteButton.imageEdgeInsets = UIEdgeInsetsMake(1, 1, 1, 1);
     UIBarButtonItem *favouriteBarBtn = [[UIBarButtonItem alloc] initWithCustomView:self.favouriteButton];
     
     UIButton *shareBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];

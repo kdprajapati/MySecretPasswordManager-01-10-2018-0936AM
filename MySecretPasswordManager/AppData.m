@@ -65,8 +65,6 @@ static AppData *_sharedAppData = nil;
         [userdefaults setObject:[NSNumber numberWithInt:self.appLaunchCount] forKey:@"AppLaunchCount"];
         [userdefaults synchronize];
         
-        self.isRemoveAdPurchased = true;
-        
         if(!self.isRemoveAdPurchased)
         {
             self.adMob=[AdMob sharedAdMob];
@@ -198,7 +196,6 @@ static AppData *_sharedAppData = nil;
         [self.dictAllCategoryData setObject:tempDict forKey:CategoryDrivingLicence];
         [self.dictAllCategoryData setObject:tempDict forKey:CategoryMemberShip];
         [self.dictAllCategoryData setObject:tempDict forKey:CategoryPassport];
-        
         [self.dictAllCategoryData writeToFile:plistPath atomically:YES];
 
     }
@@ -1046,7 +1043,7 @@ static AppData *_sharedAppData = nil;
     NSString *strDecrypted = [FBEncryptorAES decryptBase64String:string
                                                        keyString:Key];
     
-    NSLog(@"Decrypted: %@", strDecrypted);
+    //NSLog(@"Decrypted: %@", strDecrypted);
     
     return strDecrypted;
     
@@ -1404,6 +1401,14 @@ static AppData *_sharedAppData = nil;
         self.admobFullScreenDislplayCount++;
         
         if(self.admobFullScreenDislplayCount%AdMobFullScreenRepeatCount==0)
+        {
+            if(self.adMob.interstitial.isReady)
+            {
+                [self.adMob showFullScreenAdonComtroller:controller];
+            }
+            return  YES;
+        }
+        else if(self.appLaunchCount%2==0)
         {
             if(self.adMob.interstitial.isReady)
             {
